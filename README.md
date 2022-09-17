@@ -1,2 +1,7 @@
-# pythonforjunior
-Python Cources for Junior Middle School students
+# Python for Junior
+
+> **作者**：孙老师
+>
+> **说明**：本课程为孙老师的`Python`的基础教程讲义，主要面向10岁以上的初中生群体，课程的设计参考了电子学会的`Python`考级的设定，内有大量的计算机和编程的基础。帮助有意向去参与考级的学生能顺利通过每一级考试。
+>如果你是一名大学生，或者你已经掌握了其它编程语言，想学习`Python`，那么本课程并不适合你。
+>

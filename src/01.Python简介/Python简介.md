@@ -18,4 +18,4 @@ Python是一门简单，易学, 开源的高级语言
 
 在开始学习Python编程之前，首先要在自己的计算机上安装Python的解释器环境。 Python的解释器有好多种，如IDLE, VS Code、 Pycharm, Jupyter NoteBook等等。这里我们选择使用官方提供的解释器IDLE做为我们学习Python的环境。
 
-#### Windows
+#### Windows系统

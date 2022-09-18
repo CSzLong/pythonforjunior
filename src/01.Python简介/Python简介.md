@@ -16,10 +16,29 @@ Python是一门简单，易学, 开源的高级语言
 
  ### 安装Python
 
-在开始学习Python编程之前，首先要在自己的计算机上安装Python的解释器环境。 Python的解释器有好多种，如IDLE, VS Code、 Pycharm, Jupyter NoteBook等等。这里我们选择使用官方提供的解释器IDLE做为我们学习Python的环境。
+在开始学习Python编程之前，首先要在自己的计算机上安装Python的解释器环境。 Python的解释器有好多种，如IDLE、 VS Code、 Pycharm, Jupyter NoteBook等等。这里我们选择使用官方提供的解释器IDLE做为我们学习Python的环境。
 
 #### Windows系统
 
-Python的官方网站为[python.org](https://www.python.org/), 在登录之后，点击Download，并选择Windows
+Python的官方网站为[python.org](https://www.python.org/), 在登录之后，点击Download，并选择Windows。
 
 ![Python Home Page](./images/PythonHomePage.png)
+
+这里我们选择Python3.x版本， 因为2.0版本已经不再更新维护，未来3.0版才是主流版本。
+
+![Choose Version](./images/ChooseVersion.png)
+
+点击进入下一个页面之后，找到Files部分, 根据自己系统的版本选择32-bit还是64位的安装包。
+
+![Choose File](./images/ChooseFile.png)
+
+这里也提供了两个安装包的下载链接，可以点击下载:
+
+[32位Windows操作系统](https://www.python.org/ftp/python/3.10.7/python-3.10.7.exe)
+
+[64位Windows操作系统](https://www.python.org/ftp/python/3.10.7/python-3.10.7-amd64.exe)
+
+<details>
+<summary>如何查看自己计算机系统版本是32位还是64位?</summary>
+
+</details>

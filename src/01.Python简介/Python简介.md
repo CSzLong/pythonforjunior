@@ -52,4 +52,22 @@ Python的官方网站为[python.org](https://www.python.org/), 在登录之后�
 <image src="./images/SystemType.png">
 </details>
 
-下载好Python的编译器安装文件之后，双击打开Python环境的安装向导
+下载好Python的编译器安装文件之后，双击打开Python环境的安装向导，选择自定义安装，切记一定要勾选“Add Python 3.X to PATH”，否则需要手动添加环境变量，会比较麻烦。
+
+![Begin Installation](./images/BeginInstallation.png)
+
+![InstallPIP](./images/InstallPIP.png)
+
+![InstallLocation](./images/InstallLocation.png)
+
+![Complete Installation](./images/CompleteInstallation.png)
+
+安装完成之后，打开Windows的***命令提示符***或者***PowerShell***, 输入`python -V`或者`python --version`，如果返回了Python解释器的版本，例如“Python 3.10.7”, 说明安装已经成功。
+
+![Check Version](./images/CheckVersion.png)
+
+
+#### MacOS环境
+
+MacOS系统是自带Python 2版本的，但是我们需要学习的是Python 3版本，可以参考上面的方法，在官方的[下载页面](https://www.python.org/downloads/macos/)找到对应的版本下载，并安装即可。
+需要注意的是，在MacOS的***终端***直接执行`python`，调用的是Python 2版本的解释器。想要调用Python 3，必须输入`python3`。

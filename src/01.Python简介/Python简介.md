@@ -40,5 +40,16 @@ Python的官方网站为[python.org](https://www.python.org/), 在登录之后�
 
 <details>
 <summary>如何查看自己计算机系统版本是32位还是64位?</summary>
+在计算机桌面下方的工具栏中点击开始菜单，在Windows系统文件夹下找到控制面板，并打开:
+<image src="./images/StartMenu.png">
 
+在控制面板里，依次点击【系统和安全】->【系统】，就能打开系统信息面板查看自己系统的信息。
+
+<image src="./images/System.png">
+
+<image src="./images/SystemSelection.png">
+
+<image src="./images/SystemType.png">
 </details>
+
+下载好Python的编译器安装文件之后，双击打开Python环境的安装向导

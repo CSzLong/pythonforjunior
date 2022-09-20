@@ -84,7 +84,7 @@ IDLE中同样提供了这样的文本编辑环境，可以根据下列步骤进�
 2. 选择要打开的文件:
 ![Choose File](./images/ChooseFile.png)
 
-3. 编程代码，之后再运行即可：
+3. 修改代码，之后再运行即可：
 ![Edit Code](./images/EditCode.png)
 
 
@@ -107,9 +107,10 @@ IDLE中同样提供了这样的文本编辑环境，可以根据下列步骤进�
 ```Python
 """
 第一个海龟画图程序：
-1. 可以把range后面括号里的值改成其它数值
+1. 注意语句的缩进
+2. 可以把range后面括号里的值改成其它数值
 3. 可以把left后面括号里的值改成其它数值
-2. 可以把left替换成right
+4. 可以把left替换成right
 """
 import turtle as t
 

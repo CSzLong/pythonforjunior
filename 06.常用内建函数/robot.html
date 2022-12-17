@@ -1,0 +1,400 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>机器人四级 - Python 教程 for Junior</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">简介</a></li><li class="chapter-item expanded "><a href="../00.引言/引言.html"><strong aria-hidden="true">1.</strong> 引言</a></li><li class="chapter-item expanded "><a href="../01.Python简介/Python简介.html"><strong aria-hidden="true">2.</strong> Python简介</a></li><li class="chapter-item expanded "><a href="../02.HelloWorld/HelloWorld.html"><strong aria-hidden="true">3.</strong> hello, world</a></li><li class="chapter-item expanded "><a href="../03.类型和变量/类型和变量.html"><strong aria-hidden="true">4.</strong> 类型和变量</a></li><li class="chapter-item expanded "><a href="../04.运算符和表达式/运算符和表达式.html"><strong aria-hidden="true">5.</strong> 运算符和表达式</a></li><li class="chapter-item expanded "><a href="../05.位运算/位运算.html"><strong aria-hidden="true">6.</strong> 位运算</a></li><li class="chapter-item expanded "><a href="../06.常用内建函数/常用内建函数.html"><strong aria-hidden="true">7.</strong> 常用内建函数</a></li><li class="chapter-item expanded affix "><a href="../06.常用内建函数/robot.html" class="active">机器人四级</a></li><li class="chapter-item expanded affix "><a href="../附录/appendix.html">附录</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Python 教程 for Junior</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="超声波测距"><a class="header" href="#超声波测距">超声波测距</a></h2>
+<pre><code class="language-cpp">const int TrigPin = 2; //引脚号自行更新
+const int EchoPin = 3; //引脚号自行更新
+
+int distance;
+
+void getDistance(){
+    digitalWrite(TrigPin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(TrigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(TrigPin, LOW);
+    distance = pulseIn(EchoPin, HIGH) / 58.0;
+}
+</code></pre>
+<h2 id="呼吸灯"><a class="header" href="#呼吸灯">呼吸灯</a></h2>
+<pre><code class="language-cpp">const int potPin = A0;
+const int ledPin = 6;
+
+void setup(){
+    Serial.begin(9600);
+}
+
+void loop(){
+    int potVal = analogRead(potPin);
+    potVal = potVal/10;
+    Serial.println(potVal);
+    for (int i = 0; i &lt;= 255; i++){
+        analogWrite(ledPin, i);
+        delay(potVal);
+    }
+
+    for (int i = 255; i &gt;= 0; i--){
+        analogWrite(ledPin, i);
+        delay(potVal);
+    }
+}
+</code></pre>
+<h2 id="红外线遥控"><a class="header" href="#红外线遥控">红外线遥控</a></h2>
+<pre><code class="language-cpp">#include &lt;IRremote.h&gt;
+
+const int irPin = 12;
+
+IRrecv irRecv(irPin);
+decode_results results;
+
+void setup(){
+    irRecv.enableIRIn();
+    Serial.begin(9600);
+}
+
+void loop(){
+    if (irRecv.decode(&amp;results)){
+        Serial.println(results.value, HEX);
+
+        switch (results.value){
+            case 0xFF18E7:
+            {
+                Serial.println(1);
+                break;
+            }
+            case 0xFF38C7:
+            {
+                Serial.println(2);
+                break;
+            }
+        }
+        irRecv.resume();
+    }
+}
+</code></pre>
+<h2 id="舵机"><a class="header" href="#舵机">舵机</a></h2>
+<pre><code class="language-cpp">#include &lt;Servo.h&gt;
+
+const int serPin = 3;
+
+Servo myServo;
+
+void setup(){
+    myServo.attach(serPin);
+}
+
+void setup(){
+    myServo.write(90);
+    delay(1000);
+    myServo.write(135);
+}
+</code></pre>
+<h2 id="红外线智能小车"><a class="header" href="#红外线智能小车">红外线智能小车</a></h2>
+<pre><code class="language-cpp">#include &lt;IRremote.h&gt;
+
+const int leftPin1 = 8; //AIN1连接引脚8
+const int leftPin2 = 7; //AIN2连接引脚9
+const int rightPin3 = 4; //BIN1连接引脚4
+const int rightPin4 = 3; //BIN2连接引脚3
+const int leftSpeed = 6; //PWA连接引脚6
+const int rightSpeed = 5; //PWB连接引脚5
+const int irPin = A0;//红外遥控传感器信号引脚连接主板引脚 A0
+const int maxspeedPwm = 255;//PWM最大值
+const int minspeedPwm = 90; //PWM最小值
+const int speedStep = 10; //加速或减速时 PWM 的增减幅度
+
+int intSpeedPwm = 130; //设置小车运行的初始速度
+IRrecv irRecv(irPin); 
+decode_results irResults;
+
+void setup(){
+    pinMode(leftPin1, OUTPUT);
+    pinMode(leftPin2, OUTPUT);
+    pinMode(rightPin1, OUTPUT);
+    pinMode(rightPin2, OUTPUT);
+    irRecv.enableIRIn();
+    Serial.begin(9600);
+}
+
+void loop(){
+    if (irRecv.decode(&amp;irResults)){
+        Serial.println(irResults.value, HEX);
+        switch (irResult.value){
+            case 0xFF10EF:{ //左转
+                turnLeft();
+                break;
+            }
+            case 0xFF5AA5:{ //右转
+                turnRight();
+                break;
+            }
+            case 0xFF18E7:{ //前进
+                forward();
+                break;
+            }
+            case 0xFF4AB5:{ //后退
+                backward();
+                break;
+            }
+            case 0xFF38C7:{ //停止
+                pause();
+                break;
+            }
+            case 0xFFA25D:{ //减速
+                if(intSpeedPwm - speedStep &lt; minSpeedPwm){
+                    intSpeedPwm = minSpeedPwm;
+                }else{
+                    intSpeedPwm -= speedStep;
+                }
+                break;
+            }
+            case 0xFF629D:{ //加速
+                if(intSpeedPwm + speedStep &lt; maxSpeedPwm){
+                    intSpeedPwm = maxSpeedPwm;
+                }else{
+                    intSpeedPwm += speedStep;
+                }
+                break;
+            }
+            case 0xFFE21D:{ //全速
+                intSpeedPwm = maxSpeedPwm;
+                break;
+            }
+        }
+        analogWrite(leftSpeed, intSpeedPwm);
+        analogWrite(rightSpeed, intSpeedPwm);
+        irRecv.resume();
+    }
+}
+
+/*前进*/
+void forward(){
+    digitalWrite(leftPin1, 1);
+    digitalWrite(leftPin2, 0);
+    digitalWrite(rightPin3, 1);
+    digitalWrite(rightPin4, 0);
+}
+
+/*后退*/
+void backward(){
+    digitalWrite(leftPin1, 0);
+    digitalWrite(leftPin2, 1);
+    digitalWrite(rightPin3, 0);
+    digitalWrite(rightPin4, 1);
+}
+
+/*左转*/
+void turnLeft(){
+    digitalWrite(leftPin1, 0);
+    digitalWrite(leftPin2, 0);
+    digitalWrite(rightPin3, 1);
+    digitalWrite(rightPin4, 0);
+}
+
+/*右转*/
+void turnRight(){
+    digitalWrite(leftPin1, 1);
+    digitalWrite(leftPin2, 0);
+    digitalWrite(rightPin3, 0);
+    digitalWrite(rightPin4, 0);
+}
+
+/*停止*/
+void pause(){
+    digitalWrite(leftPin1, 0);
+    digitalWrite(leftPin2, 0);
+    digitalWrite(rightPin3, 0);
+    digitalWrite(rightPin4, 0);
+}
+
+/*原地左转*/
+void  rotateLeft(){
+    digitalWrite(leftPin1, 0);
+    digitalWrite(leftPin2, 1);
+    digitalWrite(rightPin3, 1);
+    digitalWrite(rightPin4, 0);
+}
+
+/*原地右转*/
+void  rotateLeft(){
+    digitalWrite(leftPin1, 1);
+    digitalWrite(leftPin2, 0);
+    digitalWrite(rightPin3, 0);
+    digitalWrite(rightPin4, 1);
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../06.常用内建函数/常用内建函数.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../附录/appendix.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../06.常用内建函数/常用内建函数.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../附录/appendix.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

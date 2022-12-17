@@ -1,0 +1,1349 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Python 教程 for Junior</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">简介</a></li><li class="chapter-item expanded "><a href="00.引言/引言.html"><strong aria-hidden="true">1.</strong> 引言</a></li><li class="chapter-item expanded "><a href="01.Python简介/Python简介.html"><strong aria-hidden="true">2.</strong> Python简介</a></li><li class="chapter-item expanded "><a href="02.HelloWorld/HelloWorld.html"><strong aria-hidden="true">3.</strong> hello, world</a></li><li class="chapter-item expanded "><a href="03.类型和变量/类型和变量.html"><strong aria-hidden="true">4.</strong> 类型和变量</a></li><li class="chapter-item expanded "><a href="04.运算符和表达式/运算符和表达式.html"><strong aria-hidden="true">5.</strong> 运算符和表达式</a></li><li class="chapter-item expanded "><a href="05.位运算/位运算.html"><strong aria-hidden="true">6.</strong> 位运算</a></li><li class="chapter-item expanded "><a href="06.常用内建函数/常用内建函数.html"><strong aria-hidden="true">7.</strong> 常用内建函数</a></li><li class="chapter-item expanded affix "><a href="06.常用内建函数/robot.html">机器人四级</a></li><li class="chapter-item expanded affix "><a href="附录/appendix.html">附录</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Python 教程 for Junior</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="简介introduction"><a class="header" href="#简介introduction">简介Introduction</a></h1>
+<blockquote>
+<p><strong>作者</strong>：孙老师</p>
+<p><strong>说明</strong>：本课程为孙老师的<code>Python</code>的基础教程讲义，主要面向10岁以上的学生群体，课程的设计参考了<a href="https://www.cie.org.cn/">电子学会</a>的<code>Python</code>考级的设定，内有大量的计算机和编程的基础。帮助有意向去参与考级的学生能顺利通过每一级考试。
+如果你是一名大学生，或者你已经掌握了其它编程语言，想学习<code>Python</code>，那么本课程并不适合你。</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="引言"><a class="header" href="#引言">引言</a></h2>
+<h3 id="1-什么是编程"><a class="header" href="#1-什么是编程">1. 什么是编程</a></h3>
+<p>编程的就是让计算机代码解决某个问题，对某个计算体系规定一定的运算方式，使计算体系按照该计算方式运行，并最终得到相应结果的过程。通俗地去理解，就是用某种计算机程序设计语言编写一个程序让计算机帮助我们完成某件工作、达到某种目的或解决某个问题。当程序员们把程序有机地结合到一起之后，再做一些深度的加工，就形成了我们常说的软件。</p>
+<p>在互联网技术高速发展的今天，由计算机编写的程序或者软件已经和我们的生活方方面面有了很大的关系，对社会的发展起到很大的推动作用。比如，为了帮助人们更加快速地处理工作中的文档，Microsoft公司开发了Office办公软件；为了娱乐，很多游戏公司开发了各种各样的游戏软件，像大家比较熟悉的王者荣耀、吃鸡等；又或是为了满足远程的沟通需求，QQ、微信、钉钉等等不同的通讯软件也被开发了出来......</p>
+<h3 id="2-计算机编程语言"><a class="header" href="#2-计算机编程语言">2. 计算机编程语言</a></h3>
+<p>计算机编程语言是程序设计的最重要的工具，它是指计算机能够接受和处理的、具有一定语法规则的语言。从计算机诞生，计算机语言经历了机器语言、汇编语言和高级语言几个阶段。</p>
+<h4 id="机器语言"><a class="header" href="#机器语言">机器语言</a></h4>
+<p>机器语言指令是一种二进制代码,由操作码和操作数两部分组成,是机器能直接识别的程序语言或指令代码，无需经过翻译，每一操作码在计算机内部都有相应的电路来完成它，或指不经翻译即可为机器直接理解和接受的程序语言或指令代码。</p>
+<p>它大概的样子如下(纯粹由孙老师胡乱编写的，理解意思即可)</p>
+<pre><code class="language-shell">1011100111010001011010101001011010100001010001000101011001010101010
+0111000101001001011101100101101010101010101010010101010100101001101
+1011110101111110101000001101010101011000000001110101011001011011101
+0000111111100010100010001111010010001110110000110101000101011001001
+</code></pre>
+<h4 id="汇编语言"><a class="header" href="#汇编语言">汇编语言</a></h4>
+<p>汇编语言， 即第二代计算机语言,属于低级语言，用一些容易理解和记忆的缩写单词来代替一些特定的指令，例如：用<code>ADD</code>代表加法操作指令，<code>SUB</code>代表减法操作指令，<code>MOV</code>代表变量传递等等。然而计算机的硬件并不认识字母符号，这时候就需要一个专门的程序把这些字符变成计算机能够识别的二进制数或机器语言。但是由于各个机器的指令集是不同的，所以汇编语言要和特定的机器指令集一一对应对能正常运行。</p>
+<p>下列是一段汇编语言的例子：</p>
+<pre><code class="language-shell">MOV AX, X
+    MOV BX, OFFSET X
+    MOV CX, 9
+ L1: INC   BX
+       INC   BX
+       CMP   AX, [BX]
+       JAE   L2
+       XCHG  AX, [BX]
+ L2: LOOP L1
+       MOV Y,  AX
+</code></pre>
+<h4 id="高级语言"><a class="header" href="#高级语言">高级语言</a></h4>
+<p>高级语言是独立于机器的一种面向过程或者面向对象的计算机编程语言, 语法结构参照了数学语言而设计的, 读起来近似于日常的会话。 比如要把两个变量的值相加，用高级语言的表达为 <code>var1 + var2</code>。 所以高级语言比低级语言更具有可读性, 更容易被理解。</p>
+<p>目前常见的高级语言有： C语言、 C++、 VB、 C#、 Java、 Python、 Go lang、 Delphi, PHP等等。</p>
+<p>下列是一段高级语言的例子（Python）:</p>
+<pre><code class="language-Python">_lenght = float(input(&quot;Please input the lenght of Square:&quot;))
+_width = float(input(&quot;Please input the width of Square:&quot;))
+
+_area = _length * _width
+
+print(&quot;The area of the Square is %.2f&quot; %_area)
+</code></pre>
+<p>高级语言并不能直接被机器执行，而要经过一系列的编译或者解释的过程，转换成机器能够直接理解的机器语言之后，才能被运行。</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="python简介"><a class="header" href="#python简介">Python简介</a></h2>
+<p>Python由荷兰数学和计算机科学研究学会的吉多·范罗苏姆于1990年代初设计，作为一门叫做ABC语言的替代品; 是一门简单，易学, 开源的高级语言。</p>
+<ul>
+<li>学习难度低，不需要太高的基础</li>
+<li>解释型语言，可移植性高，不需要考虑机器的差异</li>
+<li>代码规范性高，可读性强</li>
+<li>面向对象语言，函数式编程</li>
+<li>可粘合其它语言开发的系统，被称作“胶水语言”</li>
+<li>生态圈强大，可应用的领域有软件开发、后端开发、数据科学、人工智能、机器学习、数据采集等</li>
+</ul>
+<p>在正式学习之前, 给各位同学提几个建议</p>
+<ul>
+<li>学习过程中，尽量用英语表达各种输出</li>
+<li>多做练习</li>
+<li>不要怕犯错，学会理解解释器抛出的各种异常信息</li>
+<li>遇到问题时，先自己想办法找解决方案</li>
+</ul>
+<h3 id="安装python"><a class="header" href="#安装python">安装Python</a></h3>
+<p>在开始学习Python编程之前，首先要在自己的计算机上安装Python的解释器环境。 Python的解释器有好多种，如IDLE、 VS Code、 Pycharm, Jupyter NoteBook等等。这里我们选择使用官方提供的解释器IDLE做为我们学习Python的环境。</p>
+<h4 id="windows系统"><a class="header" href="#windows系统">Windows系统</a></h4>
+<p>Python的官方网站为<a href="https://www.python.org/">python.org</a>, 在登录之后，点击Download，并选择Windows。</p>
+<p><img src="01.Python%E7%AE%80%E4%BB%8B/./images/PythonHomePage.png" alt="Python Home Page" /></p>
+<p>这里我们选择Python3.x版本， 因为2.0版本已经不再更新维护，未来3.0版才是主流版本。</p>
+<p><img src="01.Python%E7%AE%80%E4%BB%8B/./images/ChooseVersion.png" alt="Choose Version" /></p>
+<p>点击进入下一个页面之后，找到Files部分, 根据自己系统的版本选择32-bit还是64位的安装包。</p>
+<p><img src="01.Python%E7%AE%80%E4%BB%8B/./images/ChooseFile.png" alt="Choose File" /></p>
+<p>这里也提供了两个安装包的下载链接，可以点击下载:</p>
+<p><a href="https://www.python.org/ftp/python/3.10.7/python-3.10.7.exe">32位Windows操作系统</a></p>
+<p><a href="https://www.python.org/ftp/python/3.10.7/python-3.10.7-amd64.exe">64位Windows操作系统</a></p>
+<details>
+<summary>如何查看自己计算机系统版本是32位还是64位?</summary>
+在计算机桌面下方的工具栏中点击开始菜单，在Windows系统文件夹下找到控制面板，并打开:
+<image src="./images/StartMenu.png">
+<p>在控制面板里，依次点击【系统和安全】-&gt;【系统】，就能打开系统信息面板查看自己系统的信息。</p>
+<image src="./images/System.png">
+<image src="./images/SystemSelection.png">
+<image src="./images/SystemType.png">
+</details>
+<p>下载好Python的编译器安装文件之后，双击打开Python环境的安装向导，选择自定义安装，切记一定要勾选“Add Python 3.X to PATH”，否则需要手动添加环境变量，会比较麻烦。</p>
+<p><img src="01.Python%E7%AE%80%E4%BB%8B/./images/BeginInstallation.png" alt="Begin Installation" /></p>
+<p><img src="01.Python%E7%AE%80%E4%BB%8B/./images/InstallPIP.png" alt="InstallPIP" /></p>
+<p><img src="01.Python%E7%AE%80%E4%BB%8B/./images/InstallLocation.png" alt="InstallLocation" /></p>
+<p><img src="01.Python%E7%AE%80%E4%BB%8B/./images/CompleteInstallation.png" alt="Complete Installation" /></p>
+<p>安装完成之后，打开Windows的<em><strong>命令提示符</strong></em>或者<em><strong>PowerShell</strong></em>, 输入<code>python -V</code>或者<code>python --version</code>，如果返回了Python解释器的版本，例如“Python 3.10.7”, 说明安装已经成功。</p>
+<p><img src="01.Python%E7%AE%80%E4%BB%8B/./images/CheckVersion.png" alt="Check Version" /></p>
+<h4 id="macos环境"><a class="header" href="#macos环境">MacOS环境</a></h4>
+<p>MacOS系统是自带Python 2版本的，但是我们需要学习的是Python 3版本，可以参考上面的方法，在官方的<a href="https://www.python.org/downloads/macos/">下载页面</a>找到对应的版本下载，并安装即可。
+需要注意的是，在MacOS的<em><strong>终端</strong></em>直接执行<code>python</code>，调用的是Python 2版本的解释器。想要调用Python 3，必须输入<code>python3</code>。</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="第一个python程序-hello-world"><a class="header" href="#第一个python程序-hello-world">第一个Python程序： hello, world</a></h2>
+<p><a href="02.HelloWorld/.././01.Python%E7%AE%80%E4%BB%8B/Python%E7%AE%80%E4%BB%8B.html">上一章节</a>，我们了解了Python的特性和生态，也学会了如何在自己的计算机上安装Python的官方解释器。接下来我们正式开启Python编程的学习。</p>
+<p>但：</p>
+<p><font size="4"><strong>所有的代码编写必须都要用英文输入法！！！</strong></font></p>
+<p><font size="4"><strong>所有的代码编写必须都要用英文输入法！！！</strong></font></p>
+<p><font size="4"><strong>所有的代码编写必须都要用英文输入法！！！</strong></font></p>
+<p>重要的事情说三遍；除了字符串的内容，所有的编程语言必须用英文输入法编写代码，包括包围在字符串左右两边的引号（单引号和双引号）。</p>
+<h3 id="idle"><a class="header" href="#idle">IDLE</a></h3>
+<p>我们要使用的集成开发环境是官方提供的IDLE，在正式学习之后，要知道该怎么打开它。</p>
+<p>点击 <strong>【开始】</strong> 菜单，找到安装的 <strong>【Python 3.x】</strong> 文件夹，点击 <strong>【IDLE】</strong> 打开它：</p>
+<p><img src="02.HelloWorld/./images/FindIDLE.png" alt="FindIDLE" /></p>
+<p>如下图，我们可以看到这个简单甚至简陋的Python自带的IDLE的界面；它会在本教程伴随我们一直到最后。</p>
+<p><img src="02.HelloWorld/./images/IDLE.png" alt="IDLE" /></p>
+<p>从IDLE的界面，我们可以看到Python的版本信息以及当前的运行环境信息，同时也有一些提示命令。
+在上述信息的下方，我们看到<code>&gt;&gt;&gt;</code>这样的符号，这个是Python语句输入的提示符，它的后面会有一光标在不停地闪烁，表示我们在该位置可以输入命令或者代码。</p>
+<h3 id="hello-world"><a class="header" href="#hello-world">hello, world</a></h3>
+<p>几乎在学习所有编程语言的最初，都会让我们先学会写一个简单的程序输出<code>hello, world</code>这样一句话，因为这段代码是伟大的丹尼斯·里奇（C语言之父，和肯·汤普森一起开发了Unix操作系统）和布莱恩·柯尼汉（awk语言的发明者）在他们的不朽著作The <code>C Programming Language</code> 中写的第一段代码。Python也并不例外，但是在Python中，不需要像有些语言那样先构造一个复杂的语法结构，我们只需要下面一行代码就可以实现：</p>
+<pre><code class="language-Python">print(&quot;hello, world&quot;)
+</code></pre>
+<p>IDLE给我们提供了两种编程环境，帮助我们去学习Python语言，它们分别是<em><strong>交互式环境</strong></em>和<em><strong>文本编辑环境</strong></em>，我们下面结合这两种编程环境的介绍，来完成我们在Python中的第一个程序。</p>
+<h4 id="交互式环境"><a class="header" href="#交互式环境">交互式环境</a></h4>
+<p>交互式环境的意思就是，我们输入了一行代码，敲击回车键之后，代码会马上被执行, 如果执行的代码有结果生成，那么这个结果会直接显示在窗口里。</p>
+<p>我们打开IDLE之后所看到的界面就是一个交互式环境，我们可以在输入提示符之后，输入代码再回车(#后面的内容不需要输入)：</p>
+<pre><code class="language-Python">&gt;&gt;&gt;print(&quot;hello, world&quot;) #输入完成后敲回车
+#下面一行为输出的结果
+hello, world
+</code></pre>
+<p><img src="02.HelloWorld/./images/Interactive.png" alt="Interactive" /></p>
+<p>这里需要注意的是，我们只能在最后一个输入提示符<code>&gt;&gt;&gt;</code>之后输入代码，即使在这之前有很多个<code>&gt;&gt;&gt;</code>并没有我们输入的内容，就算是把光标移过去也是不可以的。</p>
+<p>交互式环境的编程有很大的局限性，因为他每次只能写一行代码，或者是一个代码块，当我们要写的程序行数很多的时候就会很麻烦，一旦写的代码有错误，不能回去修改，只能重写。但是交互式编程并不是不可取的，它能够快速把代码执行的结果反馈出来，在这一点上是很便利的。</p>
+<h4 id="文本编辑环境"><a class="header" href="#文本编辑环境">文本编辑环境</a></h4>
+<p>文本编程是指在文本编程器中编写代码并保存成文件之后，通过编程器编译成可执行的程序文件，或者通过解释器直接执行该程序文件的一种编程方式，文本编程也可以被叫作脚本式编程或者文件式编程，这种编程方式要求代码必须编写成一个纯文本文件，不能含有除了代码之外的任何信息。所以它对编辑文本的工具软件是有要求的，比如Windows系统中自带的<em>记事本</em>就可以进行代码的编写，然而<em>写字板</em>或者Office套件中的<em>Word</em>就不可以，因为这两种软件保存的文件中包含了其它除代码之外的内容。</p>
+<p>IDLE中同样提供了这样的文本编辑环境，可以根据下列步骤进行操作：</p>
+<ol>
+<li>
+<p>在IDLE的菜单栏中，选择 <strong>【File】</strong>, 然后点击 <strong>【New File】</strong> 打开一个文件编辑窗口:
+<img src="02.HelloWorld/./images/NewFile.png" alt="New File" /></p>
+</li>
+<li>
+<p>在打开的文件编辑窗口之后，输入代码 <code>print(&quot;hello, world&quot;)</code>：
+<img src="02.HelloWorld/./images/TXTCoding.png" alt="TXTCoding" /></p>
+</li>
+<li>
+<p>完成代码编写之后，保存文件，在菜单栏中 <strong>【File】</strong>, 然后点击 <strong>【Save】</strong>，然后输入保存的文件名字，一定要注意 <strong>【保存类型】</strong> 一定是 <strong>Python files(<em>.py;</em>.pyw,*.pyi)</strong> :
+<img src="02.HelloWorld/./images/SavingFile.png" alt="SavingFile" /></p>
+</li>
+<li>
+<p>保存好文件之后，就可以运行程序了，在菜单栏中选择 <strong>【Run】</strong>, 然后点击 <strong>【Run Module】</strong> 就可以了，该操作的快捷键为 <strong>F5</strong>:
+<img src="02.HelloWorld/./images/RunModule.png" alt="RunModule" /></p>
+</li>
+<li>
+<p>运行完成之后，结果会输出在IDLE中：
+<img src="02.HelloWorld/./images/ReturnResult.png" alt="Return Result" /></p>
+</li>
+</ol>
+<p>文本式编程是一种比较灵活的编程方式，一旦我们编写完代码运行之后发现了错误，就可以重新打开文件去修改：</p>
+<ol>
+<li>
+<p>在菜单栏中，选择 <strong>【File】</strong>，点击 <strong>【Open】</strong>:
+<img src="02.HelloWorld/./images/OpenFile.png" alt="Open File" /></p>
+</li>
+<li>
+<p>选择要打开的文件:
+<img src="02.HelloWorld/./images/ChooseFile.png" alt="Choose File" /></p>
+</li>
+<li>
+<p>修改代码，之后再运行即可：
+<img src="02.HelloWorld/./images/EditCode.png" alt="Edit Code" /></p>
+</li>
+</ol>
+<p>对于一个的程序员来讲，找到一个强大的集成开发环境是必不可少的先决条件。目前有几款比较流行的集成开发工具都支持Python编程，比如微软的<em><strong>Visual Studio Code</strong></em> (简称<em><strong>VS Code</strong></em>)，或者<a href="https://www.jetbrains.com/">JetBrains</a>的<em><strong>PyCharm</strong></em>， 这些都是很强大且专业的工具。</p>
+<p>有兴趣的同学可以点击下列链接了解上述提到的工具：</p>
+<p><a href="https://code.visualstudio.com/">VS Code下载链接</a></p>
+<p><a href="https://www.jetbrains.com/pycharm/download/">Pycharm下载链接</a></p>
+<h3 id="总结"><a class="header" href="#总结">总结</a></h3>
+<p>我们已经把第一个Python程序运行起来了，同时出了解了两种不同的编程环境。同学们可以自由发挥，用<code>print</code>函数输出一些其它内容，注意要用引号引上。</p>
+<p>可以尝试把下列代码通过文本式编程编写并运行，看看我们能看到什么？
+注：两个<code>&quot;&quot;&quot;</code>之间的内容可以不用写， 且不要直接复制粘贴到交互式的环境中！</p>
+<pre><code class="language-Python">&quot;&quot;&quot;
+第一个海龟画图程序：
+1. 注意语句的缩进
+2. 可以把range后面括号里的值改成其它数值
+3. 可以把left后面括号里的值改成其它数值
+4. 可以把left替换成right
+&quot;&quot;&quot;
+import turtle as t
+
+colors = ['red', 'green', 'orange', 'blue']
+
+for i in range(100):
+    t.color(colors[i%4])
+    t.forward(i)
+    t.left(90)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="类型和变量"><a class="header" href="#类型和变量">类型和变量</a></h2>
+<p>一个计算机程序是由<strong>算法</strong>+<strong>数据结构</strong>组成，在我们编写完程序之后，在运行它之前，它仅仅是一段静态的代码，只是步骤和方法的描述，并没有真正地帮我们解决问题。只有在运行起来之后，才能开始做事情，就像一副写在书上的《西红柿炒鸡蛋》的菜谱，我们光去看它是没有用的，只有我们买好原材料（西红柿和鸡蛋）之后，去厨房真正地去做它才能最终吃到好吃的西红柿炒鸡蛋。</p>
+<p>细心的同学应该已经发现了，如果把程序比做菜谱，那么原材料（西红柿和鸡蛋）又应该是什么的比喻呢？<strong>实际上讲，我们编写的程序就是为了用来处理数据</strong>, 上一段中提到的原材料就是数据的比喻，而当程序运行起来并开始处理数据之后，它就从静态变为了动态，那么这个动态运行活动就叫做进程：</p>
+<p><em><strong>进程 = 程序 + 数据</strong></em><br/>
+<em><strong>process = program + data</strong></em><br/>
+或者<br/>
+<em><strong>进程 = 算法 + 数据结构 + 数据</strong></em><br/>
+<em><strong>process = algorithm + data structure + data</strong></em></p>
+<p>那么什么是数据呢？你可能第一个想到的就是数学里学到的数值，如1，2，3...43.23，50，1000等等， 其实你的理解并不是错的，只是仅仅列出了数据的其中一种类型。</p>
+<p>计算机中的数据不仅仅是狭义上的数字，还可以是具有一定意义的文字，字母，数字符号的组合、图形、图像、音频、视频等等。总之，根据百度百科的解释，数据是事实和观察的结果，是对客观事物的逻辑归纳，是用来表示客观事物的未经加工的原始素材。</p>
+<p>每一种编程语言都有自己内建的基本数据类型，所以我们学习Python的第一个重要的内容就是<strong>基本数据类型</strong>。</p>
+<h3 id="基本数据类型basic-datatypes"><a class="header" href="#基本数据类型basic-datatypes">基本数据类型Basic DataTypes</a></h3>
+<h4 id="整型int"><a class="header" href="#整型int">整型int</a></h4>
+<p>整型，英文为<code>integer</code>，是指没有小数部分的数值型数据，比如1，2，3，100，44221等等，但是1.0， 2.0， 10.0这些数值则不是整型，因为它们都带有小数部分，即使他们和整数部分的值大小相等。一个<code>integer</code>是集合 Z = {..., -2, -1, 0, 1, 2, ...} 中的一个数。在Python中，用<code>int</code>来表示整型的类型名，它是Python中唯一的一个整型类型，可以处理任意大小的整数。</p>
+<p>可以在IDLE中直接输入一个整型数据，再回车:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;1
+1
+&gt;&gt;&gt;2
+2
+&gt;&gt;&gt;100
+100
+&gt;&gt;&gt;888888888888888888888
+888888888888888888888
+</code></pre>
+<p>Python中同样可以支持二进制、八进制和十六进制的表示法，如0b1000(二进制，换算成十进制为8)，0o742(八进制，换算成十进制为482)， 0xFAE(十六进制，换算成十进制为4014)。其中<code>0b</code>、<code>0o</code>和<code>0x</code>分别为二进制、八进制和十六进制的前缀，如果不写的话，二进制和八进制会被当做十进制处理，十六进制则会报错。</p>
+<pre><code class="language-Python">&gt;&gt;&gt;0b1000
+8
+&gt;&gt;&gt;0o742
+482
+&gt;&gt;&gt;0xFAE
+4014
+</code></pre>
+<h4 id="浮点型float"><a class="header" href="#浮点型float">浮点型float</a></h4>
+<p>浮点型，英文为<code>float</code>，是指具有小数部分的数值型数据，比如1.414、3.1415926、2.718281828459045、4.000等等。在Python中，用<code>float</code>来表示浮点型的类型名，它是Python中唯一的一个浮点型类型，可以处理任意精度的浮点数。</p>
+<pre><code class="language-shell">&gt;&gt;&gt;1.414
+1.414
+&gt;&gt;&gt;3.1415926
+3.1415926
+&gt;&gt;&gt;2.718281828459045
+2.718281828459045
+&gt;&gt;&gt;4.000
+4.0
+</code></pre>
+<p>Python中的浮点型支持十进制和指数型两种表示法，指数型也叫科学记数法，属于超纲内容，这里就不做过多介绍了，感兴趣的同学可以自行研究一下。</p>
+<h4 id="字符串str"><a class="header" href="#字符串str">字符串str</a></h4>
+<p>字符串，英文为<code>string</code>，是指由文字、字母、数字以及一系列符号组成的一串字符，这些字符由单引号或者双引号括起来，比如“abc”、‘banana’、‘1000’等等。在Python中，用<code>str</code>来表示字符串的类型名。需要特别注意的是，只要用引号括起来之后，就是字符串，即使里面的字符看起来看是一个整型或者浮点型。</p>
+<pre><code class="language-Python">&gt;&gt;&gt;“abc”
+'abc'
+&gt;&gt;&gt;'banana'
+'banana'
+&gt;&gt;&gt;'1000'
+'1000'
+</code></pre>
+<p>如果在字符串中需要用到引号(<code>&quot;</code>或<code>'</code>)的话，可以用转义的方式(<code>\'</code>或<code>\&quot;</code>)，或者在需要用到单引号的时候，用双引号把字符串括起来，反之亦然:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;'I\'m a student.'
+&quot;I'm a student.&quot;
+&gt;&gt;&gt;&quot;I\'m a student.&quot;
+&quot;I'm a student.&quot;
+</code></pre>
+<h4 id="布尔型bool"><a class="header" href="#布尔型bool">布尔型bool</a></h4>
+<p>布尔型，英文为boolean，用来描述真假的一种数据，也叫逻辑型，它只有两个值: <code>True</code> 和 <code>False</code>。这里要注意一定是只有首字母大写，如果写成了true、flase、TURE或者是FaLSe都是错误的。在Python中，用<code>str</code>表示布尔型的类型名。</p>
+<pre><code class="language-Python">&gt;&gt;&gt;True
+True
+&gt;&gt;&gt;False
+False
+</code></pre>
+<p>如果输入错误，会报错，如输入<code>true</code>:</p>
+<pre><code class="language-shell">Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+NameError: name 'true' is not defined
+</code></pre>
+<p>在Python中，<code>bool</code>类型其实是<code>int</code>类型的子类型，一般情况下，<code>False</code>就是<code>0</code>, <code>True</code>就是<code>1</code>；但是所有的非0的数值都可以认为是真逻辑值，这一点我们会在下一章节中详细说明。</p>
+<h4 id="空值none"><a class="header" href="#空值none">空值None</a></h4>
+<p>空值，英文为<code>None</code>，是Python中一个很特殊的类型，它只有一个值，即<code>None</code>，表示空对象，什么都没有。但是数据为空并不是空值，比如空字符串<code>&quot;&quot;</code>，它是字符串类型，并不是空值类型。在Python中，用<code>NoneType</code>表示空值的类型名。</p>
+<pre><code class="language-Python">&gt;&gt;&gt;None
+&gt;&gt;&gt;
+&gt;&gt;&gt;&quot;&quot;
+''
+</code></pre>
+<p>空值并不是一个没有意义的类型，相反，需要用到它的地方有很多。比如，调用函数的时候，不想给某个参数传递值，但是这个参数没有默认的值，所以传值是必须的，那么就可以把空值传给它。关于这一点，我们以后遇到的时候，结合实际用法就可以理解得更好。</p>
+<h3 id="变量variables"><a class="header" href="#变量variables">变量Variables</a></h3>
+<p>也许你已经在数学中学习过了有关未知数的概念，那么你对变量已经有了初步的接触，如下面的方程：</p>
+<p>\[5x+(4 \times 5)-19=46\]</p>
+<p>我们可以经过解方程得到\(x\)的值为9，然而这里的\(x\)是一个固定的值，在解方程之前它只是个未知数，只有解开方程之后才知道它的值是多少。</p>
+<p>然而，Python中变量更像是初中要学习的函数里的定义域:</p>
+<p>\[ y=x^2+2x+1 \]</p>
+<p>或者</p>
+<p>\[ f(x)=x^2+2x+1 \]</p>
+<p>这里的\(x\)是一个变化的值，随着\(x\)的变化，\(y\)或者函数\(f(x)\)的值也会变化。但实际上，这里的\(x\)更加准确的概念应该是参数(parameters)，参数和变量还是不同的，参数是要配合函数来一起使用的，但是变量是独立的，可以单独去发挥作用。</p>
+<p>在计算机编程中，变量就是一个数据的载体，也就是一块用来保存数据的内存空间，它可以被读取和修改。一个变量有两个最基本的要素:<strong>名字</strong>和<strong>类型</strong>。</p>
+<p>我们可以把变量想像成一个用来存放数据的容器，像下图一样:</p>
+<p><img src="03.%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F/./images/variable.png" alt="Variables" /></p>
+<p>他在内存中的表现是这样的:</p>
+<svg width="380" height="255" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <path stroke="#000" fill="#fff" stroke-width="3" d="m163.49998,41.5l185.00002,0l0,171.3948c-92.50001,0 -92.50001,65.30456 -185.00002,28.1997l0,-199.5945z" id="svg_2"/>
+  <rect stroke="#000" fill="#fff" stroke-width="3" x="178.5" y="70.5" width="71" height="24" id="svg_3"/>
+  <text fill="#000000" stroke="#000" stroke-width="0" x="227" y="27.5" id="svg_9" font-size="24" font-family="Noto Sans JP" text-anchor="start" xml:space="preserve">内存</text>
+  <text fill="#000000" stroke="#000" stroke-width="0" x="177.5" y="63.5" id="svg_10" font-size="18" font-family="'Stick No Bills'" text-anchor="start" xml:space="preserve">存储单元</text>
+  <text fill="#000000" stroke="#000" stroke-width="0" x="262.5" y="63.5" id="svg_11" font-size="18" font-family="'Stick No Bills'" text-anchor="start" xml:space="preserve">地址</text>
+  <text fill="#000000" stroke="#000" stroke-width="0" x="255.5" y="87.5" id="svg_11" font-size="12" font-family="'Stick No Bills'" text-anchor="start" xml:space="preserve">0xADA43B01</text>
+  <text fill="#000000" stroke="#000" stroke-width="0" x="255.5" y="116.5" id="svg_11" font-size="12" font-family="'Stick No Bills'" text-anchor="start" xml:space="preserve">0xADA43B02</text>
+  <text fill="#000000" stroke="#000" stroke-width="0" x="255.5" y="144.5" id="svg_11" font-size="12" font-family="'Stick No Bills'" text-anchor="start" xml:space="preserve">0xADA43B03</text>
+  <text fill="#000000" stroke="#000" stroke-width="0" x="255.5" y="171.5" id="svg_11" font-size="12" font-family="'Stick No Bills'" text-anchor="start" xml:space="preserve">0xADA43B04</text>
+  <path stroke="#000" stroke-width="3" fill="#fff" d="m30.02751,73.32114l21.56375,-30.54866l86.43623,0l0,152.99999l-107.99998,0l0,-122.45133l0,0.00001z" id="svg_12"/>
+  <text style="cursor: move;" fill="#000000" stroke="#0" stroke-width="3" x="56.5" y="27.5" id="svg_13" font-size="24" font-family="'Syne'" text-anchor="start" xml:space="preserve">程序</text>
+  <text fill="#000000" stroke="#0" stroke-width="3" x="44.5" y="91.5" id="svg_16" font-size="18" font-family="'Stick No Bills'" text-anchor="start" xml:space="preserve">a = 1</text>
+  <text fill="#000000" stroke="#0" stroke-width="3" x="189.5" y="87.5" id="svg_17" font-size="12" font-family="'Stick No Bills'" text-anchor="start" xml:space="preserve">00000001</text>
+  <rect stroke="#000" fill="#fff" stroke-width="3" x="178.5" y="98.5" width="71" height="24" id="svg_1"/>
+  <rect stroke="#000" fill="#fff" stroke-width="3" x="178.5" y="126.5" width="71" height="24" id="svg_4"/>
+  <rect stroke="#000" fill="#fff" stroke-width="3" x="178.5" y="154.5" width="71" height="24" id="svg_5"/>
+  <text xml:space="preserve" text-anchor="start" font-family="'Stick No Bills'" font-size="18" id="svg_6" y="197.5" x="204" stroke-width="0" stroke="#0" fill="#000000">......</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Stick No Bills'" font-size="18" id="svg_7" y="197.5" x="273" stroke-width="0" stroke="#0" fill="#000000">......</text>
+  <path transform="rotate(88.93 138.778 85.4919)" stroke="#0" id="svg_14" d="m132.57303,85.39116l6.20516,-41.88579l6.20516,41.88579l-3.10258,0l0,42.08734l-6.20516,0l0,-42.08734l-3.10258,0z" stroke-width="3" fill="#000000"/>
+ </g>
+</svg>
+<p>上图中的<code>a</code>就是变量的名字，在Python中，变量的类型不是在声明它的时候给出，而且会根据我们赋给它的值变化，比如<code>a = 1</code>，这时变量<code>a</code>的类型是整型<code>int</code>，如果我们重新给它赋值<code>a=&quot;apple&quot;</code>，那它的类型就变成了字符串<code>str</code>；我们也可以通过一些内建函数来改变它的类型，这一点我们后面很快就会讲到。</p>
+<h4 id="变量命名"><a class="header" href="#变量命名">变量命名</a></h4>
+<p>每一个变量都需要提前定义，首先要给它取一个名字，方便我们在后面使用它。变量的命名是要遵循下列规则的：</p>
+<ul>
+<li>变量的名字由字母、下划线<code>_</code>和数字组成，但是不能以数字开头。这里的字母不单单是26个英文字母，它指的是在Unicode(也被称作万国码)字符集里的所有字母，包括中文、英文、日文、希腊字母、德文等等，范围非常广，但是像<code>@</code>、<code>#</code>、<code>$</code>这些字符是不能出现在变量名中的，我们强烈建议起名的时候只用英文字母。</li>
+<li>变量的名字是大小写敏感的，比如<code>A</code>和<code>a</code>是两不同的变量。</li>
+<li>变量的名字不要使用Python中已经保留的关键字，也不要用自定义的函数、类名。</li>
+</ul>
+<p>我们可以通过下面的方式查看Python中有哪些保留的关键字:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;import keyword
+&gt;&gt;&gt;keyword.kwlist
+['False', 'None', 'True', '__peg_parser__', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+</code></pre>
+<p>有关我自定义函数和类名的限制，我们以后会讲到。</p>
+<h4 id="变量赋值"><a class="header" href="#变量赋值">变量赋值</a></h4>
+<p>可以通过执行赋值表达式来修改变量中存储的值，Python中的赋值运算符为<code>=</code>，这个等号并不是我们数学上的“等于”，千万不要混淆。给变量赋值的语法为:</p>
+<p><em><strong>变量 = 值</strong></em><br/>
+<em><strong>变量 = 变量</strong></em><br/>
+<em><strong>变量 = 表达式</strong></em></br>
+<em><strong>变量 = 函数返回值</strong></em><br/></p>
+<p>在赋值的时候，变量<strong>永远要写在左边</strong>，右边是要赋与它的值。</p>
+<pre><code class="language-Python">&gt;&gt;&gt;a = 1 #直接用值给变量赋值
+&gt;&gt;&gt;print(a)
+&gt;&gt;&gt;1
+&gt;&gt;&gt;b = a #用变量的值给变量赋值
+&gt;&gt;&gt;print(b)
+&gt;&gt;&gt;1
+&gt;&gt;&gt;c = a + b #用表达式给变量赋值
+&gt;&gt;&gt;print(c)
+&gt;&gt;&gt;2
+&gt;&gt;&gt;a = a + 1 #同样是用表达式给a赋值
+&gt;&gt;&gt;print(a)
+&gt;&gt;&gt;2
+&gt;&gt;&gt;d = str(a) #用函数返回值给变量赋值
+&gt;&gt;&gt;print(d)
+&gt;&gt;&gt;'2'
+</code></pre>
+<p>看到上面的例子，你是不是对于<code>a = a + 1</code>不太理解？没关系，我来给你解释：</p>
+<p>赋值表达式在执行过程中，是先要执行赋值符<code>=</code>右边的代码的，当右边的代码执行完并得到结果之后，就会把这个结果赋值给赋值符<code>=</code>左边的变量。所以在<code>a = a + 1</code>中，最初变量<code>a</code>存储的值为<code>1</code>，先是使用了变量<code>a</code>，把它加了1之后得到<code>2</code>，再把字面量值<code>2</code>重新赋值给了变量<code>a</code>。</p>
+<p>总之，变量是一种方便使用的占位符，用于引用计算机的内存地址来存储值。</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="运算符和表达式"><a class="header" href="#运算符和表达式">运算符和表达式</a></h2>
+<p>运算符是用来组成表达式的重要元素，会对表达式的结果产生影响。</p>
+<p>表达式可以直接用来执行，并通过运算会得到一个结果，但是这个结果马上就会补缓存释放且不再存在，所以在编程过程中，表达式要配合变量来使用。</p>
+<h3 id="运算符-operators"><a class="header" href="#运算符-operators">运算符 Operators</a></h3>
+<p>我们这里提到的运算符不仅仅是在数学中学到的<em>加、减、乘、除</em>， Python提供了大量的强大的运算符来帮助我们进行运算，这里我们先介绍下面三种类型的运算符（按优先级排列）：</p>
+<h4 id="算术运算符-arithmetic-operator"><a class="header" href="#算术运算符-arithmetic-operator">算术运算符 Arithmetic Operator</a></h4>
+<table><thead><tr><th align="left">运算符</th><th align="left">说明</th></tr></thead><tbody>
+<tr><td align="left"><code>**</code></td><td align="left">幂运算（指数运算）</td></tr>
+<tr><td align="left"><code>+</code>  <code>-</code></td><td align="left">正负号（正号可省略）</td></tr>
+<tr><td align="left"><code>*</code>  <code>/</code>  <code>%</code>  <code>//</code></td><td align="left">乘、除、模（取余）、整除</td></tr>
+<tr><td align="left"><code>+</code>  <code>-</code></td><td align="left">加、减</td></tr>
+</tbody></table>
+<h4 id="位运算符-bit-operator"><a class="header" href="#位运算符-bit-operator">位运算符 Bit Operator</a></h4>
+<table><thead><tr><th align="left">运算符</th><th align="left">说明</th></tr></thead><tbody>
+<tr><td align="left"><code>~</code></td><td align="left">按位取反</td></tr>
+<tr><td align="left"><code>>></code>&nbsp;&nbsp;<code><<</code></td><td align="left">右移&nbsp;&nbsp;左移</td></tr>
+<tr><td align="left"><code>&amp;</code></td><td align="left">按位与</td></tr>
+<tr><td align="left"><code>^</code>&nbsp;&nbsp;<code>|</code></td><td align="left">按位异或、按位或</td></tr>
+</tbody></table>
+<h4 id="关系运算符比较运算符relational-operator"><a class="header" href="#关系运算符比较运算符relational-operator">关系运算符（比较运算符）Relational Operator</a></h4>
+<table><thead><tr><th align="left">运算符</th><th align="left">说明</th></tr></thead><tbody>
+<tr><td align="left"><code>&lt;=</code>  <code>&lt;</code>  <code>&gt;=</code>  <code>&gt;</code></td><td align="left">小于等于、小于、大于等于、大于</td></tr>
+<tr><td align="left"><code>==</code>  <code>!=</code></td><td align="left">等于、不等于</td></tr>
+</tbody></table>
+<h4 id="逻辑运行符-logic-operator"><a class="header" href="#逻辑运行符-logic-operator">逻辑运行符 Logic Operator</a></h4>
+<table><thead><tr><th align="left">运算符</th><th align="left">说明</th></tr></thead><tbody>
+<tr><td align="left"><code>not</code></td><td align="left">逻辑非</td></tr>
+<tr><td align="left"><code>and</code></td><td align="left">逻辑与</td></tr>
+<tr><td align="left"><code>or</code></td><td align="left">逻辑或</td></tr>
+</tbody></table>
+<p>需要说明的是，上述前三种运算符的优先级为: <strong>算术运算符</strong>&gt;<strong>位运算符</strong>&gt;<strong>比较运算符</strong>&gt;<strong>逻辑运行符</strong>，而的位运行符中的按位取反<code>~</code>的优先级和正负号一样，低于幂运算<code>**</code>，高于其它算术运算符。</p>
+<p>完整的运算符列表以及优先级可查看<a href="04.%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/../%E9%99%84%E5%BD%95/appendix.html#%E5%AE%8C%E6%95%B4%E8%BF%90%E7%AE%97%E7%AC%A6">附录-完整运算符</a></p>
+<h3 id="表达式-expression"><a class="header" href="#表达式-expression">表达式 Expression</a></h3>
+<p>表达式是由字面量的值、变量等等与运算符组成的运算式，每一个表达式最终都会等到一个确切的字面量的值。</p>
+<p>有关字面量的解释，可以查看<a href="04.%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/../%E9%99%84%E5%BD%95/appendix.html#%E5%AD%97%E9%9D%A2%E9%87%8F">附录-字面量</a></p>
+<p>在Python中，常用的表达式有<em>算术表达式</em>、<em>关系表达式</em>（或者叫<em>比较表达式</em>）和<em>逻辑表达式</em>。</p>
+<h4 id="算术表达式-arithmetic-expression"><a class="header" href="#算术表达式-arithmetic-expression">算术表达式 Arithmetic Expression</a></h4>
+<p>Python中的算术表达式和数学中算式很像，只是我们不需要在后面再写个等号并给出结果。</p>
+<pre><code class="language-Python">&gt;&gt;&gt;1 + 1
+2
+&gt;&gt;&gt;1 - 1
+0
+&gt;&gt;&gt;1 * 2
+2
+</code></pre>
+<p>Python中的除法运算<code>/</code>得到的结果一定是一个浮点型的数值:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;10 / 5
+2.0
+</code></pre>
+<p>Python中的整除和取余分别用来得到数学中除法运算的<strong>商</strong>和<strong>余数</strong>，比如：</p>
+<p>\[10 \div 3 = 3 \ldots 1\]</p>
+<p>取余运算<code>%</code>和整除运算<code>//</code>不仅仅适用于整型数值，也适用于浮点型数值，只要在参与运算的数值里，有一个浮点型，那么结果一点是一个浮点型数值。</p>
+<pre><code class="language-Python">&gt;&gt;&gt;10 // 3 
+3
+&gt;&gt;&gt;10 % 3
+1
+&gt;&gt;&gt;10.0 // 3
+3.0
+&gt;&gt;&gt;10.0 % 3
+1.0
+&gt;&gt;&gt;18.32 // 2.51
+7.0
+&gt;&gt;&gt;18.32 % 2.51
+0.7500000000000018
+</code></pre>
+<p>注: 至于上面的余数为什么出现了<code>0.7500000000000018</code>，我们后面会讲到。</p>
+<p>在使用算术表达式的时候，一这要注意<a href="04.%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F.html#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6">运算符</a>的优先级关系，如果搞不清楚优先级，可以使用圆括号来确保运算的执行顺序。</p>
+<p>比如在数学中的:</p>
+<p>\[\lbrace[(3 + 4) \times 5-6]+7 \rbrace \times 8\]</p>
+<p>应该写成:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;(((3 + 4) * 5 - 6 ) + 7) * 8
+288
+</code></pre>
+<p>这一点同样适用于关系表达式和逻辑表达式。</p>
+<p>在Python中，字符串也能进行加法<code>+</code>和乘法<code>*</code>运算，加法运算只能发生在两个字符串之间,运算结果为两个字符串连接在一起之后的新字符串；而乘法运算是只能由字符串和整型参与，比如<code>&quot;abc&quot; * 2</code>，结果为<code>'abcabc'</code></p>
+<pre><code class="language-Python">&gt;&gt;&gt;&quot;abc&quot; + &quot;def&quot;
+'abcdef'
+&gt;&gt;&gt;&quot;def&quot; + &quot;abc&quot;
+'defabc'
+&gt;&gt;&gt;&quot;a&quot; * 10
+'aaaaaaaaaa'
+</code></pre>
+<h4 id="关系表达式-ralational-expression"><a class="header" href="#关系表达式-ralational-expression">关系表达式 Ralational Expression</a></h4>
+<p>关系表达式，也可以被叫做比较表达式，通过关系运算符将两个值连接到一起得到的一种表达式，用来运算这一关系是否成立，一个关系表达式的结果只有两个值<code>True</code>和<code>False</code>。</p>
+<p>在使用关系表达式的时候，要注意数据的类型，一般情况下，整型和浮点型之间的比较没有限制，也可以和布尔型进行比较（基本不会用到），但是它们都不能与字符串进行比较:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;3 &gt; 2
+True
+&gt;&gt;&gt;4 &lt; 2
+False
+&gt;&gt;&gt;5.3 &gt; 3
+True
+&gt;&gt;&gt;True &gt; False
+True
+&gt;&gt;&gt;False &gt; -1
+True
+</code></pre>
+<p>字符串之间则是按照字节逐个去比较的，比如下面三个字符串<code>'16'</code>、<code>'161'</code>和<code>'8'</code>，先比较第一个字符，分别为<code>'1'</code>、<code>'1'</code>、<code>'8'</code>，其中<code>'8'</code>比其它两个都大，所以<code>'8'</code>是三个中最大的字符串；在其余两个字符串中，前面两个字节均为<code>'1'</code>和<code>'6'</code>，所以还要继续比较下一个字节的大小，但是第一个字符串只有两个字节，而第二个字符串还有第三个字节，所以第二个字符串比第一个字符串要大。根据以上分析，下面三个字符串的大小顺序为<code>'8'&gt;'161'&gt;'16'</code>。</p>
+<svg width="260" height="160" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <rect stroke="#000f0f" id="svg_8" height="36" width="78" y="62" x="11" fill="none"/>
+  <rect stroke="#000f0f" id="svg_11" height="36" width="78" y="62" x="91" fill="none"/>
+  <rect stroke="#000f0f" id="svg_12" height="36" width="78" y="62" x="171" fill="none"/>
+  <rect stroke="#000f0f" id="svg_13" height="36" width="78" y="10" x="11" fill="none"/>
+  <rect stroke="#000f0f" id="svg_14" height="36" width="78" y="10" x="91" fill="none"/>
+  <rect stroke="#000f0f" id="svg_16" height="36" width="78" y="115" x="11" fill="none"/>
+  <text stroke="#000f0f" xml:space="preserve" text-anchor="start" font-family="'Stick No Bills'" font-size="18" stroke-width="0" id="svg_19" y="34.5" x="49" fill="#000000">1</text>
+  <text transform="matrix(1.42566 0 0 1 -65.3354 4)" stroke="#000f0f" xml:space="preserve" text-anchor="start" font-family="'Stick No Bills'" font-size="18" id="svg_20" y="29.5" x="130.70143" stroke-width="0" fill="#000000">6</text>
+  <text stroke="#000f0f" xml:space="preserve" text-anchor="start" font-family="'Stick No Bills'" font-size="18" stroke-width="0" id="svg_21" y="87.5" x="49" fill="#000000">1</text>
+  <text transform="matrix(1.42566 0 0 1 -65.3354 4)" stroke="#000f0f" xml:space="preserve" text-anchor="start" font-family="'Stick No Bills'" font-size="18" id="svg_22" y="82.5" x="130.70143" stroke-width="0" fill="#000000">6</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Stick No Bills'" font-size="18" id="svg_24" y="86.5" x="204" stroke-width="0" stroke="#000f0f" fill="#000000">1</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Stick No Bills'" font-size="18" stroke-width="0" id="svg_25" y="138.5" x="46" stroke="#000f0f" fill="#000000">8</text>
+ </g>
+</svg>
+<pre><code class="language-Python">&gt;&gt;&gt;'16' &lt; '161'
+True
+&gt;&gt;&gt;'161' &gt; '8'
+False
+</code></pre>
+<p>两个字符串的大小是根据它们在字符集中的位置判断的，暂时我们只需要下表即可。</p>
+<table><thead><tr><th align="left">字符</th><th align="left">位置</th></tr></thead><tbody>
+<tr><td align="left"><code>'0'</code>~<code>'9'</code></td><td align="left">48~57</td></tr>
+<tr><td align="left"><code>‘A’</code>~<code>'Z'</code></td><td align="left">65~90</td></tr>
+<tr><td align="left"><code>‘a’</code>~<code>‘b’</code></td><td align="left">97~122</td></tr>
+</tbody></table>
+<p>从上表可以看出，即使字母<code>a</code>是小写的，但是它并不“小”，在字符串中，它要大于大写字母<code>A</code>。当我们不确定某个字符在字符集中的位置的时候，可以调用函数<code>ord()</code>来查看，有关这一内建函数，我们会在后面章节详细学习:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;ord(‘A’)
+65
+</code></pre>
+<h4 id="逻辑表达式-logic-expression"><a class="header" href="#逻辑表达式-logic-expression">逻辑表达式 Logic Expression</a></h4>
+<p>当我们用两个关系表达式和逻辑运算符组成一个逻辑表达式时，它的结果也是只有两个<code>True</code>和<code>False</code>:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;5 &gt; 3 and 4 &lt; 6
+True
+&gt;&gt;&gt;5 &gt; 6 or 6 &lt; 7
+True
+&gt;&gt;&gt;7 &gt; 4 and 3 &lt; 1
+False
+&gt;&gt;&gt;not (5 &gt; 6)
+True
+</code></pre>
+<p>对于关系表达式，也可以多个值一起比较，但不建议用，在这里还是建义大家用逻辑表达式来代替:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;5 &lt; 6 &gt; 2
+True
+&gt;&gt;&gt;5 &lt; 6 and 6 &gt; 2 #与上式等价
+True
+</code></pre>
+<p>假如，假和爸爸去看电影，检票员说：”你们两个必须都有票才能进“，那么这里用的就是<code>and</code>，如果检票员说：”你们两个只要有一发张票就可以进入“，那么这里用的就是<code>or</code>。</p>
+<p>我们可以用下表来熟悉两个关系表达式的结果在逻辑表达式中的运算情况</p>
+<table><thead><tr><th align="left">表达式a</th><th align="left">表达式b</th><th align="left"><code>and</code>运算</th><th align="left"><code>or</code>运算</th><th align="left"><code>not a</code>运算</th></tr></thead><tbody>
+<tr><td align="left"><code>True</code></td><td align="left"><code>True</code></td><td align="left"><code>True</code></td><td align="left"><code>True</code></td><td align="left"><code>False</code></td></tr>
+<tr><td align="left"><code>True</code></td><td align="left"><code>False</code></td><td align="left"><code>False</code></td><td align="left"><code>True</code></td><td align="left"><code>False</code></td></tr>
+<tr><td align="left"><code>False</code></td><td align="left"><code>True</code></td><td align="left"><code>False</code></td><td align="left"><code>True</code></td><td align="left"><code>True</code></td></tr>
+<tr><td align="left"><code>False</code></td><td align="left"><code>False</code></td><td align="left"><code>False</code></td><td align="left"><code>False</code></td><td align="left"><code>True</code></td></tr>
+</tbody></table>
+<p>在Python中，还有一种特别有意思的概念，也是我们接下来要讲的:<em>短路逻辑</em>，它的意思可以理解成在逻辑表达式中，运算符右边部分的运算被短路了:</p>
+<p>在<code>a and b</code>表达式中，如果<code>a</code>的值为<code>True</code>，那么结果为<code>b</code>的值，否则结果直接为<code>a</code>的值</p>
+<pre><code class="language-Python">&gt;&gt;&gt;5 and 6
+6
+&gt;&gt;&gt;5 &lt; 4 and 6 &gt; 1 #这里关系表达式“6 &gt; 1”被短路了，并没有进行运算
+False
+&gt;&gt;&gt;False and 6 #这里6被短路了，并没有被运算
+False
+</code></pre>
+<p>在<code>a or b</code>表达式中，如果<code>a</code>的值为<code>True</code>，那么结果为<code>a</code>的值，否则结果直接为<code>b</code>的值</p>
+<pre><code class="language-Python">&gt;&gt;&gt;5 or 6  #这里6被短路了，并没有被运算
+5
+&gt;&gt;&gt;5 &gt; 4 or 6 &lt; 1 #这里关系表达式“6 &gt; 1”被短路了，并没有进行运算
+True
+&gt;&gt;&gt;False or 6
+6
+</code></pre>
+<p>在上一章节，我们提到过，任何非<code>0</code>数值均可被认为是真逻辑值，这一说法可以扩展到其它基本类型:</p>
+<table><thead><tr><th align="left">类型</th><th align="left">假逻辑值</th><th align="left">真逻辑值</th></tr></thead><tbody>
+<tr><td align="left"><code>int</code></td><td align="left"><code>0</code></td><td align="left"><code>非0整数</code></td></tr>
+<tr><td align="left"><code>float</code></td><td align="left"><code>0.0</code>、<code>0.00</code>等等</td><td align="left"><code>非0.0浮点数</code></td></tr>
+<tr><td align="left"><code>str</code></td><td align="left"><code>''</code></td><td align="left"><code>非空字符串</code></td></tr>
+<tr><td align="left"><code>NoneType</code></td><td align="left"><code>None</code></td><td align="left">无</td></tr>
+</tbody></table>
+<pre><code class="language-Python">&gt;&gt;&gt;'' and True
+''
+&gt;&gt;&gt;None and False
+&gt;&gt;&gt;
+</code></pre>
+<h3 id="表达式与变量"><a class="header" href="#表达式与变量">表达式与变量</a></h3>
+<p>在本章节开篇时，我们提到，表达式的结果被输出之后就会被缓存释放了，所以为了后面继续使用表达式运算出来的结果，需要配合变量来使用。</p>
+<pre><code class="language-Python">&gt;&gt;&gt;a = 5 + 7
+&gt;&gt;&gt;print(a)
+12
+&gt;&gt;&gt;b = 4 &gt; 3 and 5 &lt; 1
+&gt;&gt;&gt;print(b)
+False
+&gt;&gt;&gt;c = a and b
+&gt;&gt;&gt;print(c)
+False
+</code></pre>
+<p>有关变量的详细内容，如果还有不清楚的地方，可以回到上一章节中复习：<a href="04.%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/.././03.%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F/%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F.html#%E5%8F%98%E9%87%8Fvariables">变量</a>。</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="位运算"><a class="header" href="#位运算">位运算</a></h2>
+<p>程序中的所有数在计算机内存中都是以二进制的形式储存的。位运算就是直接对整数在内存中的二进制位进行操作。所以要先了解二进制。</p>
+<p>另:本章节详细分析部分有一定难度，建议只学习位运算符的使用方法即可。</p>
+<h3 id="二进制"><a class="header" href="#二进制">二进制</a></h3>
+<p>17世纪至18世纪的德国数学家莱布尼茨，是世界上第一个提出二进制记数法的人。用二进制记数，只用<code>0</code>和<code>1</code>两个符号，无需其他符号。这一计数方法充分结合了数字电子电路系统的高低电平，在一些系统中，高电平表示<code>1</code>，低电平表示<code>0</code>，而有的系统则是高电平表示<code>1</code>，低电平表示<code>2</code>。这也是为什么低级语言编写的程序不能跨平台使用的原因。下面两个图可以简单表示两种不同系统的高低电平情况:</p>
+<p><img src="05.%E4%BD%8D%E8%BF%90%E7%AE%97/./images/high-low%20level1.png" alt="高电平1，低电平0" />
+<img src="05.%E4%BD%8D%E8%BF%90%E7%AE%97/./images/high-low%20level2.png" alt="高电平0，低电平1" /></p>
+<h4 id="进制转换"><a class="header" href="#进制转换">进制转换</a></h4>
+<p><strong>十进制转二进制</strong></p>
+<p>一个十进制数转换为二进制数要分整数部分和小数部分分别转换，最后再组合到一起。</p>
+<p>整数部分采用 &quot;除2取余，逆序排列&quot;法。具体做法是：用2整除十进制整数，可以得到一个商和余数；再用2去除商，又会得到一个商和余数，如此进行，直到商为小于1时为止，然后把先得到的余数作为二进制数的低位有效位，后得到的余数作为二进制数的高位有效位，依次排列起来。例：125:</p>
+<p><img src="05.%E4%BD%8D%E8%BF%90%E7%AE%97/./images/integertobinary.webp" alt="Integer to Binary" /></p>
+<p>经过运算，十进制的<code>125</code>，转换成二进制之后为<code>1111101</code>。</p>
+<p>小数部分要使用“乘2取整法”。即用十进制的小数乘以2并取走结果的整数(必是 0或1)，然后再用剩下的小数重复刚才的步骤，直到剩余的小数为0时停止，最后将每次得到的整数部分按先后顺序从左到右排列即得到所对应二进制小数。例如，将十进制小数 0.8125 转换成二进制小数过程如下:</p>
+<p><img src="05.%E4%BD%8D%E8%BF%90%E7%AE%97/./images/floattobinary.webp" alt="Float to Binary" /></p>
+<p><strong>二进制转十进制</strong></p>
+<p>二进制转换成十进制是要按位进行\(2^{x-1}\)运算，再加到一起，比如:</p>
+<p>\[(111111)_2 = 2^5 + 2^4 + 2^3 + 2^2 + 2^1 + 2^0 = 63\]</p>
+<p>或:</p>
+<p>\[(101011)_2 = 2^5 + 2^3 + 2^1 + 2^0 = 43\]</p>
+<h3 id="位运算-bitwise"><a class="header" href="#位运算-bitwise">位运算 Bitwise</a></h3>
+<table><thead><tr><th align="left">运算符</th><th align="left">说明</th></tr></thead><tbody>
+<tr><td align="left"><code>~</code></td><td align="left">按位取反</td></tr>
+<tr><td align="left"><code>>></code>&nbsp;&nbsp;<code><<</code></td><td align="left">右移&nbsp;&nbsp;左移</td></tr>
+<tr><td align="left"><code>&amp;</code></td><td align="left">按位与</td></tr>
+<tr><td align="left"><code>^</code>&nbsp;&nbsp;<code>|</code></td><td align="left">按位异或、按位或</td></tr>
+</tbody></table>
+<h4 id="按位取反"><a class="header" href="#按位取反">按位取反</a></h4>
+<p>按位取反运算符：对数据的每个二进制位取反,即把1变为0,把0变为1:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;~6
+-7
+&gt;&gt;&gt;~-8
+7
+</code></pre>
+<p><code>~x</code> 类似于 <code>-x-1</code>，但是实际情况远远要复杂得多，有兴趣的同学可以查看附录进行学习<a href="05.%E4%BD%8D%E8%BF%90%E7%AE%97/../%E9%99%84%E5%BD%95/appendix.html#%E6%8C%89%E4%BD%8D%E5%8F%96%E5%8F%8D">附录-按位取反</a></p>
+<h4 id="左移右移"><a class="header" href="#左移右移">左移、右移</a></h4>
+<p>位运算中，左移<code>n</code>位相当于原数整除<code>2n</code>，左移<code>n</code>位相当于原数乘以<code>2n</code>，但是位移运算效率更高。</p>
+<pre><code class="language-Python">&gt;&gt;&gt;15&gt;&gt;2
+3
+&gt;&gt;&gt;15&lt;&lt;2
+60
+</code></pre>
+<p>假设我们的一台简易计算机只用一个字节(byte，即8位)来存储数值，那么<code>15</code>的二进制应该为<code>0000 1111</code>，所以左移2位之后变为<code>0000 0011</code>，即<code>3</code>; 左移2位之后变成<code>0011 1100</code>，即<code>60</code>。</p>
+<h4 id="按位与"><a class="header" href="#按位与">按位与</a></h4>
+<p>按位与运算是将两个数值的二进制按位进行逻辑与运算，只有同时为<code>1</code>时才能得到<code>1</code>，否则结果都是<code>0</code>。</p>
+<pre><code class="language-Python">&gt;&gt;&gt;15 &amp; 24
+8
+</code></pre>
+<table><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td>15:</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>24:</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>&amp;</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</tbody></table>
+<h4 id="按位或"><a class="header" href="#按位或">按位或</a></h4>
+<p>按位或运算是将两个数值的二进制按位进行逻辑或运算，只有同时为<code>0</code>时才能得到<code>0</code>，否则结果都是<code>1</code>。</p>
+<pre><code class="language-Python">&gt;&gt;&gt;15 | 24
+31
+</code></pre>
+<table><thead><tr><th></th><th></th><th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th></tr></thead><tbody>
+<tr><td>15:</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr><td>24:</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>|</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h4 id="按位异或"><a class="header" href="#按位异或">按位异或</a></h4>
+<p>按位异或运算是将两个数值的二进制按位进行逻辑异或运算，当值相同是得到<code>0</code>，不同时则得到<code>1</code>。</p>
+<pre><code class="language-Python">&gt;&gt;&gt;15 | 24
+23
+</code></pre>
+<table><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td>15:</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>24:</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>^</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+</tbody></table>
+<h3 id="总结-1"><a class="header" href="#总结-1">总结</a></h3>
+<p>位运算是计算机编程中很重要的一种运算方式，这里我们暂时了解这些就足够了。</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="常用内建函数"><a class="header" href="#常用内建函数">常用内建函数</a></h2>
+<p>在今后的学习过程中，我们会用到很多内建函数，比如标准的输入输出，类型转换等等。内建函数实现了一些常用的功能，可以直接拿来使用。</p>
+<table><thead><tr><th align="left">函数名</th><th align="left">功能</th><th align="left">返回值</th></tr></thead><tbody>
+<tr><td align="left"><code>print()</code></td><td align="left">向终端输出信息</td><td align="left">无</td></tr>
+<tr><td align="left"><code>input()</code></td><td align="left">通过终端输入数据并返回结果</td><td align="left">有</td></tr>
+<tr><td align="left"><code>int()</code></td><td align="left">将参数中的值转换成整型并返回结果</td><td align="left">有</td></tr>
+<tr><td align="left"><code>float()</code></td><td align="left">将参数中的值转换成浮点型并返回结果</td><td align="left">有</td></tr>
+<tr><td align="left"><code>str()</code></td><td align="left">将参数中的值转换成字符串并返回结果</td><td align="left">有</td></tr>
+<tr><td align="left"><code>eval()</code></td><td align="left">将参数中字符串转换成一段可执行的表达式并返回结果</td><td align="left">有</td></tr>
+<tr><td align="left"><code>chr()</code></td><td align="left">返回整型参数在Uncode 中对应的字符</td><td align="left">有</td></tr>
+<tr><td align="left"><code>ord()</code></td><td align="left">返回字符参数在Uncode 中对应的码位</td><td align="left">有</td></tr>
+</tbody></table>
+<h3 id="print"><a class="header" href="#print">print()</a></h3>
+<p>我们在<a href="06.%E5%B8%B8%E7%94%A8%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0/../02.HelloWorld/HelloWorld.html">hello, world</a>中已经使用过了<code>print()</code>函数:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;print(&quot;hello, world!&quot;)
+hello, world!
+</code></pre>
+<p><code>print()</code>函数的功能就是将参数的内容打印出来:</p>
+<ol>
+<li>对于实际的值，原样打印，字符串要用引号（如上）</li>
+</ol>
+<pre><code class="language-Python">&gt;&gt;&gt;print(1)
+1
+&gt;&gt;&gt;print(1.4)
+1.4
+&gt;&gt;&gt;print(True)
+True
+</code></pre>
+<ol start="2">
+<li>对于变量，打印变量内存储的值</li>
+</ol>
+<pre><code class="language-Python">&gt;&gt;&gt;a = 4
+&gt;&gt;&gt;print(a)
+4
+&gt;&gt;&gt;name = &quot;Chris&quot;
+&gt;&gt;&gt;print(name)
+Chris
+</code></pre>
+<ol start="3">
+<li>也可以打印函数返回的值</li>
+</ol>
+<pre><code class="language-Python">&gt;&gt;&gt;print(chr(65))
+A
+</code></pre>
+<p><code>print()</code>函数是默认以<code>\n</code>结束，也就是说，当打印完信息之后自动会换行，如果想要不自动换行，可以给参数<code>end</code>传一个别的值:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;print(123);print(456)
+123
+456
+&gt;&gt;&gt;print(123, end = &quot;$&quot;);print(456)
+123$456
+</code></pre>
+<p><code>print()</code>函数也可以打印多段值，默认用<code>' '</code>隔开，如果想要换成其它分隔符，可以给参数<code>sep</code>传入其它值:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;a = 'A'
+&gt;&gt;&gt;b = 'B'
+&gt;&gt;&gt;c = 'C'
+&gt;&gt;&gt;print(a,b,c)
+A B C
+&gt;&gt;&gt;print(a,b,c,sep = &quot;&amp;&quot;)
+A&amp;B&amp;C
+</code></pre>
+<h4 id="占位符"><a class="header" href="#占位符">占位符</a></h4>
+<p>在用<code>print()</code>函数向终端输出信息时，可以使用占位符来格式化：</p>
+<table><thead><tr><th>占位符</th><th>描述</th><th>说明</th></tr></thead><tbody>
+<tr><td><code>%d</code></td><td>整型占位符</td><td>无</td></tr>
+<tr><td><code>%f</code></td><td>浮点型占位符</td><td>默认保留小数点后6位，如果要自定义保留<code>n</code> 位，可以写成<code>%.nf</code>，结果会四舍五入</td></tr>
+<tr><td><code>%s</code></td><td>字符串占位符</td><td>无</td></tr>
+</tbody></table>
+<pre><code class="language-Python">&gt;&gt;&gt;print(&quot;%s is a student.&quot; %&quot;Tom&quot;)
+Tom is a student.
+&gt;&gt;&gt;name = &quot;Jerry&quot;
+&gt;&gt;&gt;print(&quot;%s is a student.&quot; %name)
+Jerry is a student.
+
+&gt;&gt;&gt;age = 10
+&gt;&gt;&gt;print(&quot;He is %d years old.&quot; %age)
+He is 10 years old.
+
+&gt;&gt;&gt;height = 1.46
+&gt;&gt;&gt;print(&quot;His height is %.1f.&quot; %height)
+His height is 1.5.
+
+#有多个占位符时，需要用括号
+&gt;&gt;&gt;print(&quot;%s is a student. He is %d years old. His height is %.1f.&quot; %(name, age, height))
+Jerry is a student. He is 10 years old. His height is 1.5.
+
+#如果不填充占位符，那么就会原样输出。
+&gt;&gt;&gt;print(&quot;%s is a student. He is %d years old. His height is %.1f.&quot;)
+%s is a student. He is %d years old. His height is %.1f.
+</code></pre>
+<h3 id="input"><a class="header" href="#input">input()</a></h3>
+<p><code>input()</code>函数可以接收标准输入的数据，并且把数据以字符串格式返回，括号里的参数会被输出到终端作为提示用，这里参数的用法和<code>print()</code>一致:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;input()
+# 下面一行是输入的内容，在输入时会有光标闪烁
+1
+# 下面一行是input()函数返回的值
+'1'
+&gt;&gt;&gt;input(&quot;Input a value:&quot;)
+# 先输出提示的参数，然后再在后面输入内容，在输入时会有光标闪烁
+Input a value:1
+'1'
+</code></pre>
+<p>由于<code>input()</code>是有返回值的函数，所以当我们输入了值之后，如果没有把返回的值赋值给变量，那么这个值会马上被缓存释放，并不再存在，所以我们要用一个变量来接收这个返回值:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;a = input(&quot;Input a:&quot;)
+# 下面一行是输入的内容，在输入时会有光标闪烁
+Input a:1
+&gt;&gt;&gt;print(a)
+'1'
+</code></pre>
+<p>练习: 从终端输入两个值，分别赋值给变量<code>a</code>和<code>b</code>，并尝试进行计算下列算式，查看结果:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;a = input(&quot;Input a:&quot;)
+Input a: #输入值给a
+&gt;&gt;&gt;b = input(&quot;Input b:&quot;)
+Input b: #输入值给b
+
+#尝试下列算式：
+&gt;&gt;&gt;a + b
+&gt;&gt;&gt;a - b
+&gt;&gt;&gt;a * b
+&gt;&gt;&gt;a / b
+</code></pre>
+<h3 id="int和float"><a class="header" href="#int和float">int()和float()</a></h3>
+<p>假如你已经尝试了上述代码，给<code>a</code> 赋值了<code>1</code>，给<code>b</code> 赋值了<code>2</code>，那么你会发现加法运算的结果是<code>'12'</code>，而其它运算都报了错误:</p>
+<pre><code class="language-shell">Traceback (most recent call last):
+  File &quot;&lt;pyshell#71&gt;&quot;, line 1, in &lt;module&gt;
+    a-b
+TypeError: unsupported operand type(s) for -: 'str' and 'str'
+...
+TypeError: can't multiply sequence by non-int of type 'str'
+...
+TypeError: unsupported operand type(s) for /: 'str' and 'str'
+</code></pre>
+<p>相信细心的同学已经想到了原因:用<code>input()</code>函数通过终端输入的内容都会以字符串的形式返回出来，但是字符串与字符串之间并没有<code>-、*、/</code>的运算，而<code>+</code>运算只是把两个字符串连接到一起。</p>
+<p>为了能够进行数学运算，我们需要用到<code>int()</code>和<code>float()</code>将返回的字符串转换成数值：</p>
+<ul>
+<li>int(): 将输入的参数转换成整型，可以输入的参数为&lt;<em><strong>整型、浮点型和整数型的字符串</strong></em>&gt;</li>
+</ul>
+<pre><code class="language-Python">&gt;&gt;&gt;int(1)
+1
+&gt;&gt;&gt;int(1.5)
+1
+&gt;&gt;&gt;int(&quot;32&quot;)
+32
+&gt;&gt;&gt;int(&quot;2.2&quot;)
+Traceback (most recent call last):
+  File &quot;&lt;pyshell#74&gt;&quot;, line 1, in &lt;module&gt;
+    int(&quot;2.2&quot;)
+ValueError: invalid literal for int() with base 10: '2.2'
+
+# int()是有返回值的函数，需要用变量接收返回值:
+&gt;&gt;&gt;a = int(&quot;32&quot;)
+&gt;&gt;&gt;print(a)
+32
+</code></pre>
+<ul>
+<li>float():将输入的参数转换成浮点型，可以输入的参数为&lt;<em><strong>整型、浮点型和数值型的字符串</strong></em>&gt;</li>
+</ul>
+<pre><code class="language-Python">&gt;&gt;&gt;float(3)
+3.0
+&gt;&gt;&gt;float(1.2)
+1.2
+&gt;&gt;&gt;float(&quot;2.2&quot;)
+2.2
+&gt;&gt;&gt;float(&quot;2.2.2&quot;)
+...
+   Traceback (most recent call last):
+      File &quot;&lt;pyshell#78&gt;&quot;, line 1, in &lt;module&gt;
+        float(&quot;2.2.2&quot;)
+   ValueError: could not convert string to float: '2.2.2' 
+
+# float()是有返回值的函数，需要用变量接收返回值:
+&gt;&gt;&gt;a = float(&quot;1.5&quot;)
+&gt;&gt;&gt;print(a)
+1.5
+</code></pre>
+<p>函数之间是可以嵌套的:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;a = int(float(&quot;2.2&quot;))
+&gt;&gt;&gt;print(a)
+2
+</code></pre>
+<p>练习: 重新练习下面练习题，从终端输入两个值，分别赋值给变量<code>a</code>和<code>b</code>，并尝试进行计算下列算式，查看结果
+要求：1. 第一次尝试给 <code>a</code>和<code>b</code> 分别输入整型
+2. 第二次尝试给 <code>a</code>和<code>b</code> 分别输入浮点型</p>
+<pre><code class="language-Python">&gt;&gt;&gt;# input a 代码，由学生练习时填写
+&gt;&gt;&gt;# input b 代码，由学生练习时填写
+#尝试下列算式：
+&gt;&gt;&gt;a + b
+&gt;&gt;&gt;a - b
+&gt;&gt;&gt;a * b
+&gt;&gt;&gt;a / b
+</code></pre>
+<h3 id="str"><a class="header" href="#str">str()</a></h3>
+<p><code>str()</code>用来将输入的参数转换成字符串并返回:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;str(1)
+'1'
+&gt;&gt;&gt;a = str(1)
+&gt;&gt;&gt;print(a)
+&gt;&gt;&gt;a
+'1'
+</code></pre>
+<p>在IDLE中，用交互环境直接输入变量名字，会打印出该变量的值，这个和 <code>print()</code>是有区别的，如果用<code>print()</code>打印出来的是用户能理解的数据，而直接输入变量名字，打印出来的是解释器能理解的数据。但是在文本编程环境中，只能用<code>print()</code>函数。</p>
+<h3 id="eval"><a class="header" href="#eval">eval()</a></h3>
+<p><code>eval()</code> 函数用来执行一个字符串表达式，并返回表达式的值。</p>
+<pre><code class="language-Python">&gt;&gt;&gt;a = 5
+&gt;&gt;&gt;b = eval(&quot;a + 5&quot;)
+&gt;&gt;&gt;print(6)
+b
+</code></pre>
+<p>如果字符串表达式中用到的变量不存在，就会报错:</p>
+<pre><code class="language-Python">&gt;&gt;&gt;c = eval(&quot;d + 3&quot;)
+Traceback (most recent call last):
+  File &quot;&lt;pyshell#85&gt;&quot;, line 1, in &lt;module&gt;
+    c = eval(&quot;d + 3&quot;)
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+NameError: name 'd' is not defined. Did you mean: 'id'?
+</code></pre>
+<h3 id="chr和ord"><a class="header" href="#chr和ord">chr()和ord()</a></h3>
+<p>我们可以将这两个函数理解成字典，<code>chr()</code>和<code>ord()</code>的功能是正好相反的，<code>chr()</code>是根据数值查找字符，<code>ord()</code>是根据字符查找它所在位置。</p>
+<pre><code class="language-Python">&gt;&gt;&gt;chr(65)
+'A'
+&gt;&gt;&gt;ord('A')
+65
+&gt;&gt;&gt;ord(&quot;我&quot;)
+25105
+</code></pre>
+<h2 id="返回值"><a class="header" href="#返回值">返回值</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="超声波测距"><a class="header" href="#超声波测距">超声波测距</a></h2>
+<pre><code class="language-cpp">const int TrigPin = 2; //引脚号自行更新
+const int EchoPin = 3; //引脚号自行更新
+
+int distance;
+
+void getDistance(){
+    digitalWrite(TrigPin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(TrigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(TrigPin, LOW);
+    distance = pulseIn(EchoPin, HIGH) / 58.0;
+}
+</code></pre>
+<h2 id="呼吸灯"><a class="header" href="#呼吸灯">呼吸灯</a></h2>
+<pre><code class="language-cpp">const int potPin = A0;
+const int ledPin = 6;
+
+void setup(){
+    Serial.begin(9600);
+}
+
+void loop(){
+    int potVal = analogRead(potPin);
+    potVal = potVal/10;
+    Serial.println(potVal);
+    for (int i = 0; i &lt;= 255; i++){
+        analogWrite(ledPin, i);
+        delay(potVal);
+    }
+
+    for (int i = 255; i &gt;= 0; i--){
+        analogWrite(ledPin, i);
+        delay(potVal);
+    }
+}
+</code></pre>
+<h2 id="红外线遥控"><a class="header" href="#红外线遥控">红外线遥控</a></h2>
+<pre><code class="language-cpp">#include &lt;IRremote.h&gt;
+
+const int irPin = 12;
+
+IRrecv irRecv(irPin);
+decode_results results;
+
+void setup(){
+    irRecv.enableIRIn();
+    Serial.begin(9600);
+}
+
+void loop(){
+    if (irRecv.decode(&amp;results)){
+        Serial.println(results.value, HEX);
+
+        switch (results.value){
+            case 0xFF18E7:
+            {
+                Serial.println(1);
+                break;
+            }
+            case 0xFF38C7:
+            {
+                Serial.println(2);
+                break;
+            }
+        }
+        irRecv.resume();
+    }
+}
+</code></pre>
+<h2 id="舵机"><a class="header" href="#舵机">舵机</a></h2>
+<pre><code class="language-cpp">#include &lt;Servo.h&gt;
+
+const int serPin = 3;
+
+Servo myServo;
+
+void setup(){
+    myServo.attach(serPin);
+}
+
+void setup(){
+    myServo.write(90);
+    delay(1000);
+    myServo.write(135);
+}
+</code></pre>
+<h2 id="红外线智能小车"><a class="header" href="#红外线智能小车">红外线智能小车</a></h2>
+<pre><code class="language-cpp">#include &lt;IRremote.h&gt;
+
+const int leftPin1 = 8; //AIN1连接引脚8
+const int leftPin2 = 7; //AIN2连接引脚9
+const int rightPin3 = 4; //BIN1连接引脚4
+const int rightPin4 = 3; //BIN2连接引脚3
+const int leftSpeed = 6; //PWA连接引脚6
+const int rightSpeed = 5; //PWB连接引脚5
+const int irPin = A0;//红外遥控传感器信号引脚连接主板引脚 A0
+const int maxspeedPwm = 255;//PWM最大值
+const int minspeedPwm = 90; //PWM最小值
+const int speedStep = 10; //加速或减速时 PWM 的增减幅度
+
+int intSpeedPwm = 130; //设置小车运行的初始速度
+IRrecv irRecv(irPin); 
+decode_results irResults;
+
+void setup(){
+    pinMode(leftPin1, OUTPUT);
+    pinMode(leftPin2, OUTPUT);
+    pinMode(rightPin1, OUTPUT);
+    pinMode(rightPin2, OUTPUT);
+    irRecv.enableIRIn();
+    Serial.begin(9600);
+}
+
+void loop(){
+    if (irRecv.decode(&amp;irResults)){
+        Serial.println(irResults.value, HEX);
+        switch (irResult.value){
+            case 0xFF10EF:{ //左转
+                turnLeft();
+                break;
+            }
+            case 0xFF5AA5:{ //右转
+                turnRight();
+                break;
+            }
+            case 0xFF18E7:{ //前进
+                forward();
+                break;
+            }
+            case 0xFF4AB5:{ //后退
+                backward();
+                break;
+            }
+            case 0xFF38C7:{ //停止
+                pause();
+                break;
+            }
+            case 0xFFA25D:{ //减速
+                if(intSpeedPwm - speedStep &lt; minSpeedPwm){
+                    intSpeedPwm = minSpeedPwm;
+                }else{
+                    intSpeedPwm -= speedStep;
+                }
+                break;
+            }
+            case 0xFF629D:{ //加速
+                if(intSpeedPwm + speedStep &lt; maxSpeedPwm){
+                    intSpeedPwm = maxSpeedPwm;
+                }else{
+                    intSpeedPwm += speedStep;
+                }
+                break;
+            }
+            case 0xFFE21D:{ //全速
+                intSpeedPwm = maxSpeedPwm;
+                break;
+            }
+        }
+        analogWrite(leftSpeed, intSpeedPwm);
+        analogWrite(rightSpeed, intSpeedPwm);
+        irRecv.resume();
+    }
+}
+
+/*前进*/
+void forward(){
+    digitalWrite(leftPin1, 1);
+    digitalWrite(leftPin2, 0);
+    digitalWrite(rightPin3, 1);
+    digitalWrite(rightPin4, 0);
+}
+
+/*后退*/
+void backward(){
+    digitalWrite(leftPin1, 0);
+    digitalWrite(leftPin2, 1);
+    digitalWrite(rightPin3, 0);
+    digitalWrite(rightPin4, 1);
+}
+
+/*左转*/
+void turnLeft(){
+    digitalWrite(leftPin1, 0);
+    digitalWrite(leftPin2, 0);
+    digitalWrite(rightPin3, 1);
+    digitalWrite(rightPin4, 0);
+}
+
+/*右转*/
+void turnRight(){
+    digitalWrite(leftPin1, 1);
+    digitalWrite(leftPin2, 0);
+    digitalWrite(rightPin3, 0);
+    digitalWrite(rightPin4, 0);
+}
+
+/*停止*/
+void pause(){
+    digitalWrite(leftPin1, 0);
+    digitalWrite(leftPin2, 0);
+    digitalWrite(rightPin3, 0);
+    digitalWrite(rightPin4, 0);
+}
+
+/*原地左转*/
+void  rotateLeft(){
+    digitalWrite(leftPin1, 0);
+    digitalWrite(leftPin2, 1);
+    digitalWrite(rightPin3, 1);
+    digitalWrite(rightPin4, 0);
+}
+
+/*原地右转*/
+void  rotateLeft(){
+    digitalWrite(leftPin1, 1);
+    digitalWrite(leftPin2, 0);
+    digitalWrite(rightPin3, 0);
+    digitalWrite(rightPin4, 1);
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="完整运算符"><a class="header" href="#完整运算符">完整运算符</a></h2>
+<table><thead><tr><th>运算符</th><th>描述</th></tr></thead><tbody>
+<tr><td><code>[]</code> <code>[:]</code></td><td>下标，切片</td></tr>
+<tr><td><code>**</code></td><td>指数</td></tr>
+<tr><td><code>~</code> <code>+</code> <code>-</code></td><td>按位取反, 正负号</td></tr>
+<tr><td><code>*</code> <code>/</code> <code>%</code> <code>//</code></td><td>乘，除，模，整除</td></tr>
+<tr><td><code>+</code> <code>-</code></td><td>加，减</td></tr>
+<tr><td><code>&gt;&gt;</code> <code>&lt;&lt;</code></td><td>右移，左移</td></tr>
+<tr><td><code>&amp;</code></td><td>按位与</td></tr>
+<tr><td><code>^</code> <code>\|</code></td><td>按位异或，按位或</td></tr>
+<tr><td><code>&lt;=</code> <code>&lt;</code> <code>&gt;</code> <code>&gt;=</code></td><td>小于等于，小于，大于，大于等于</td></tr>
+<tr><td><code>==</code> <code>!=</code></td><td>等于，不等于</td></tr>
+<tr><td><code>is</code>  <code>is not</code></td><td>身份运算符</td></tr>
+<tr><td><code>in</code> <code>not in</code></td><td>成员运算符</td></tr>
+<tr><td><code>not</code> <code>or</code> <code>and</code></td><td>逻辑运算符</td></tr>
+<tr><td><code>=</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>%=</code> <code>//=</code> <code>**=</code> <code>&amp;=</code> `</td><td>=<code> </code>^=<code> </code>&gt;&gt;=<code> </code>&lt;&lt;=`</td></tr>
+</tbody></table>
+<h2 id="字面量"><a class="header" href="#字面量">字面量</a></h2>
+<p><strong>字面量</strong>是用于表达源码中一个固定值的表示法，整数、浮点数和字符串等等都是字符串。比如在下面声名变量语句中:</p>
+<pre><code class="language-Python">a = 1
+</code></pre>
+<p><code>a</code>是声明的变量，那赋值符<code>=</code>后面的<code>1</code>就是字面量。总之，字面量就是没有用标识符封装起来的量，是“值”的原始状态。</p>
+<h2 id="按位取反-1"><a class="header" href="#按位取反-1">按位取反</a></h2>
+<p>在学习按位取反之前，我们要先了解<strong>原码、反码和补码</strong>。</p>
+<p>前面提到过，数值在计算机中的以二进制的方式存储的，但是真正在存储时用的都是二进制补码，且在存储之前先要经过<strong>原码-&gt;反码-&gt;补码</strong>的转换过程：</p>
+<p>对于一个有符号数(即正、负)，它的最高位永远是符号位，<code>0</code>为正数，<code>1</code>为负数。假设我们的一台简易计算机只用一个字节(byte，即8位)来存储数值，那么对于5和-5来说:</p>
+<p>原码:</p>
+<pre><code class="language-shell">5: 0000 0101
+-5: 1000 0101
+</code></pre>
+<p>反码(正数反码即自身，负数则除符号位之外其它各位取反):</p>
+<pre><code class="language-shell">5: 0000 0101
+-5: 1111 1010
+</code></pre>
+<p>补码(正数补码还是自身，负数则是在反码基础上加1):</p>
+<pre><code class="language-shell">5: 0000 0101
+-5: 1111 1011
+</code></pre>
+<p>这样设计能够解决加减法不正确的问题</p>
+<p>首先，计算十进制的表达式： <code>1-1=0</code>，看一下原码的计算:</p>
+<pre><code class="language-shell"># 原码计算:
+0000 0001 + 1000 0001 = 1000 0010
+</code></pre>
+<p><code>1000 0010</code>转换成十进制之后为<code>-2</code>，这个结果显然是错误的，所以不能直接用原码进行运算。</p>
+<p>那么反码会怎样：</p>
+<pre><code class="language-shell"># 原码计算:
+0000 0001 + 1000 0001
+# 反码计算:
+0000 0001 + 1111 1110 = 1111 1111
+# 转换回原码结果为
+1000 0000
+</code></pre>
+<p><code>1000 0000</code>转换成十进制之后为<code>-0</code>，结果是正确了，但是这个<code>-0</code>看起来又很奇怪，虽然人们可以理解<code>+0</code>和<code>-0</code>是一样的，然而带符号的<code>0</code>并没有什么意义。</p>
+<p>使用补码就可以解决上述问题：</p>
+<pre><code class="language-shell"># 原码计算:
+0000 0001 + 1000 0001
+# 反码计算:
+0000 0001 + 1111 1110
+# 补码计算:
+0000 0001 + 1111 1111 = 0000 0000
+# 转换回原码结果为
+0000 0000
+</code></pre>
+<p>这里有些同学会问，结果不应该是<code>1 0000 0000</code>吗？这里是因为我们假设计算机是用一个字节来存储数值的，一个字节是只有8位的，所以多出的1会被移掉。</p>
+<p>现在我们来看一下按位取反是怎么实现的:</p>
+<pre><code class="language-shell">-5: 原码:1000 0101  反码:1111 1010: 补码:1111 1011
+# 按位取反发生在补码上:
+0000 0100 
+# 由于是正数的补码，和原码是一样的，那么结果就是:
+0000 0100 即十进制的4
+
+5: 原码、反码、补码: 0000 0101
+# 按位取反后:
+1111 1010
+# 由于是补码，要先减1得到反码
+1111 1001
+# 再取反得到原码 
+1000 0110 即十进制-6
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+    </body>
+</html>

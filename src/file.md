@@ -29,6 +29,13 @@ f.close()
 f = open("/path/subject.txt","r",encoding="utf-8")
 f.close()
 ```
+
+用`with`关键字打开，不需要调用`close()`方法，但是打开之后，操作文件的语句要缩进
+
+```python
+with open("d://score2.csv", 'r', encoding="utf-8") as f:
+    print(f.readlines())
+```
 ### 模式
 
 | 模式  | 解释                  |

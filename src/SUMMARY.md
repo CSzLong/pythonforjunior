@@ -13,4 +13,6 @@
 
 [sort](./sort.md)
 [三级部分](./三级考试.md)
+[file](./file.md)
+[exception](./exception.md)
 [附录](./附录/appendix.md)

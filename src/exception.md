@@ -1,0 +1,91 @@
+## 异常处理
+
+在程序运行过程中，出现一些未能避免的错误，通常这些错误会导致程序不能正常结束，所以异常处理是用来处理这些错误。
+比如，我们开发一个计算器程序，从键盘输入数值和运算符来计算结果，但是如果错误输入了字符去运算，那么正常在
+Python中会报错，从而程序中止运行。那么此时就需要异常处理来保证程序能正常结束。
+
+### 语法结构
+
+```Python
+try:
+    # 可能会发生异常的语句
+except:                                                                                                                                                                  
+    # 捕获到异常之后要执行的语句
+else:
+    # 没有异常时要执行的语句
+finally:
+    # 不论有无异常，都要执行的语句
+```
+
+在异常处理中，`else`和`finally`不是必须的。一旦写了`try`，那么一定要有`except`。
+
+尝试运行下列代码：
+```Python
+a = 5
+b = 0
+c = a / b
+"""
+执行上述代码后会有下面错误发生：
+Traceback (most recent call last):
+  File "<pyshell#3>", line 1, in <module>
+    a/b
+ZeroDivisionError: division by zero
+"""
+```
+如果用异常处理，正确的方式为：
+```python
+a = 5
+b = 0
+try:
+    c = a / b
+except:
+    print("有异常")
+```
+
+假如，我要设计的逻辑是有异常就处理，没有异常则打印c的值，则需要在`else`的下面填写语句：
+
+```python
+a = 5
+b = 4
+try:
+    c = a / b
+except:
+    print("有异常")
+else:
+    print("c的值为：",c)
+```
+如果不管有没有异常，我都需要提醒一句"程序结束"，则需要在`finally`的下面填写语句：
+
+```python
+a = 5
+b = 4
+try:
+    c = a / b
+except:
+    print("有异常")
+else:
+    print("c的值为：",c)
+finally:
+    print("程序结束！")
+```
+### 处理不同的异常
+
+在捕获异常的过程中，可能捕获到的异常有很多种，那么不同的异常的处理方式也应该有所不同，因为一旦提示的异常处理方式秒妥当，对程序的运行不会有帮助。
+
+在`except`语句的后面可以加上要处理的异常的名字，如`ValueError`、`ZeroDivisionError`等等。
+
+```python
+try:
+    a = "a"
+    b = 0
+
+    if a+b!=100:
+        raise Exception("a+b is not 100")
+    c = a / b
+except ValueError:
+    print("赋值错误！")
+except ZeroDivisionError:
+    print("除数不能为零！")
+except:
+    print("其它异常")
+```

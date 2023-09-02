@@ -84,3 +84,13 @@ def selection_sort(ls, reverse=False):
                     ls[i], ls[j] = ls[j], ls[i]
         print(ls)
 ```   
+
+
+### 二分法查找
+
+二分法查找要求要查找的序列`seq`先排序，再根据起始位置(`start`和`end`)确定一个中间位置`mid`(mid=(start + end)//2)，根据要查找的关键字`key`和中间位置的元素做比较:
+
+如果`key` > `seq[mid]`，则将start = mid + 1,再重新计算出`mid`
+如果`key` < `seq[mid]`，则将end = mid - 1,再重新计算出`mid`
+
+直到找到`key`或者`start`==`end`结束

@@ -1,4 +1,4 @@
-## Python简介
+# Python简介
 
 Python由荷兰数学和计算机科学研究学会的吉多·范罗苏姆于1990年代初设计，作为一门叫做ABC语言的替代品; 是一门简单，易学, 开源的高级语言。
 
@@ -15,11 +15,11 @@ Python由荷兰数学和计算机科学研究学会的吉多·范罗苏姆于199
  - 不要怕犯错，学会理解解释器抛出的各种异常信息
  - 遇到问题时，先自己想办法找解决方案
 
- ### 安装Python
+## 安装Python
 
 在开始学习Python编程之前，首先要在自己的计算机上安装Python的解释器环境。 Python的解释器有好多种，如IDLE、 VS Code、 Pycharm, Jupyter NoteBook等等。这里我们选择使用官方提供的解释器IDLE做为我们学习Python的环境。
 
-#### Windows系统
+### Windows系统
 
 Python的官方网站为[python.org](https://www.python.org/), 在登录之后，点击Download，并选择Windows。
 
@@ -68,7 +68,7 @@ Python的官方网站为[python.org](https://www.python.org/), 在登录之后�
 ![Check Version](./images/CheckVersion.png)
 
 
-#### MacOS环境
+### MacOS环境
 
 MacOS系统是自带Python 2版本的，但是我们需要学习的是Python 3版本，可以参考上面的方法，在官方的[下载页面](https://www.python.org/downloads/macos/)找到对应的版本下载，并安装即可。
 需要注意的是，在MacOS的***终端***直接执行`python`，调用的是Python 2版本的解释器。想要调用Python 3，必须输入`python3`。

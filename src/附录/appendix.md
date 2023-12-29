@@ -113,3 +113,24 @@ a = 1
 ```
 
 ## 海龟的绝对零度
+
+海龟的方向有两个模式：
+
+| standard模式 | logo模式    |
+|:-----------|:----------|
+| `0 - 东`    | `0 - 北`   |
+| `90 - 北`   | `90 - 东`  |
+| `180 - 西`  | `180 - 南` |
+| `270 - 南`  | `270 - 西` |
+
+海龟模块中的`mode()`函数可以设置海龟模式 (`standard` 或  `logo`) 并执行重置。
+
+```python
+import turtle as t
+t.seth(45)
+t.mode('logo')
+```
+
+<div align="center">
+<img name="mode" src="./images/mode.png" width="350">
+</div>

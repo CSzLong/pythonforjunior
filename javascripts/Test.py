@@ -1,8 +1,33 @@
+from typing import List, Tuple
+
+
+def max_one(arr: Tuple[int]) -> int:
+    return max(arr)
+
+
+def insertion_sort(arr: List[int]) -> List[int]:
+    n = len(arr)
+
+    for i in range(1, n):
+        key = arr[i]
+        j = i - 1
+
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+
+        arr[j + 1] = key
+
+    return arr
+
+
 if __name__ == '__main__':
-    print("请教官说出一个1-9之间任意数字")
-    n = int(input("数字为:"))
-    print("开始报数")
-    for i in range(1, 151):
-        if i % 10 == n or i % n == 0:
-            continue
-        print(i, end=' ')
+    # 示例用法
+    original_list = [12, 11, 13, 5, 6]
+    sorted_list = insertion_sort(original_list)
+
+    print("原始列表:", original_list)
+    print("排序后列表:", sorted_list)
+
+    num_list = ['A', 'C', 'e', 'z', 'r']
+    print("Max value:", max_one(num_list))

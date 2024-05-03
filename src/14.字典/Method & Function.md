@@ -71,3 +71,31 @@ new dictionary initialized with the name=value pairs in the keyword argument lis
 >>> dict(one=1, two=2, three=3, F=1111)
 {'one': 1, 'two': 2, 'three': 3, 'F': 1111}
 ```
+
+
+```python
+
+# 执行语句
+eval() exec()
+
+# 检查空值
+any() all()
+
+# 输入输出
+input() print()
+
+# 数学运算
+round() abs() divmod() pow()
+
+# 字符与码位转换
+chr()/ord()
+
+# 进制转换
+bin()/oct()/hex()
+
+# 类型转换
+int() float() bool() str() list() tuple() set() dict()
+
+# 批量处理迭代对象
+filter() map()
+```

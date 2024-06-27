@@ -1,0 +1,15 @@
+// Simple Flowchart
+digraph {
+	A [label=Start]
+	B [label="Decision 1"]
+	C [label="Process 1"]
+	D [label="Decision 2"]
+	E [label="Process 2"]
+	F [label=End]
+	A -> B [label="Go to Decision 1"]
+	B -> C [label=Yes]
+	B -> D [label=No]
+	C -> E [label="Process 1 Complete"]
+	D -> E [label="Decision 2 Made"]
+	E -> F [label=Finish]
+}

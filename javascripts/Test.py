@@ -4,7 +4,7 @@ from tkinter import filedialog, messagebox
 class TextEditor:
     def __init__(self, root):
         self.root = root
-        self.root.title("Untitled - Simple Text Editor")
+        self.root.title("Untitled - Text Editor")
         self.root.geometry("800x600")
 
         self.current_file = None
@@ -26,8 +26,8 @@ class TextEditor:
 
         self.edit_menu = tk.Menu(self.menu_bar, tearoff=0)
         self.menu_bar.add_cascade(label="Edit", menu=self.edit_menu)
-        self.edit_menu.add_command(label="Undo", command=self.text_area.edit_undo)
-        self.edit_menu.add_command(label="Redo", command=self.text_area.edit_redo)
+        self.edit_menu.add_command(label="Undo", command=self.undo)
+        self.edit_menu.add_command(label="Redo", command=self.redo)
         self.edit_menu.add_separator()
         self.edit_menu.add_command(label="Cut", command=lambda: self.text_area.event_generate("<<Cut>>"))
         self.edit_menu.add_command(label="Copy", command=lambda: self.text_area.event_generate("<<Copy>>"))
@@ -43,7 +43,7 @@ class TextEditor:
         if self.confirm_save_changes():
             self.text_area.delete(1.0, tk.END)
             self.current_file = None
-            self.root.title("Untitled - Simple Text Editor")
+            self.root.title("Untitled - Text Editor")
 
     def open_file(self):
         if self.confirm_save_changes():
@@ -54,7 +54,7 @@ class TextEditor:
                     self.text_area.delete(1.0, tk.END)
                     self.text_area.insert(tk.END, file.read())
                 self.current_file = file_path
-                self.root.title(f"{file_path} - Simple Text Editor")
+                self.root.title(f"{file_path} - Text Editor")
                 self.text_area.edit_modified(False)
 
     def save_file(self):
@@ -62,6 +62,7 @@ class TextEditor:
             with open(self.current_file, "w") as file:
                 file.write(self.text_area.get(1.0, tk.END))
             self.text_area.edit_modified(False)
+            self.root.title(f"{self.current_file} - Text Editor")
         else:
             self.save_as_file()
 
@@ -72,7 +73,7 @@ class TextEditor:
             with open(file_path, "w") as file:
                 file.write(self.text_area.get(1.0, tk.END))
             self.current_file = file_path
-            self.root.title(f"{file_path} - Simple Text Editor")
+            self.root.title(f"{file_path} - Text Editor")
             self.text_area.edit_modified(False)
 
     def confirm_save_changes(self):
@@ -91,14 +92,26 @@ class TextEditor:
             self.root.quit()
 
     def show_about(self):
-        messagebox.showinfo("About", "Simple Text Editor\nBuilt with Python and Tkinter")
+        messagebox.showinfo("About", "Text Editor\nBuilt with Python and Tkinter")
 
-    def on_modified(self, event):
+    def on_modified(self, event=None):
         if self.current_file:
-            self.root.title(f"*{self.current_file} - Simple Text Editor")
+            title = f"{self.current_file} - Text Editor"
         else:
-            self.root.title("*Untitled - Simple Text Editor")
+            title = "Untitled - Text Editor"
+        if self.text_area.edit_modified():
+            title = "*" + title
+        self.root.title(title)
         self.text_area.edit_modified(False)
+
+    def undo(self):
+        self.text_area.edit_undo()
+        self.on_modified()
+
+    def redo(self):
+        self.text_area.edit_redo()
+        self.on_modified()
+
 
 if __name__ == "__main__":
     root = tk.Tk()

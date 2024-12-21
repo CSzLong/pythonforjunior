@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "src/25.常用内建模块/内建模块.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "内建模块"
             }
           }
         ]
@@ -175,12 +175,12 @@
   },
   "active": "b2915041d2005321",
   "lastOpenFiles": [
-    "(25.常用内建模块/常用内建模块.md",
+    "src/SUMMARY.md",
+    "src/25.常用内建模块/内建模块.md",
     "README.md",
+    "(25.常用内建模块/常用内建模块.md",
     "src/25.常用内建模块/time.md",
     "src/25.常用内建模块/math.md",
-    "src/25.常用内建模块/内建模块.md",
-    "src/SUMMARY.md",
     "(25.常用内建模块",
     "src/introduction.md",
     "src/08.选择结构/三大结构.md",

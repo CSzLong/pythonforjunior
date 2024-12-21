@@ -4,15 +4,15 @@
 
 ### 定义
 
-```shell
+```python
 def function_name(parameters):
     function body
     <return clause>
 ```
 
 - **def:** 关键字，用来自定义函数时使用，写在最前面。 def 为 define 的简写
-- **function_name:** 函数的名字，首先命名规则(naming conversion)同变量的命名规则
-- **parameters:** 函数的参数
+- **function_name:** 函数的名字，命名规则(naming conversion)同变量的命名规则，不要使用内置函数的名字。
+- **parameters:** 函数的参数，参数有四类，需要重点学习。
 - **function body:** 函数的实体，具体要执行(execute)的逻辑(logic) 
 - **return clause:** 返回值语句，如果有返回值，需要写清楚，return 是关键字(keywords)
 
@@ -198,13 +198,64 @@ Tina 31 Female Beijing Teacher
 ```
 
 
+### 内部函数
+
+在`Python`的自定义函数中，可以内部定义新的函数，这是一种嵌套函数，在外部函数的作用域中存在，并且只能在外部函数内部访问或返回，这个内部函数可以实现功能的封装，也可以实现闭包。
+
+语法结构
+
+```python
+def outer_function(parameters):
+    ...
+    ...
+    def inner_function(parameters):
+        ...
+        ...
+    
+    <inner_function(parameters)>
+    <return inner_function>
+    <return inner_function()>
+```
+
+
 ### 变量的作用域
 
-**局部变量:** 写在函数体里的变量
+
+在`Python`中，变量的作用域决定了变量的可见性和生命周期，共有四种作用域规则，通常被称为**LEGB规则**，代表了四种作用域的顺序查找方式。
+
+1. **Local(L):** 局部作用域
+2. **Enclosing(E):** 闭包函数的外层作用域
+3. **Global(G):** 全局作用域
+4. **Build-in(B):** 内置作用域
 
 
-如果有用全局变量时，没有直接赋值情况下，函数会先在局部范围内找这个变量，如果没找到，再去全局范围内查找。
+#### Local
 
-如果有给与全局变量名字一样的变量赋值时，并且在赋值时，没有这个变量参与运算，则会创建一个新局部变量，并在函数范围内覆盖掉全局变量的有效性。
+局部作用域指的是在函数或者方法内部定义的变量。函数中变量默认为是局部变量，除非特别声明为全局变量或者闭包中的非局部变量。
 
-当有局部变量的名字与全局变量重复时，在创建这个局部变量之前，不可以使用这个名字去参与运算
+```python
+def my_function():
+    x = 10
+    print(x)
+
+my_function()
+# 打印10
+```
+
+如果在函数外部也有一个名为`x`的变量：
+
+```python
+x = 100
+
+def my_function():
+    x = 10
+    print(x)
+
+my_function()
+# 打印10
+
+print(x)
+#打印100
+```
+
+#### Enclosing

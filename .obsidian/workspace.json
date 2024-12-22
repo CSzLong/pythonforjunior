@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "b4a8d9c8423546da",
+        "id": "ed77b8063211ac83",
         "type": "tabs",
         "children": [
           {
-            "id": "b2915041d2005321",
+            "id": "359839059f7c41f2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/25.常用内建模块/内建模块.md",
+                "file": "C++ CSP-J/C++ 之 CSP-J 主要内容.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "内建模块"
+              "title": "C++ 之 CSP-J 主要内容"
             }
           }
         ]
@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "cff1d2889fcd4de7",
@@ -173,10 +173,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b2915041d2005321",
+  "active": "359839059f7c41f2",
   "lastOpenFiles": [
-    "src/SUMMARY.md",
+    "C++ CSP-J/数据类型.md",
+    "C++ CSP-J/C++ 之 CSP-J 主要内容.md",
+    "C++ CSP-J",
+    "Untitled.canvas",
     "src/25.常用内建模块/内建模块.md",
+    "src/SUMMARY.md",
     "README.md",
     "(25.常用内建模块/常用内建模块.md",
     "src/25.常用内建模块/time.md",

@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d9477c1d13c32f5b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "src/25.常用内建模块/内建模块.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "内建模块"
-            }
-          },
-          {
             "id": "161a1dc3162e01fc",
             "type": "leaf",
             "state": {
@@ -35,8 +21,7 @@
               "title": "SUMMARY"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -191,15 +176,15 @@
   },
   "active": "161a1dc3162e01fc",
   "lastOpenFiles": [
-    "src/26.面向对象编程/类的继承.md",
     "src/26.面向对象编程/类和对象.md",
     "src/SUMMARY.md",
+    "src/26.面向对象编程/类的继承.md",
+    "src/25.常用内建模块/内建模块.md",
     "src/25.常用内建模块/time.md",
     "src/26.面向对象编程",
     "src/25.常用内建模块/math.md",
     "src/25.常用内建模块/random.md",
     "src/25.常用内建模块/os.md",
-    "src/25.常用内建模块/内建模块.md",
     "src/22.排序算法/排序算法.md",
     "src/23.二分法查找/二分法查找.md",
     "C++ CSP-J/C++ 之 CSP-J 主要内容.md",

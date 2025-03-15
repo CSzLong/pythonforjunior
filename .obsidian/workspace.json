@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "7907c26ec61e12bc",
+        "id": "c3d49c04be52061e",
         "type": "tabs",
         "children": [
           {
-            "id": "161a1dc3162e01fc",
+            "id": "21861c1265ba8728",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/26.面向对象编程/类的继承.md",
+                "file": "src/27.模块、包以及 PIP/包 Package.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "类的继承"
+              "title": "包 Package"
             }
           }
         ]
@@ -174,11 +174,23 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "161a1dc3162e01fc",
+  "active": "21861c1265ba8728",
   "lastOpenFiles": [
-    "src/26.面向对象编程/类和对象.md",
-    "src/SUMMARY.md",
+    "src/27.模块、包以及 PIP/Package.jpg",
+    "src/27.模块、包以及 PIP/模块 module.md",
+    "src/27.模块、包以及 PIP/包 Package.md",
+    "src/27.模块、包以及 PIP/ModuleTesting.jpg",
     "src/26.面向对象编程/类的继承.md",
+    "src/27.模块、包以及 PIP",
+    "src/26.面向对象编程/类和对象.md",
+    "src/26.面向对象编程/WechatIMG165.jpg",
+    "src/26.面向对象编程/WechatIMG164.jpg",
+    "src/26.面向对象编程/自定义异常.md",
+    "src/21.异常处理/异常处理.md",
+    "src/01.Python简介/Python简介.md",
+    "WechatIM.md",
+    "src/00.引言/引言.md",
+    "src/SUMMARY.md",
     "src/25.常用内建模块/内建模块.md",
     "src/25.常用内建模块/time.md",
     "src/26.面向对象编程",
@@ -197,15 +209,8 @@
     "src/11.字符串/字符串.md",
     "C++ CSP-J",
     "Untitled.canvas",
-    "(25.常用内建模块/常用内建模块.md",
     "(25.常用内建模块",
-    "src/introduction.md",
-    "src/08.选择结构/三大结构.md",
-    "src/05.位运算/位运算.md",
-    "src/24.自定义函数/User-Defined Function.md",
     "src/24.自定义函数",
-    "src/07.海龟画图/海龟画图一.md",
-    "src/附录/appendix.md",
     "src/25.常用内建模块"
   ]
 }

@@ -176,7 +176,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 601.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -189,7 +189,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f6128934069336ba",
+  "active": "55d673ec0fbc400b",
   "lastOpenFiles": [
     "src/Exam/习题.md",
     "src/SUMMARY.md",

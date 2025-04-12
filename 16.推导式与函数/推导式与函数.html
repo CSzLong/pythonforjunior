@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>推导式与函数 - Python 教程 for Junior</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">简介</a></li><li class="chapter-item expanded "><a href="../00.引言/引言.html"><strong aria-hidden="true">1.</strong> Python 初识</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../00.引言/引言.html"><strong aria-hidden="true">1.1.</strong> 引言</a></li><li class="chapter-item expanded "><a href="../01.Python简介/Python简介.html"><strong aria-hidden="true">1.2.</strong> Python简介</a></li><li class="chapter-item expanded "><a href="../02.HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.3.</strong> hello, world</a></li></ol></li><li class="chapter-item expanded "><a href="../03.类型和变量/类型和变量.html"><strong aria-hidden="true">2.</strong> 一级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03.类型和变量/类型和变量.html"><strong aria-hidden="true">2.1.</strong> 类型和变量</a></li><li class="chapter-item expanded "><a href="../04.运算符和表达式/运算符和表达式.html"><strong aria-hidden="true">2.2.</strong> 运算符和表达式</a></li><li class="chapter-item expanded "><a href="../05.位运算/位运算.html"><strong aria-hidden="true">2.3.</strong> 位运算</a></li><li class="chapter-item expanded "><a href="../06.常用内建函数/常用内建函数.html"><strong aria-hidden="true">2.4.</strong> 常用内建函数</a></li><li class="chapter-item expanded "><a href="../07.海龟画图/海龟画图一.html"><strong aria-hidden="true">2.5.</strong> 海龟画图-第一部分</a></li><li class="chapter-item expanded "><a href="../07.海龟画图/海龟画图二.html"><strong aria-hidden="true">2.6.</strong> 海龟画图-第二部分</a></li></ol></li><li class="chapter-item expanded "><a href="../08.选择结构/三大结构.html"><strong aria-hidden="true">3.</strong> 二级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.选择结构/三大结构.html"><strong aria-hidden="true">3.1.</strong> 三大结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.选择结构/选择结构.html"><strong aria-hidden="true">3.1.1.</strong> 选择结构</a></li><li class="chapter-item expanded "><a href="../09.循环结构/循环结构.html"><strong aria-hidden="true">3.1.2.</strong> 循环结构</a></li></ol></li><li class="chapter-item expanded "><a href="../10.高级数据类型/高级数据类型.html"><strong aria-hidden="true">3.2.</strong> 高级数据结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../11.字符串/字符串.html"><strong aria-hidden="true">3.2.1.</strong> 字符串</a></li><li class="chapter-item expanded "><a href="../12.列表/列表.html"><strong aria-hidden="true">3.2.2.</strong> 列表</a></li><li class="chapter-item expanded "><a href="../13.元组/元组.html"><strong aria-hidden="true">3.2.3.</strong> 元组</a></li><li class="chapter-item expanded "><a href="../14.集合/集合.html"><strong aria-hidden="true">3.2.4.</strong> 集合</a></li><li class="chapter-item expanded "><a href="../15.字典/字典.html"><strong aria-hidden="true">3.2.5.</strong> 字典</a></li></ol></li><li class="chapter-item expanded "><a href="../16.推导式与函数/推导式与函数.html" class="active"><strong aria-hidden="true">3.3.</strong> 推导式与函数</a></li></ol></li><li class="chapter-item expanded "><a href="../18.内置函数/内置函数.html"><strong aria-hidden="true">4.</strong> 三级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../18.内置函数/内置函数.html"><strong aria-hidden="true">4.1.</strong> 内置函数</a></li><li class="chapter-item expanded "><a href="../19.文件读写/文件读写.html"><strong aria-hidden="true">4.2.</strong> 文件读写</a></li><li class="chapter-item expanded "><a href="../20.进制转换/进制转换.html"><strong aria-hidden="true">4.3.</strong> 进制转换</a></li><li class="chapter-item expanded "><a href="../21.异常处理/异常处理.html"><strong aria-hidden="true">4.4.</strong> 异常处理</a></li><li class="chapter-item expanded "><a href="../22.排序算法/排序算法.html"><strong aria-hidden="true">4.5.</strong> 排序算法</a></li><li class="chapter-item expanded "><a href="../23.二分法查找/二分法查找.html"><strong aria-hidden="true">4.6.</strong> 二分法查找</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/内建模块.html"><strong aria-hidden="true">4.7.</strong> 常用内建模块</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../25.常用内建模块/内建模块.html"><strong aria-hidden="true">4.7.1.</strong> 内建模块</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/math.html"><strong aria-hidden="true">4.7.2.</strong> math</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/time.html"><strong aria-hidden="true">4.7.3.</strong> time</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/os.html"><strong aria-hidden="true">4.7.4.</strong> os</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.</strong> 高级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.1.</strong> 面向对象编程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.1.1.</strong> 类和对象</a></li><li class="chapter-item expanded "><a href="../26.面向对象编程/类的继承.html"><strong aria-hidden="true">5.1.2.</strong> 类的继承</a></li><li class="chapter-item expanded "><a href="../26.面向对象编程/自定义异常.html"><strong aria-hidden="true">5.1.3.</strong> 自定义异常</a></li></ol></li><li class="chapter-item expanded "><a href="../27.模块和包/模块.html"><strong aria-hidden="true">5.2.</strong> 模块、包</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../27.模块和包/模块.html"><strong aria-hidden="true">5.2.1.</strong> 模块</a></li><li class="chapter-item expanded "><a href="../27.模块和包/包.html"><strong aria-hidden="true">5.2.2.</strong> 包</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../Exam/习题.html"><strong aria-hidden="true">6.</strong> 习题</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Exam/习题.html"><strong aria-hidden="true">6.1.</strong> 习题1</a></li><li class="chapter-item expanded "><a href="../Exam/习题2.html"><strong aria-hidden="true">6.2.</strong> 习题2</a></li><li class="chapter-item expanded "><a href="../Exam/习题3.html"><strong aria-hidden="true">6.3.</strong> 习题3</a></li><li class="chapter-item expanded "><a href="../Exam/习题4.html"><strong aria-hidden="true">6.4.</strong> 习题4</a></li></ol></li><li class="chapter-item expanded "><a href="../进制转换.html">进制转换</a></li><li class="chapter-item expanded affix "><a href="../附录/appendix.html">附录</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Python 教程 for Junior</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="推导式与函数"><a class="header" href="#推导式与函数">推导式与函数</a></h1>
+<p>我们在前面五个章节中对<code>Python</code>中的内置数据结构做了详细的介绍，其中包括最基本的操作、函数和内置方法的调用。这些数据结构都有很强大的功能，用以解决相对较复杂的问题。</p>
+<p>除了直接创建各种数据类型之外，<code>Python</code>也提供推导式和函数高效地生成高级数据类型。</p>
+<h2 id="推导式"><a class="header" href="#推导式">推导式</a></h2>
+<p>推导式<code>Comprehension</code>是一种在<code>Python</code>中用于创建新的数据结构（例如列表、集合、字典等）的简洁方法。推导式可以将循环和条件语句结合起来，以一种简洁、可读性高的方式生成新的数据结构。</p>
+<p><code>Python</code>中有三种类型的推导式：列表推导式<code>List Comprehension</code>、集合推导式<code>Set Comprehension</code>和字典推导式<code>Dictionary Comprehension</code>。每种推导式都有其特定的语法形式，但它们的基本思想都是类似的。</p>
+<p>通过推导式可以生成元素个数较多的数据结构对象。</p>
+<h3 id="列表推导式list-comprehension"><a class="header" href="#列表推导式list-comprehension">列表推导式（List Comprehension）</a></h3>
+<p>列表推导式是用于生成列表的推导式，其语法形式为：</p>
+<pre><code class="language-python">[expression for item in iterable if condition]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><code>expression</code>：对每个 <code>item</code> 计算得到的结果。</li>
+<li><code>item</code>：可迭代对象中的每个元素。</li>
+<li><code>iterable</code>：可迭代对象，如列表、元组、字符串等。</li>
+<li><code>condition</code>（可选）：对 <code>item</code> 的筛选条件。</li>
+</ul>
+<p>例如，生成一个由 1 到 10 的平方组成的列表：</p>
+<pre><code class="language-python">&gt;&gt;&gt; squares = [x**2 for x in range(1, 11)]
+&gt;&gt;&gt; print(squares)
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+</code></pre>
+<h3 id="集合推导式set-comprehension"><a class="header" href="#集合推导式set-comprehension">集合推导式（Set Comprehension）</a></h3>
+<p>集合推导式用于生成集合，其语法形式为：</p>
+<pre><code class="language-python">{expression for item in iterable if condition}
+</code></pre>
+<p>其中的语法和列表推导式类似，只是使用了大括号 <code>{}</code>。</p>
+<p>例如，生成一个由 1 到 10 的平方组成的集合：</p>
+<pre><code class="language-python">&gt;&gt;&gt; squares_set = {x**2 for x in range(1, 11)}
+&gt;&gt;&gt; print(squares_set)
+{1, 4, 9, 16, 25, 36, 49, 64, 81, 100}
+</code></pre>
+<h3 id="字典推导式dictionary-comprehension"><a class="header" href="#字典推导式dictionary-comprehension">字典推导式（Dictionary Comprehension）</a></h3>
+<p>字典推导式用于生成字典，其语法形式为：</p>
+<pre><code class="language-python">{key_expression: value_expression for item in iterable if condition}
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><code>key_expression</code>：对每个 <code>item</code> 计算得到的键。</li>
+<li><code>value_expression</code>：对每个 <code>item</code> 计算得到的值。</li>
+</ul>
+<p>例如，生成一个将名字转换为对应长度的字典：</p>
+<pre><code class="language-python">&gt;&gt;&gt; names = [&quot;Alice&quot;, &quot;Bob&quot;, &quot;Charlie&quot;]
+&gt;&gt;&gt; name_lengths = {name: len(name) for name in names}
+&gt;&gt;&gt; print(name_lengths)
+{'Alice':5, 'Bob':3, 'Charlie':7}
+</code></pre>
+<p>推导式是 Python 中的一个非常强大和常用的特性，能够以简洁、高效的方式生成新的数据结构，提高了代码的可读性和可维护性。</p>
+<h2 id="函数"><a class="header" href="#函数">函数</a></h2>
+<p><code>Python</code>提供丰富的内置函数将传入的参数转换并返回各种高级数据类型， 这里我们用到的词语是<code>“转换”</code>而不是<code>”生成”</code>是因为在<code>Python</code>中有<code>生成器对象(Generator)</code>，所以为了避免在未来的学习过程中产生歧义，我们在这里只用<code>“转换”</code>一词:</p>
+<table><thead><tr><th align="left">函数名</th><th align="left">说明</th></tr></thead><tbody>
+<tr><td align="left"><code>str</code></td><td align="left">将参数转换成字符串并返回</td></tr>
+<tr><td align="left"><code>list</code></td><td align="left">将参数转换成列表并返回</td></tr>
+<tr><td align="left"><code>tuple</code></td><td align="left">将参数转换成元组并返回</td></tr>
+<tr><td align="left"><code>set</code></td><td align="left">将参数转换成集合并返回</td></tr>
+<tr><td align="left"><code>dict</code></td><td align="left">将参数转换成字典并返回</td></tr>
+</tbody></table>
+<h3 id="strobject"><a class="header" href="#strobject">str(object)</a></h3>
+<p>将<code>object</code>转换成字符串文本并返回, 如果没有传参数则返回空字符串<code>&quot;&quot;</code>。</p>
+<p>这个函数我们并不陌生，在<a href="../06.%E5%B8%B8%E7%94%A8%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0/%E5%B8%B8%E7%94%A8%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0.html">常用内置函数</a>一章中就已经学习过了，它的功能很简单，就是将传入的参数转换成字符串，如：</p>
+<pre><code class="language-python">&gt;&gt;&gt; str(1)
+'1'
+</code></pre>
+<p>上面例子中，我们传入的参数只是基本的整型，但是对于更复杂的高级数据类型，它的作用不是将其中的元素进行拼接再转换成字条串，而是在将其所表现的基础上直接加上引号，如<code>str([1,2,3])</code>的结果不是<code>'123'</code>, 而是<code>'[1,2,3]'</code></p>
+<pre><code class="language-python">&gt;&gt;&gt; str([1, 2, 3])
+'[1, 2, 3]'
+</code></pre>
+<p>对于<code>str</code>函数的学习还没完结，我们会在后面继续介绍。</p>
+<h3 id="listiterable"><a class="header" href="#listiterable">list(iterable)</a></h3>
+<p>返回将<code>iterable</code>转换之后生成的列表, 如果没有传参数则返回空列表<code>[]</code>。</p>
+<pre><code class="language-python">&gt;&gt;&gt; list(&quot;abcdefg&quot;)
+['a','b','c','d','e','f','g']
+&gt;&gt;&gt; list(1)
+Traceback (most recent call last):
+  File &quot;&lt;pyshell#4&gt;&quot;, line 1, in &lt;module&gt;
+    list(1)
+TypeError: 'int' object is not iterable
+
+&gt;&gt;&gt; list()
+[]
+&gt;&gt;&gt; list({1:2,3:4,5:6})
+[1, 3, 5]
+</code></pre>
+<h3 id="tupleiterable"><a class="header" href="#tupleiterable">tuple(iterable)</a></h3>
+<p>返回将<code>iterable</code>转换之后生成的元组，如果没有传参数则返回空元组<code>()</code>。</p>
+<pre><code class="language-python">&gt;&gt;&gt; tuple([1,2,3,4,5,6,7])
+(1, 2, 3, 4, 5, 6, 7)
+&gt;&gt;&gt; tuple(&quot;abcdefg&quot;)
+('a', 'b', 'c', 'd', 'e', 'f', 'g')
+&gt;&gt;&gt; tuple()
+()
+</code></pre>
+<h3 id="setiterable"><a class="header" href="#setiterable">set(iterable)</a></h3>
+<p>返回将<code>iterable</code>转换之后生成的集合，如果没有传参数则返回空集合<code>set()</code>。</p>
+<pre><code class="language-python">&gt;&gt;&gt; set([1,2,3,4,5,5,6,1,4])
+{1, 2, 3, 4, 5, 6}
+&gt;&gt;&gt; set()
+set()
+</code></pre>
+<h3 id="dictkwargs"><a class="header" href="#dictkwargs">dict(**kwargs)</a></h3>
+<p>返回一个字典，字典内每个键值对由关键字参数中一对<code>参数名=值</code>组成，无参数则返回一个空字典<code>{}</code>。</p>
+<pre><code class="language-python">&gt;&gt;&gt; dict(one=1, two=2, three=3, F=1111)
+{'one': 1, 'two': 2, 'three': 3, 'F': 1111}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../15.字典/字典.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../18.内置函数/内置函数.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../15.字典/字典.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../18.内置函数/内置函数.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

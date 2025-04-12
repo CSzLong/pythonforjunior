@@ -1,0 +1,434 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>类的继承 - Python 教程 for Junior</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">简介</a></li><li class="chapter-item expanded "><a href="../00.引言/引言.html"><strong aria-hidden="true">1.</strong> Python 初识</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../00.引言/引言.html"><strong aria-hidden="true">1.1.</strong> 引言</a></li><li class="chapter-item expanded "><a href="../01.Python简介/Python简介.html"><strong aria-hidden="true">1.2.</strong> Python简介</a></li><li class="chapter-item expanded "><a href="../02.HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.3.</strong> hello, world</a></li></ol></li><li class="chapter-item expanded "><a href="../03.类型和变量/类型和变量.html"><strong aria-hidden="true">2.</strong> 一级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03.类型和变量/类型和变量.html"><strong aria-hidden="true">2.1.</strong> 类型和变量</a></li><li class="chapter-item expanded "><a href="../04.运算符和表达式/运算符和表达式.html"><strong aria-hidden="true">2.2.</strong> 运算符和表达式</a></li><li class="chapter-item expanded "><a href="../05.位运算/位运算.html"><strong aria-hidden="true">2.3.</strong> 位运算</a></li><li class="chapter-item expanded "><a href="../06.常用内建函数/常用内建函数.html"><strong aria-hidden="true">2.4.</strong> 常用内建函数</a></li><li class="chapter-item expanded "><a href="../07.海龟画图/海龟画图一.html"><strong aria-hidden="true">2.5.</strong> 海龟画图-第一部分</a></li><li class="chapter-item expanded "><a href="../07.海龟画图/海龟画图二.html"><strong aria-hidden="true">2.6.</strong> 海龟画图-第二部分</a></li></ol></li><li class="chapter-item expanded "><a href="../08.选择结构/三大结构.html"><strong aria-hidden="true">3.</strong> 二级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.选择结构/三大结构.html"><strong aria-hidden="true">3.1.</strong> 三大结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.选择结构/选择结构.html"><strong aria-hidden="true">3.1.1.</strong> 选择结构</a></li><li class="chapter-item expanded "><a href="../09.循环结构/循环结构.html"><strong aria-hidden="true">3.1.2.</strong> 循环结构</a></li></ol></li><li class="chapter-item expanded "><a href="../10.高级数据类型/高级数据类型.html"><strong aria-hidden="true">3.2.</strong> 高级数据结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../11.字符串/字符串.html"><strong aria-hidden="true">3.2.1.</strong> 字符串</a></li><li class="chapter-item expanded "><a href="../12.列表/列表.html"><strong aria-hidden="true">3.2.2.</strong> 列表</a></li><li class="chapter-item expanded "><a href="../13.元组/元组.html"><strong aria-hidden="true">3.2.3.</strong> 元组</a></li><li class="chapter-item expanded "><a href="../14.集合/集合.html"><strong aria-hidden="true">3.2.4.</strong> 集合</a></li><li class="chapter-item expanded "><a href="../15.字典/字典.html"><strong aria-hidden="true">3.2.5.</strong> 字典</a></li></ol></li><li class="chapter-item expanded "><a href="../16.推导式与函数/推导式与函数.html"><strong aria-hidden="true">3.3.</strong> 推导式与函数</a></li></ol></li><li class="chapter-item expanded "><a href="../18.内置函数/内置函数.html"><strong aria-hidden="true">4.</strong> 三级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../18.内置函数/内置函数.html"><strong aria-hidden="true">4.1.</strong> 内置函数</a></li><li class="chapter-item expanded "><a href="../19.文件读写/文件读写.html"><strong aria-hidden="true">4.2.</strong> 文件读写</a></li><li class="chapter-item expanded "><a href="../20.进制转换/进制转换.html"><strong aria-hidden="true">4.3.</strong> 进制转换</a></li><li class="chapter-item expanded "><a href="../21.异常处理/异常处理.html"><strong aria-hidden="true">4.4.</strong> 异常处理</a></li><li class="chapter-item expanded "><a href="../22.排序算法/排序算法.html"><strong aria-hidden="true">4.5.</strong> 排序算法</a></li><li class="chapter-item expanded "><a href="../23.二分法查找/二分法查找.html"><strong aria-hidden="true">4.6.</strong> 二分法查找</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/内建模块.html"><strong aria-hidden="true">4.7.</strong> 常用内建模块</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../25.常用内建模块/内建模块.html"><strong aria-hidden="true">4.7.1.</strong> 内建模块</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/math.html"><strong aria-hidden="true">4.7.2.</strong> math</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/time.html"><strong aria-hidden="true">4.7.3.</strong> time</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/os.html"><strong aria-hidden="true">4.7.4.</strong> os</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.</strong> 高级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.1.</strong> 面向对象编程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.1.1.</strong> 类和对象</a></li><li class="chapter-item expanded "><a href="../26.面向对象编程/类的继承.html" class="active"><strong aria-hidden="true">5.1.2.</strong> 类的继承</a></li><li class="chapter-item expanded "><a href="../26.面向对象编程/自定义异常.html"><strong aria-hidden="true">5.1.3.</strong> 自定义异常</a></li></ol></li><li class="chapter-item expanded "><a href="../27.模块和包/模块.html"><strong aria-hidden="true">5.2.</strong> 模块、包</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../27.模块和包/模块.html"><strong aria-hidden="true">5.2.1.</strong> 模块</a></li><li class="chapter-item expanded "><a href="../27.模块和包/包.html"><strong aria-hidden="true">5.2.2.</strong> 包</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../Exam/习题.html"><strong aria-hidden="true">6.</strong> 习题</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Exam/习题.html"><strong aria-hidden="true">6.1.</strong> 习题1</a></li><li class="chapter-item expanded "><a href="../Exam/习题2.html"><strong aria-hidden="true">6.2.</strong> 习题2</a></li><li class="chapter-item expanded "><a href="../Exam/习题3.html"><strong aria-hidden="true">6.3.</strong> 习题3</a></li><li class="chapter-item expanded "><a href="../Exam/习题4.html"><strong aria-hidden="true">6.4.</strong> 习题4</a></li></ol></li><li class="chapter-item expanded "><a href="../进制转换.html">进制转换</a></li><li class="chapter-item expanded affix "><a href="../附录/appendix.html">附录</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Python 教程 for Junior</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>继承<code>inherit</code>是对现有的类的扩展(<code>extension</code>)，实现对代码的重用和重写。</p>
+<p>被继承的类叫作<code>父类（Super Class 或 Parent Class）</code>, 继承的类叫<code>子类(Subclass 或 Child)</code>.</p>
+<ul>
+<li><strong>父类</strong>就像是一个<code>基础模板 base model</code>或者<code>蓝图 blue print</code>，比如<code>动物类</code></li>
+<li><strong>子类</strong>继承父类后，它自动拥有了父类的特性，但是可以添加更多的特性，或者修改父类的特性。例如<code>动物类</code>的子类可以<code>猫类</code>或<code>狗类</code>，它们都继承了<code>动物类</code>的行为，但是也有自己独特的行为。</li>
+</ul>
+<p>对于已经创建好的并开始被使用的类 <code>ClassA</code> 来说，有了新的要求需要做更改，但是对于<code>ClassA</code>来说，已经有对象创建了，并且这些对象并不需要新加的功能，所以需要用到继承来解决问题。</p>
+<h2 id="继承动物类"><a class="header" href="#继承动物类">继承动物类</a></h2>
+<p>在继承动物类之前，首先要有一个动物类才可以继承：</p>
+<pre><code class="language-python">class Animal:
+
+	def __init__(self, name, sound):
+		self.name = name
+		self.sound = sound
+
+	def speak(self):
+		print(f&quot;{self.name} makes a {self.sound} sound.&quot;)
+
+animal = Animal('Tony', 'roar')
+animal.speak()
+</code></pre>
+<p>有了动物类之后，就可以实现继承了，下面用<code>小狗类</code>举例</p>
+<pre><code class="language-python">class Dog(Animal):
+    pass
+
+dog = Dog('Odie', 'bark')
+dog.speak()
+</code></pre>
+<h3 id="子类对父类的扩展"><a class="header" href="#子类对父类的扩展">子类对父类的扩展</a></h3>
+<p>在上面的例子中，<code>Dog</code>类完全继承了父类的属性和方法，在这个基础上， <code>Dog</code>也可以对父类进行扩展，比如新一个功能<code>catch</code>。</p>
+<pre><code class="language-python">class Dog(Animal):
+
+	def catch(self, obj):
+		print(f&quot;I caught a {obj} that thrown by my master.&quot;)
+
+dog = Dog('Odie', 'bark')
+dog.speak()
+</code></pre>
+<p>``</p>
+<h3 id="方法的重写"><a class="header" href="#方法的重写">方法的重写</a></h3>
+<p>有时候，子类需要对父类的行为（方法）进行修改，这叫做<code>重写(Override)</code>。</p>
+<pre><code class="language-python">class Cat(Animal):
+
+	def speak(self):
+		print(f&quot;{self.sound}, {self.sound}&quot;)	
+</code></pre>
+<p>重写之后，<code>Cat</code>的<code>speak</code>方法与父类已经完全不一样了</p>
+<pre><code class="language-python">cat = Cat(&quot;Garfield&quot;, 'Meow~')
+cat.speak()
+
+# 打印结果为：Meow~, Meow~
+</code></pre>
+<p>重写可以针对父类的所有资源：</p>
+<pre><code class="language-python">class Cat(Animal):
+
+	def __init__(self, color):
+		self.color = color
+
+	def speak(self):
+		print(f&quot;{self.sound}, {self.sound}&quot;)
+</code></pre>
+<p>对于上面的继承方式，<code>Cat</code>类放弃了父类的两个属性<code>name</code>和<code>sound</code>, 这样一来，<code>Cat</code>类里的<code>speak</code>方法就不能被成功调用。</p>
+<p>如果在重写时想要保留父类原有的功能或属性，需要用到<code>super</code>关键字。</p>
+<pre><code class="language-python">class Cat(Animal):
+
+	def __init__(self, name, sound, color):
+		super().__init__(name, sound)
+		self.color = color
+
+	def speak(self):
+		super().speak()
+		print(f&quot;{self.sound}, {self.sound}&quot;)
+</code></pre>
+<p><strong>方法的重写需要特别注意两个点：</strong></p>
+<ol>
+<li>重写时，需要完全继承父类方法，super()的<code>.</code>之后的名字要写正确。</li>
+<li>不要忘记需要带入的参数，以及传值顺序。</li>
+</ol>
+<p>完整的例子如下：</p>
+<pre><code class="language-python">class Animal:
+
+    def __init__(self, name, sound):
+        self.name = name
+        self.sound = sound
+
+    def speak(self):
+        print(f&quot;{self.name} makes a {self.sound} sound.&quot;)
+
+    def run(self):
+        print(&quot;I am running.&quot;)
+
+    def eat(self, food):
+        print(f&quot;I am eating {food}.&quot;)
+
+
+class Cat(Animal):
+    
+    def __init__(self, name, sound, color):
+	super().__init__(name, sound)
+	self.color = color
+
+    def speak(self):
+	super().speak()
+	print(f&quot;{self.sound}, {self.sound}&quot;)
+    
+    def eat(self, food):
+        super().run()
+        print(&quot;Clean my face and hand&quot;)
+        super().eat(food)
+        print(&quot;Drink water.&quot;)
+</code></pre>
+<h2 id="多继承"><a class="header" href="#多继承">多继承</a></h2>
+<p>多继承指的是一个类可以从多个父类继承属性和方法。</p>
+<p>多继承的语法为：</p>
+<pre><code class="language-python">class ChildClass(ParentClass1, ParentClass2, ...):
+	pass
+</code></pre>
+<p>下面是一个全新的<code>动物类</code></p>
+<pre><code class="language-python">class Animal:
+
+	def alive(self):
+		print(&quot;I am alive&quot;)
+
+	def eat(self, food):
+		print(&quot;I must eat to be alive.&quot;)
+
+</code></pre>
+<p>然后创建一个<code>鸟类</code>:</p>
+<pre><code class="language-python">class Bird:
+
+	def __init__(self):
+		self.wings = 2
+		self.legs = 2
+
+	def fly(self):
+		print(&quot;I can fly.&quot;)
+</code></pre>
+<p>对于小鸡，它既是动物又是鸟类，所以它可以多继承上面两个父类</p>
+<pre><code class="language-python">
+class Chicken(Animal, Bird):
+	pass
+</code></pre>
+<p>在多继承的过程中，如果需要在重写或者扩展函数时，需要用<code>super</code>关键字来调用父类的方法，与单继承类似，但是需要特别注意，如果两个父类有同名方法，要掌握 <code>MRO</code> 的查找逻辑。</p>
+<h3 id="mromethod-resolution-order"><a class="header" href="#mromethod-resolution-order">MRO(Method Resolution Order)</a></h3>
+<p>当子类调用方法时，Python 会按照<code>MRO</code>中的顺序去查找方法，这样可以保证类的层次结构的正确性。</p>
+<p><strong><code>MRO</code>的规则</strong>:</p>
+<ol>
+<li>深度优先： Python 首先会从左到右查找父类</li>
+<li>从子类开始：搜索是从当前类开始的，如果当前类没有该方法或属性，就查找父类</li>
+</ol>
+<p>在实例应用中，如果对这个顺序不清楚，可以调用<code>mro()</code>或 <code>__mro__</code>查看 MRO顺序</p>
+<pre><code class="language-python">print(Chicken.__mro__)
+
+# 打印结果为： (&lt;class '__main__.Chicken'&gt;, &lt;class '__main__.Animal'&gt;, &lt;class '__main__.Bird'&gt;, &lt;class 'object'&gt;)
+</code></pre>
+<p>如果多继承中的多个父类有同名方法的情况，就需要<code>MRO</code>机制来确定最终执行的是哪个类里的方法：</p>
+<pre><code class="language-python">class A:
+	def speak(self):
+		print('A is speaking.')
+
+class B:
+	def speak(self):
+		print('B is speaking.')
+
+class C(A, B):
+	pass
+
+c = C()
+c.speak()
+
+#打印结果： A is speaking.
+</code></pre>
+<p>如果需要手动改变顺序，也就是说需要强制让子类重写父类里的重名方法，并且不按照<code>MRO</code>规则调用，需要特别写明父类的名字的调用，并且要传递参数<code>self</code>， 这种调用叫做显式<code>Explicit</code>调用：</p>
+<pre><code class="language-python">class C(A, B):
+	def speak(self):
+		B.speak(self)
+		A.speak(self)
+</code></pre>
+<h4 id="钻石继承问题diamond-problem"><a class="header" href="#钻石继承问题diamond-problem">钻石继承问题（Diamond Problem）</a></h4>
+<p>在多继承中，如果一个类继承了两个父类，而这个父类又继承自同一个祖先类，可能会遇到所谓的钻石继承问题:</p>
+<pre><code class="language-python"># 祖先类 A
+class A:
+    def speak(self):
+        print('A is speaking.')
+
+# 父类 B
+class B(A):
+    def speak(self):
+        super().speak()
+        print('B is speaking.')
+
+# 父类 C
+class C(A):
+    def speak(self):
+        super().speak()
+        print('C is speaking.')
+
+# 子类 D
+class D(B, C):
+    def speak(self):
+        super().speak()
+        print('D is speaking.')
+
+
+print(D.__mro__)
+
+d = D()
+d.speak()
+
+&quot;&quot;&quot;
+执行结果为：
+A is speaking.
+C is speaking.
+B is speaking.
+D is speaking.
+&quot;&quot;&quot;
+</code></pre>
+<h2 id="练习"><a class="header" href="#练习">练习</a></h2>
+<p><img src="WechatIMG164.jpg" alt="练习1" /></p>
+<pre><code class="language-python">class Student:
+
+    def __init__(self, name, scores):
+        self.name = name
+        self.scores = scores
+
+
+class Scholar(Student):
+
+    def average_score(self):
+        return sum(self.scores)/len(self.scores)
+
+
+scholar = Scholar('Jack', [100, 98, 92, 97, 99])
+print(scholar.average_score())
+</code></pre>
+<p><img src="WechatIMG165.jpg" alt="习题2" /></p>
+<pre><code class="language-python">class Student:
+
+    def __init__(self, name, scores):
+        self.name = name
+        self.scores = scores
+
+
+class AdvancedStudent(Student):
+
+    def average_score(self):
+        return sum(self.scores)/len(self.scores)
+
+class Scholar(AdvancedStudent):
+
+    def average_score(self):
+        return (sum(self.scores)-min(self.scores))/(len(self.scores)-1)
+
+scholar = Scholar('Jack', [100, 98, 92, 97, 99])
+print(scholar.average_score())
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../26.面向对象编程/类和对象.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../26.面向对象编程/自定义异常.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../26.面向对象编程/类和对象.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../26.面向对象编程/自定义异常.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

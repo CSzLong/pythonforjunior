@@ -1,0 +1,512 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>海龟画图-第一部分 - Python 教程 for Junior</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">简介</a></li><li class="chapter-item expanded "><a href="../00.引言/引言.html"><strong aria-hidden="true">1.</strong> Python 初识</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../00.引言/引言.html"><strong aria-hidden="true">1.1.</strong> 引言</a></li><li class="chapter-item expanded "><a href="../01.Python简介/Python简介.html"><strong aria-hidden="true">1.2.</strong> Python简介</a></li><li class="chapter-item expanded "><a href="../02.HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.3.</strong> hello, world</a></li></ol></li><li class="chapter-item expanded "><a href="../03.类型和变量/类型和变量.html"><strong aria-hidden="true">2.</strong> 一级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03.类型和变量/类型和变量.html"><strong aria-hidden="true">2.1.</strong> 类型和变量</a></li><li class="chapter-item expanded "><a href="../04.运算符和表达式/运算符和表达式.html"><strong aria-hidden="true">2.2.</strong> 运算符和表达式</a></li><li class="chapter-item expanded "><a href="../05.位运算/位运算.html"><strong aria-hidden="true">2.3.</strong> 位运算</a></li><li class="chapter-item expanded "><a href="../06.常用内建函数/常用内建函数.html"><strong aria-hidden="true">2.4.</strong> 常用内建函数</a></li><li class="chapter-item expanded "><a href="../07.海龟画图/海龟画图一.html" class="active"><strong aria-hidden="true">2.5.</strong> 海龟画图-第一部分</a></li><li class="chapter-item expanded "><a href="../07.海龟画图/海龟画图二.html"><strong aria-hidden="true">2.6.</strong> 海龟画图-第二部分</a></li></ol></li><li class="chapter-item expanded "><a href="../08.选择结构/三大结构.html"><strong aria-hidden="true">3.</strong> 二级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.选择结构/三大结构.html"><strong aria-hidden="true">3.1.</strong> 三大结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.选择结构/选择结构.html"><strong aria-hidden="true">3.1.1.</strong> 选择结构</a></li><li class="chapter-item expanded "><a href="../09.循环结构/循环结构.html"><strong aria-hidden="true">3.1.2.</strong> 循环结构</a></li></ol></li><li class="chapter-item expanded "><a href="../10.高级数据类型/高级数据类型.html"><strong aria-hidden="true">3.2.</strong> 高级数据结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../11.字符串/字符串.html"><strong aria-hidden="true">3.2.1.</strong> 字符串</a></li><li class="chapter-item expanded "><a href="../12.列表/列表.html"><strong aria-hidden="true">3.2.2.</strong> 列表</a></li><li class="chapter-item expanded "><a href="../13.元组/元组.html"><strong aria-hidden="true">3.2.3.</strong> 元组</a></li><li class="chapter-item expanded "><a href="../14.集合/集合.html"><strong aria-hidden="true">3.2.4.</strong> 集合</a></li><li class="chapter-item expanded "><a href="../15.字典/字典.html"><strong aria-hidden="true">3.2.5.</strong> 字典</a></li></ol></li><li class="chapter-item expanded "><a href="../16.推导式与函数/推导式与函数.html"><strong aria-hidden="true">3.3.</strong> 推导式与函数</a></li></ol></li><li class="chapter-item expanded "><a href="../18.内置函数/内置函数.html"><strong aria-hidden="true">4.</strong> 三级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../18.内置函数/内置函数.html"><strong aria-hidden="true">4.1.</strong> 内置函数</a></li><li class="chapter-item expanded "><a href="../19.文件读写/文件读写.html"><strong aria-hidden="true">4.2.</strong> 文件读写</a></li><li class="chapter-item expanded "><a href="../20.进制转换/进制转换.html"><strong aria-hidden="true">4.3.</strong> 进制转换</a></li><li class="chapter-item expanded "><a href="../21.异常处理/异常处理.html"><strong aria-hidden="true">4.4.</strong> 异常处理</a></li><li class="chapter-item expanded "><a href="../22.排序算法/排序算法.html"><strong aria-hidden="true">4.5.</strong> 排序算法</a></li><li class="chapter-item expanded "><a href="../23.二分法查找/二分法查找.html"><strong aria-hidden="true">4.6.</strong> 二分法查找</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/内建模块.html"><strong aria-hidden="true">4.7.</strong> 常用内建模块</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../25.常用内建模块/内建模块.html"><strong aria-hidden="true">4.7.1.</strong> 内建模块</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/math.html"><strong aria-hidden="true">4.7.2.</strong> math</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/time.html"><strong aria-hidden="true">4.7.3.</strong> time</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/os.html"><strong aria-hidden="true">4.7.4.</strong> os</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.</strong> 高级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.1.</strong> 面向对象编程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.1.1.</strong> 类和对象</a></li><li class="chapter-item expanded "><a href="../26.面向对象编程/类的继承.html"><strong aria-hidden="true">5.1.2.</strong> 类的继承</a></li><li class="chapter-item expanded "><a href="../26.面向对象编程/自定义异常.html"><strong aria-hidden="true">5.1.3.</strong> 自定义异常</a></li></ol></li><li class="chapter-item expanded "><a href="../27.模块和包/模块.html"><strong aria-hidden="true">5.2.</strong> 模块、包</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../27.模块和包/模块.html"><strong aria-hidden="true">5.2.1.</strong> 模块</a></li><li class="chapter-item expanded "><a href="../27.模块和包/包.html"><strong aria-hidden="true">5.2.2.</strong> 包</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../Exam/习题.html"><strong aria-hidden="true">6.</strong> 习题</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Exam/习题.html"><strong aria-hidden="true">6.1.</strong> 习题1</a></li><li class="chapter-item expanded "><a href="../Exam/习题2.html"><strong aria-hidden="true">6.2.</strong> 习题2</a></li><li class="chapter-item expanded "><a href="../Exam/习题3.html"><strong aria-hidden="true">6.3.</strong> 习题3</a></li><li class="chapter-item expanded "><a href="../Exam/习题4.html"><strong aria-hidden="true">6.4.</strong> 习题4</a></li></ol></li><li class="chapter-item expanded "><a href="../进制转换.html">进制转换</a></li><li class="chapter-item expanded affix "><a href="../附录/appendix.html">附录</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Python 教程 for Junior</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="海龟画图-第一部分"><a class="header" href="#海龟画图-第一部分">海龟画图-第一部分</a></h1>
+<p>海龟画图(Turtle Graphics)是<code>Python</code>的内建模块，它移植于LOGO语言，这门语言是在1967年由Seymour Papert， Wally Feurzig和Cynthia Solomon 为了专门给儿童学习编程发明出来的，它的特色就是通过编程指挥一个小海龟（Turtle） 在屏幕上绘图。<br>
+在 Python 中，海龟绘图提供了一个实体“海龟”形象（带有画笔的小机器动物），假定它在地板上平铺的纸张上画出线条形成各种图形。</p>
+<p>我们先通过下面简单代码对海龟画图有个初步认识</p>
+<pre><code class="language-Python">import turtle as t
+
+&quot;&quot;&quot;
+author: 孙老师
+功能: 画一个正方形
+&quot;&quot;&quot;
+
+t.pensize(3)
+
+t.pencolor(&quot;red&quot;)
+t.forward(100)
+t.left(90)
+
+t.pencolor(&quot;green&quot;)
+t.forward(100)
+t.left(90)
+
+t.pencolor(&quot;orange&quot;)
+t.forward(100)
+t.left(90)
+
+t.pencolor(&quot;blue&quot;)
+t.forward(100)
+t.left(90)
+</code></pre>
+<p>运行上述代码之后，弹出绘画窗口，并画出一个正方形：</p>
+<div align="center">
+<img name="square" src="./images/square.png" width="350"/>
+</div>
+<!--![square](./images/rectangle.png)-->
+<h2 id="导入模块"><a class="header" href="#导入模块">导入模块</a></h2>
+<p>由于<code>turtle</code>是<code>Python</code>中的内置模块，在使用之前需要先用<code>import</code>关键字来导入，导入模块有三个方式：</p>
+<pre><code class="language-Python"># 方式1：导入模块
+import turtle
+# 方式2：导入模块并起一个别名
+import turtle as t
+# 方式3：批量导入资源
+from turtle import *
+</code></pre>
+<ul>
+<li>使用第一种方式时，在调用模块中的资源时，用<code>turtle.</code>的方式即可，例如<code>turtle.forward(100)</code>。</li>
+<li>使用第二种方式时，在调用模块中的资源时，用<code>t.</code>的方式即可，例如<code>t.forward(100)</code>。</li>
+<li>使用第三种方式时，可以直接用资源的名字调用，不需要加任何前缀，例如<code>forward(100)</code>。</li>
+</ul>
+<p><strong>这里我们建议用第二种方式；不建议用第一种方式的原因是有些模块的名字会很长，在编写代码时应用起来不太方便；而对于第三种方式而言，需要特别注意不要从不同模块导入有相同名字的资源，也不要编写同名的自定义函数，所以在初期学习阶段并不建议。</strong></p>
+<h2 id="海龟的属性"><a class="header" href="#海龟的属性">海龟的属性</a></h2>
+<p>在让海龟画图之前，首先要了解海龟的三个属性，分别为：<em><strong>位置</strong></em>、<em><strong>方向</strong></em>和<em><strong>颜色</strong></em>。</p>
+<h3 id="位置"><a class="header" href="#位置">位置</a></h3>
+<p>在Python中，海龟的位置是由<code>x</code>和<code>y</code>两个信息组成的，它们分别表示海龟横纵坐标。我们以画布的最中心点为原点，分别在水平和垂直的方向画两条线，这样就画出类似于数学中的平面坐标系，如下图：</p>
+<div align="center">
+<img name="coord" src="./images/coord.png" width="350">
+</div>
+<!--![coord](./images/coord.png)-->
+<p>平面坐标系把整个画布分成了四个部分，也叫四个象限：</p>
+<ul>
+<li>第一象限：位于坐标系的右上，<code>x</code>和<code>y</code>的值均为正数；</li>
+<li>第二象限：位于坐标系的左上，<code>x</code>为负数，<code>y</code>为正数；</li>
+<li>第三象限：位于坐标系的左下，<code>x</code>和<code>y</code>的值均为负数；</li>
+<li>第四象限：位于坐标系的左上，<code>x</code>为正数，<code>y</code>为负数。</li>
+</ul>
+<p>坐标的表示方式为<code>(x,y)</code>，如<code>(100,100)</code>、<code>(-43,32)</code>等。</p>
+<h3 id="方向"><a class="header" href="#方向">方向</a></h3>
+<p>这里提到的方向指的就是<strong>绝对方向</strong>：</p>
+<ul>
+<li>0°：水平向右</li>
+<li>90°：垂直向上</li>
+<li>180°：水平向左</li>
+<li>270°：垂直向下</li>
+</ul>
+<p>即，只要当海龟的箭头指向水平向左，那边它的绝对方向就是<code>180°</code>。</p>
+<div align="center">
+<img name="direction" src="./images/direction.png" width="350">
+</div>
+<!--![direction](./images/direction.png)-->
+<p>需要提醒的是，水平向右的绝对方向为<code>0°</code>是模块中默认的情况，我们可以调用<code>mode()</code>函数来设置垂直向上的绝对方向为<code>0°</code>。请查看<a href="../%E9%99%84%E5%BD%95/appendix.html#%E6%B5%B7%E9%BE%9F%E7%9A%84%E7%BB%9D%E5%AF%B9%E9%9B%B6%E5%BA%A6">海龟的绝对零度</a>进行详细的学习，我们在学习本章过程中以默认的情况为主。</p>
+<h3 id="颜色"><a class="header" href="#颜色">颜色</a></h3>
+<p>海龟的颜色分为画笔颜色和填充颜色，画笔颜色决定海龟在画图时线条的颜色，而当海龟在绘制之后，会形成一个平面图形，如果调用了填充函数，会给这个平面图形填充颜色，那么海龟的填充颜色影响的就是这个平面图形内的颜色。</p>
+<p>如下图所示，在绘制完等边三角形之后，我们将海龟称动到了坐标为<code>(100, 100)</code>的位置，可以很清楚看到，海龟的外面一圈为<code>红色</code>， 而内部为<code>绿色</code>，这里外面的一圈就是画笔颜色，内部为填充颜色。所以，这只海龟所绘制的等边三角形的线条为<code>红色</code>，而内部填充的为<code>绿色</code>：</p>
+<div align="center">
+<img name="colors" src="./images/colors.png" width="350">
+</div>
+<!--![colors](./images/colors.png)-->
+<h2 id="海龟和它的分身"><a class="header" href="#海龟和它的分身">海龟和它的分身</a></h2>
+<p>在导入海龟之后，可以直接让海龟去画图，如下:</p>
+<pre><code class="language-python">import turtle as t
+t.circle(100)
+</code></pre>
+<p>这里我们直接用的模块的别名<code>t</code>来画的这个图形；除此之外，也可以用<code>Pen()</code>函数给海龟创建一个影分身来作画。调用这个函数时不需要传递任何参数，并且要注意第一个字母<code>P</code>要大写：</p>
+<pre><code class="language-Python">import turtle as t
+p1 = t.Pen()
+p2 = t.Pen()
+
+p1.pu()
+p1.goto(100,100)
+p1.pd()
+
+p2.pu()
+p2.goto(-100,100)
+p2.pd()
+
+t.showturtle()
+</code></pre>
+<div align="center">
+<img name="pen" src="./images/pen.png" width="350">
+</div>
+<!--![pen](./images/pen.png)-->
+<p>在创建了分身之后，并不影响我们继续使用别名<code>t</code>去调用海龟的函数让他作画，在上述代码中，我们在创建好两个影分身并移动它们之后，调用了<code>showturtle()</code>函数让海龟本体也显示出来了，此时可以进行绘画的画笔就有了三个。</p>
+<h2 id="让海龟去画图一"><a class="header" href="#让海龟去画图一">让海龟去画图(一)</a></h2>
+<p>所谓的海龟画图，就是能用调用海龟画图模块<code>turtle</code>的函数，让小海龟在画布上移动画出线条，形成平面图形的过程。所以我们需要掌握主要内容就是如何去调用<code>turtle</code>模块的函数。</br></p>
+<p>我们可以根据海龟的属性将海龟的功能分为几个不同的类型：</p>
+<p><em><strong>方向</strong></em></p>
+<table><thead><tr><th align="left">函数名</th><th align="left">功能</th></tr></thead><tbody>
+<tr><td align="left"><code>setheading()</code>,<code>seth()</code></td><td align="left">设置海龟的绝对方向</td></tr>
+<tr><td align="left"><code>left()</code>,<code>lt()</code></td><td align="left">向左转动海龟，改变其方向</td></tr>
+<tr><td align="left"><code>right()</code>,<code>rt()</code></td><td align="left">向右转动海龟，改变其方向</td></tr>
+</tbody></table>
+<p><em><strong>位置</strong></em></p>
+<table><thead><tr><th align="left">函数名</th><th align="left">功能</th></tr></thead><tbody>
+<tr><td align="left"><code>dot()</code></td><td align="left">画出一个点</td></tr>
+<tr><td align="left"><code>goto()</code>,<code>setpos()</code>,<code>setposition()</code></td><td align="left">设置海龟的坐标，让海龟从当前位置直接移动到指定坐标</td></tr>
+<tr><td align="left"><code>pos()</code>,<code>position()</code></td><td align="left">获取当前海龟的坐标</td></tr>
+<tr><td align="left"><code>up()</code>, <code>penup()</code>, <code>pu()</code></td><td align="left">抬笔，海龟移动时不会留下痕迹</td></tr>
+<tr><td align="left"><code>down()</code>, <code>pendown()</code>, <code>pd()</code></td><td align="left">落笔，海龟移动时会留下痕迹</td></tr>
+<tr><td align="left"><code>forward()</code>, <code>fd()</code></td><td align="left">延着海龟面对的方向向前移动</td></tr>
+<tr><td align="left"><code>backward()</code>, <code>bk()</code></td><td align="left">背对海龟面对的方向移动</td></tr>
+<tr><td align="left"><code>circle()</code></td><td align="left">让海龟画圆或者画一段弧线，也可以画出正多边形</td></tr>
+<tr><td align="left"><code>home()</code></td><td align="left">让海龟的位置回到(0,0)坐标</td></tr>
+</tbody></table>
+<p><em><strong>颜色</strong></em></p>
+<table><thead><tr><th align="left">函数名</th><th align="left">功能</th></tr></thead><tbody>
+<tr><td align="left"><code>pencolor()</code></td><td align="left">改变画笔的颜色</td></tr>
+<tr><td align="left"><code>fillcolor()</code></td><td align="left">设置填充颜色</td></tr>
+<tr><td align="left"><code>begin_fill()</code></td><td align="left">开始填充</td></tr>
+<tr><td align="left"><code>end_fill()</code></td><td align="left">结束填充</td></tr>
+<tr><td align="left"><code>color()</code></td><td align="left">改变画笔和填充颜色</td></tr>
+<tr><td align="left"><code>bgcolor()</code></td><td align="left">改变画布的背景颜色</td></tr>
+</tbody></table>
+<p><em><strong>画笔与画布控制</strong></em></p>
+<table><thead><tr><th align="left">函数名</th><th align="left">功能</th></tr></thead><tbody>
+<tr><td align="left"><code>setup()</code></td><td align="left">设置主窗口的尺寸和位置</td></tr>
+<tr><td align="left"><code>speed()</code></td><td align="left">改变海龟画图的速度</td></tr>
+<tr><td align="left"><code>pensize()</code></td><td align="left">改变画笔的大小，单位为像素</td></tr>
+<tr><td align="left"><code>hideturtle()</code>, <code>ht()</code></td><td align="left">隐藏画笔</td></tr>
+<tr><td align="left"><code>showturtle()</code>, <code>st()</code></td><td align="left">显示画笔</td></tr>
+<tr><td align="left"><code>reset()</code></td><td align="left">重置海龟的状态，并清除画布</td></tr>
+</tbody></table>
+<p>下面我们对每个函数逐一介绍：</p>
+<h3 id="改变海龟的方向"><a class="header" href="#改变海龟的方向">改变海龟的方向</a></h3>
+<p>我们可以从<code>相对</code>和<code>绝对</code>两个概念去改变海龟的方向：</p>
+<h4 id="设置绝对方向"><a class="header" href="#设置绝对方向">设置绝对方向</a></h4>
+<p>可以调用<code>setheading()</code>函数来改变海龟的绝对方向，这个函数接收一个数值型的值；<code>seth()</code>是<code>setheading()</code>的简写，二者用其一即可。</br>
+海龟的初始方向为<code>0°</code>,调用了<code>setheading(45)</code>之后，海龟的方向就会变成<code>45°</code>。</p>
+<pre><code class="language-python">import turtle as t
+t.seth(45)
+</code></pre>
+<div align="center">
+<img name="seth" src="./images/seth.png" width="350">
+</div>
+<!--![seth](./images/seth.png)-->
+<h4 id="向左转left和向右转right"><a class="header" href="#向左转left和向右转right">向左转<code>left()</code>和向右转<code>right()</code></a></h4>
+<p>让海龟向左或向右转，都是基于当前的方向，所以这种方向的改变是相对的，如果当前海龟的绝对方向为<code>45°</code>，向左转了<code>90°</code>之后，绝对方向就变成了<code>135°</code>：</p>
+<pre><code class="language-python">import turtle as t
+t.seth(45)
+t.left(90)
+</code></pre>
+<div align="center">
+<img name="left" src="./images/left.png" width="350">
+</div>
+<!--![left](./images/left.png)-->
+<p><code>right()</code>同理。两个函数都接收数值型参数。</p>
+<h3 id="对海龟位置的操作"><a class="header" href="#对海龟位置的操作">对海龟位置的操作</a></h3>
+<h4 id="在画布上画上一个点-dot"><a class="header" href="#在画布上画上一个点-dot">在画布上画上一个点 <code>dot()</code></a></h4>
+<p><code>dot()</code>函数可以让海龟在画布上画上一个点，它有两个参数<code>size</code>和<code>color</code>:</p>
+<ul>
+<li><code>size</code> 表示点的粗细，如果没给定一个值，那么画出的点的粗细取<code>pensize*2</code>和<code>pensize+4</code>之间的最大值。</li>
+<li><code>color</code>表示点的颜色，传参数的要求和<code>pencolor</code>一下致。</li>
+</ul>
+<pre><code class="language-python">import turtle as t
+p = t.Pen()
+p.pu()
+p.goto(100, 100)
+p.pd()
+p.pensize(10)
+p.dot()
+t.dot(20, 'red')
+</code></pre>
+<div align="center">
+<img name="dot" src="./images/dot.png" width="350">
+</div>
+<!--![dot](./images/dot.png)-->
+<h4 id="让海龟直接移动指定位置"><a class="header" href="#让海龟直接移动指定位置">让海龟直接移动指定位置</a></h4>
+<p>在本章节的<code>海龟的属性-位置</code>部分介绍了画布的四个象限的分配情况，以及如何根据坐标来表达海龟在画布中的位置，基于对这两个知识点的理解，我们可以调用<code>goto()</code>,<code>setpos()</code>,<code>setposition()</code>这三个函数改移到海龟到指定的坐标位置，这三个函数实现在的功能是一样的，调用时都需要传递两个参数<code>x</code>和<code>y</code>，分别代表目标坐标的横纵坐标；我们这里介绍其中的<code>goto()</code>即可：</p>
+<pre><code class="language-python">import turtle as t
+t.goto(100, 100)
+</code></pre>
+<div align="center">
+<img name="goto" src="./images/goto.png" width="350">
+</div>
+<!--![goto](./images/goto.png)-->
+<p>除了<code>goto()</code>之外，也可以调用<code>setx()</code>和<code>sety()</code>来单独设置海龟的横、纵坐标，这两个函数都只需要传入一上数值型参数即可。</p>
+<h4 id="抬笔与落笔"><a class="header" href="#抬笔与落笔">抬笔与落笔</a></h4>
+<p>我们已经发现，海龟在画布上移动会画出线条，但是有些线条并不是想要画出图形的一部分，这时我们可以调用抬笔功能，当海龟移动到指定位置后，再调用落笔功能继续作画：</p>
+<ul>
+<li><code>penup()、pu()、up()</code> 抬笔，三个函数功能一致，无参数。</li>
+<li><code>pendown()、pd()、down()</code>落笔，三个函数功能一致，无参数。</li>
+</ul>
+<pre><code class="language-python">import turtle as t
+t.goto(100, 100)
+t.pu()
+t.goto(-100, 100)
+t.pd()
+t.goto(-100, 0)
+</code></pre>
+<div align="center">
+<img name="pupd" src="./images/pupd.png" width="350">
+</div>
+<h4 id="获取海龟的位置"><a class="header" href="#获取海龟的位置">获取海龟的位置</a></h4>
+<p><code>pos()</code>或<code>position()</code>函数可以返回当前海龟所在位置的坐标：</p>
+<pre><code class="language-python">import turtle as t
+p = t.position()
+print(p)
+</code></pre>
+<p>执行上述代码之后，print函数会在终端打印如下内容：</p>
+<pre><code class="language-python">(0.00,0.00)
+</code></pre>
+<h4 id="前进-forward--后退-backward"><a class="header" href="#前进-forward--后退-backward">前进 forward , 后退 backward</a></h4>
+<p>我们可以用<code>forward()</code>和<code>backward()</code>函数控制海龟前进和后退，这两个函数都要求在被调用时传入一个数值型的参数，表示海龟前进或者后退的距离。<br/>
+需要特别注意的是，海龟的移动受到两个因素的影响：海龟的方向和传入参数的正负。</p>
+<pre><code class="language-python">import turtle as t
+p1 = t.Pen()
+p2 = t.Pen()
+p3 = t.Pen()
+p4 = t.Pen()
+
+p1.pu()
+p1.goto(0, 200)
+p1.pd()
+p1.forward(100)
+p1.write(&quot;p1&quot;, font=('Arial', 18))
+
+p2.pu()
+p2.goto(0, 100)
+p2.pd()
+p2.forward(-100)
+p2.write(&quot;p2&quot;, font=('Arial', 18))
+
+p3.pu()
+p3.goto(0, -100)
+p3.pd()
+p3.backward(100)
+p3.write(&quot;p3&quot;, font=('Arial', 18))
+
+p4.pu()
+p4.goto(0, -200)
+p4.pd()
+p4.backward(-100)
+p4.write(&quot;p4&quot;, font=('Arial', 18))
+</code></pre>
+<div align="center">
+<img name="fdbk" src="./images/fdbk.png" width="350">
+</div>
+<!--![fdbk](./images/fdbk.png)-->
+<h4 id="画出一个圆弧"><a class="header" href="#画出一个圆弧">画出一个圆弧</a></h4>
+<p><code>circle</code>是海龟画图模块中较复杂的一个函数，它可以画布上画出圆弧，在<code>turtle</code>模块中的定义如下：</p>
+<pre><code class="language-python">circle(radius, extent=None, steps=None)
+</code></pre>
+<p>这三个参数分别为：</p>
+<ul>
+<li><code>radius</code> -- 一个数值</li>
+<li><code>extent</code> -- 一个数值 (或 <code>None</code>)</li>
+<li><code>steps</code> -- 一个整型数 (或 <code>None</code>)</li>
+</ul>
+<p>这个函数的功能为绘制一个<code>radius</code>指定半径的圆。圆心在海龟左边<code>radius</code>个单位；<code>extent</code>为一个夹角，用来决定绘制圆的一部分。如未指定 <code>extent</code>则绘制整个圆。如果<code>extent</code>不是完整圆周，则以当前画笔位置为一个端点绘制圆弧。如果<code>radius</code>为正值则朝逆时针方向绘制圆弧，否则朝顺时针方向。最终海龟的朝向会依据<code>extent</code>的值而改变。</p>
+<p>圆实际是以其内切正多边形来近似表示的，其边的数量由<code>steps</code>指定。如果未指定边数则会自动确定为一个弧度为<code>extent</code>的圆弧。在指定了<code>steps</code>之后，海龟会将该圆弧内切成<code>steps</code>条连接的等长线段，如果该圆弧为一个完整的圆，那么绘制出来的则为一个正<code>steps</code>边形。</p>
+<p>调用这个函数会复杂一些，这里建议同学可以回到常用内建函数一章中的<a href="../06.%E5%B8%B8%E7%94%A8%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0/%E5%B8%B8%E7%94%A8%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0.html#%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0">函数的参数</a>部分进行复习。</p>
+<ul>
+<li><strong>画出完整的圆：</strong></li>
+</ul>
+<pre><code class="language-python">import turtle as t
+t.circle(80)
+t.circle(-100)
+</code></pre>
+<div align="center">
+<img name="circle" src="./images/circle.png" width="350">
+</div>
+<p>如上图，首先我们可以根据海龟所在的位置可以判断，海龟是沿着圆的弧线移动画出的圆，其次，根据上面代码，第一个圆的半径是正数，那么画完之后，它位于海龟的左侧，另一个圆的半径为负数，那么这个圆位于了海龟的右侧。</p>
+<ul>
+<li><strong>画出一段圆弧</strong></li>
+</ul>
+<pre><code class="language-python">import turtle as t
+t.circle(100, 90) #或者 t.circle(100, extent=90)
+</code></pre>
+<div align="center">
+<img name="extent" src="./images/extent.png" width="350">
+</div>
+<p><strong>在一段画圆弧时，海龟的方向会随着移动而发生改变的，只有当所画的圆弧正好为一个完整的圆时，海龟才会回到画弧之前所面对的方向。</strong></p>
+<ul>
+<li><strong>内切圆弧</strong></li>
+</ul>
+<pre><code class="language-python">import turtle as t
+t.circle(100, 120, 3)
+</code></pre>
+<div align="center">
+<img name="it" src="./images/internally_tangent.png" width="350">
+</div>
+<p>结合代码，我们可以从上图中观察到，海龟在<code>120</code>度的圆弧均匀地点了<code>3</code>个点，在将相临的两点连接之后，把外面的圆弧给舍弃了，最后保留了三个等长的线段。所以基于这一特点，我们可以在完整的圆内内切出正多边形。</p>
+<pre><code class="language-python">import turtle as t
+t.circle(100, None, 5) # 或者 t.circle(100, steps=5)
+</code></pre>
+<div align="center">
+<img name="polygon" src="./images/polygon.png" width="350">
+</div>
+<p>可以通过改变海龟的绝对方向和半径的正负来改变出正多边形的方向，大家可以自行尝试下列代码：</p>
+<pre><code class="language-python">import turtle as t
+t.circle(-100, None, 5) # 或者 t.circle(-100, steps=5)
+</code></pre>
+<pre><code class="language-python">import turtle as t
+t.seth(60)
+t.circle(-100, None, 5) # 或者 t.circle(-100, steps=5)
+</code></pre>
+<h4 id="回归原点"><a class="header" href="#回归原点">回归原点</a></h4>
+<p>当海龟移动到原点之外的其它位置之后，我们可以调用<code>home()</code>函数让海龟立即回到原点位置，并重置它的绝对方向为初始方向，调用这个函数不需要传递参数。</p>
+<pre><code class="language-python">import turtle as t
+t.circle(100, 120)
+t.home()
+</code></pre>
+<div align="center">
+<img name="home" src="./images/home.png" width="350">
+</div>
+<p>如果直接调用<code>goto(0, 0)</code>，也可以回归到原点，但是它的绝对方向不会被重置，继续保持回归前一刻所面对的方向。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../06.常用内建函数/常用内建函数.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../07.海龟画图/海龟画图二.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../06.常用内建函数/常用内建函数.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../07.海龟画图/海龟画图二.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

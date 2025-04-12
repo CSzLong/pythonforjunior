@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>习题1 - Python 教程 for Junior</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">简介</a></li><li class="chapter-item expanded "><a href="../00.引言/引言.html"><strong aria-hidden="true">1.</strong> Python 初识</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../00.引言/引言.html"><strong aria-hidden="true">1.1.</strong> 引言</a></li><li class="chapter-item expanded "><a href="../01.Python简介/Python简介.html"><strong aria-hidden="true">1.2.</strong> Python简介</a></li><li class="chapter-item expanded "><a href="../02.HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.3.</strong> hello, world</a></li></ol></li><li class="chapter-item expanded "><a href="../03.类型和变量/类型和变量.html"><strong aria-hidden="true">2.</strong> 一级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03.类型和变量/类型和变量.html"><strong aria-hidden="true">2.1.</strong> 类型和变量</a></li><li class="chapter-item expanded "><a href="../04.运算符和表达式/运算符和表达式.html"><strong aria-hidden="true">2.2.</strong> 运算符和表达式</a></li><li class="chapter-item expanded "><a href="../05.位运算/位运算.html"><strong aria-hidden="true">2.3.</strong> 位运算</a></li><li class="chapter-item expanded "><a href="../06.常用内建函数/常用内建函数.html"><strong aria-hidden="true">2.4.</strong> 常用内建函数</a></li><li class="chapter-item expanded "><a href="../07.海龟画图/海龟画图一.html"><strong aria-hidden="true">2.5.</strong> 海龟画图-第一部分</a></li><li class="chapter-item expanded "><a href="../07.海龟画图/海龟画图二.html"><strong aria-hidden="true">2.6.</strong> 海龟画图-第二部分</a></li></ol></li><li class="chapter-item expanded "><a href="../08.选择结构/三大结构.html"><strong aria-hidden="true">3.</strong> 二级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.选择结构/三大结构.html"><strong aria-hidden="true">3.1.</strong> 三大结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.选择结构/选择结构.html"><strong aria-hidden="true">3.1.1.</strong> 选择结构</a></li><li class="chapter-item expanded "><a href="../09.循环结构/循环结构.html"><strong aria-hidden="true">3.1.2.</strong> 循环结构</a></li></ol></li><li class="chapter-item expanded "><a href="../10.高级数据类型/高级数据类型.html"><strong aria-hidden="true">3.2.</strong> 高级数据结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../11.字符串/字符串.html"><strong aria-hidden="true">3.2.1.</strong> 字符串</a></li><li class="chapter-item expanded "><a href="../12.列表/列表.html"><strong aria-hidden="true">3.2.2.</strong> 列表</a></li><li class="chapter-item expanded "><a href="../13.元组/元组.html"><strong aria-hidden="true">3.2.3.</strong> 元组</a></li><li class="chapter-item expanded "><a href="../14.集合/集合.html"><strong aria-hidden="true">3.2.4.</strong> 集合</a></li><li class="chapter-item expanded "><a href="../15.字典/字典.html"><strong aria-hidden="true">3.2.5.</strong> 字典</a></li></ol></li><li class="chapter-item expanded "><a href="../16.推导式与函数/推导式与函数.html"><strong aria-hidden="true">3.3.</strong> 推导式与函数</a></li></ol></li><li class="chapter-item expanded "><a href="../18.内置函数/内置函数.html"><strong aria-hidden="true">4.</strong> 三级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../18.内置函数/内置函数.html"><strong aria-hidden="true">4.1.</strong> 内置函数</a></li><li class="chapter-item expanded "><a href="../19.文件读写/文件读写.html"><strong aria-hidden="true">4.2.</strong> 文件读写</a></li><li class="chapter-item expanded "><a href="../20.进制转换/进制转换.html"><strong aria-hidden="true">4.3.</strong> 进制转换</a></li><li class="chapter-item expanded "><a href="../21.异常处理/异常处理.html"><strong aria-hidden="true">4.4.</strong> 异常处理</a></li><li class="chapter-item expanded "><a href="../22.排序算法/排序算法.html"><strong aria-hidden="true">4.5.</strong> 排序算法</a></li><li class="chapter-item expanded "><a href="../23.二分法查找/二分法查找.html"><strong aria-hidden="true">4.6.</strong> 二分法查找</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/内建模块.html"><strong aria-hidden="true">4.7.</strong> 常用内建模块</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../25.常用内建模块/内建模块.html"><strong aria-hidden="true">4.7.1.</strong> 内建模块</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/math.html"><strong aria-hidden="true">4.7.2.</strong> math</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/time.html"><strong aria-hidden="true">4.7.3.</strong> time</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/os.html"><strong aria-hidden="true">4.7.4.</strong> os</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.</strong> 高级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.1.</strong> 面向对象编程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.1.1.</strong> 类和对象</a></li><li class="chapter-item expanded "><a href="../26.面向对象编程/类的继承.html"><strong aria-hidden="true">5.1.2.</strong> 类的继承</a></li><li class="chapter-item expanded "><a href="../26.面向对象编程/自定义异常.html"><strong aria-hidden="true">5.1.3.</strong> 自定义异常</a></li></ol></li><li class="chapter-item expanded "><a href="../27.模块和包/模块.html"><strong aria-hidden="true">5.2.</strong> 模块、包</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../27.模块和包/模块.html"><strong aria-hidden="true">5.2.1.</strong> 模块</a></li><li class="chapter-item expanded "><a href="../27.模块和包/包.html"><strong aria-hidden="true">5.2.2.</strong> 包</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../Exam/习题.html" class="active"><strong aria-hidden="true">6.</strong> 习题</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Exam/习题.html" class="active"><strong aria-hidden="true">6.1.</strong> 习题1</a></li><li class="chapter-item expanded "><a href="../Exam/习题2.html"><strong aria-hidden="true">6.2.</strong> 习题2</a></li><li class="chapter-item expanded "><a href="../Exam/习题3.html"><strong aria-hidden="true">6.3.</strong> 习题3</a></li><li class="chapter-item expanded "><a href="../Exam/习题4.html"><strong aria-hidden="true">6.4.</strong> 习题4</a></li></ol></li><li class="chapter-item expanded "><a href="../进制转换.html">进制转换</a></li><li class="chapter-item expanded affix "><a href="../附录/appendix.html">附录</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Python 教程 for Junior</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h3 id="一填空题fill-in-the-blanks"><a class="header" href="#一填空题fill-in-the-blanks"><strong>一、填空题（Fill in the Blanks）</strong></a></h3>
+<ol>
+<li>在 Python 中，<code>print(10 // 3)</code> 的结果是 <code>__3__</code>。</li>
+<li><code>list.append(x)</code> 方法的作用是将 <code>x</code> 添加到列表的 <code>__末尾（tail）__</code>。</li>
+<li>在 Python 中，<code>__def__</code> 关键字用 append于定义一个函数。</li>
+<li><code>lambda x: x * 2</code> 定义了一个 <code>__函数（function）__</code>。</li>
+<li><code>my_dict = {}</code> 创建的是一个 <code>__字典（dict/dictionary）__</code> 类型的数据结构。</li>
+<li><code>try-except</code> 结构用于 <code>__异常(exception)__</code> 处理。</li>
+<li>Python 的 <code>for</code> 循环可以用于 <code>__可迭代（iterable）__</code> 数据结构，如列表、字符串等。</li>
+<li><code>my_tuple = (1, 2, 3)</code>，<code>my_tuple[0] = 10</code> 会 <code>__失败__</code>（成功 / 失败）。</li>
+<li><code>is</code> 运算符用于比较两个对象的 <code>__identity__</code>，而 <code>==</code> 运算符用于比较两个对象的 <code>__值（value）__</code>。</li>
+<li><code>import random</code> 用于导入 <code>__随机(random)__</code> 模块，该模块提供随机数生成功能。</li>
+</ol>
+<pre><code class="language-bash">1. 考核运算符的应用；
+    对于除法运算的结果都是浮点数，只有一种例外，就是参与整除运算的两个都是 int 类型的数据，结果一定是 int 类型。
+2. 考核的是列表的方法
+3. 关键字
+4. 匿名函数
+5. 考核的点为空字典与空集合的区别；
+   空字典的表示方式为`{}`，而空集合的表式方式为`set()`
+6. 异常
+7. 对于可迭代对象的理解
+8. 对于元组的理解，是否改更新
+9. is 比较两个对象的身份，或者直接理解的话，就是检验两个对象是不是使用了同一块内存
+   但是Python 有一个特殊的机制，叫小整数池 （small integer pool)，范围在`-5 ~256`之间的整数会被认为成小整数，它们的取值都是从缓存里取的。
+   也就是说，对于1来讲，假设它在缓存的地址为 `0xabcd`,那么当有变量被赋值为1时，都是将这个1从小整数池里取出来赋值，再将1赋值给后来的变量时，会将新的变量指向缓存中的1。
+10. 模块的导入。
+</code></pre>
+<hr />
+<h3 id="二选择题multiple-choice-questions"><a class="header" href="#二选择题multiple-choice-questions"><strong>二、选择题（Multiple Choice Questions）</strong></a></h3>
+<ol>
+<li>
+<p><strong>以下哪个 Python 代码会导致 SyntaxError？</strong>  B
+A) <code>print(&quot;Hello, World!&quot;)</code><br />
+B) <code>x = 5 +</code><br />
+C) <code>if x == 10:</code><br />
+D) <code>list.append(10)</code></p>
+</li>
+<li>
+<p><strong>在 Python 中，哪种数据结构是不可变的？</strong>   B
+A) <code>list</code><br />
+B) <code>tuple</code><br />
+C) <code>set</code><br />
+D) <code>dictionary</code></p>
+</li>
+<li>
+<p><strong>以下代码的输出是什么？</strong> B</p>
+<pre><code class="language-python">x = [1, 2, 3]
+y = x
+y.append(4)
+print(x)
+</code></pre>
+<p>A) <code>[1, 2, 3]</code><br />
+B) <code>[1, 2, 3, 4]</code><br />
+C) <code>Error</code><br />
+D) <code>[1, 2]</code></p>
+</li>
+<li>
+<p><strong>下面哪个方法用于从字典 <code>my_dict</code> 中安全地获取键 <code>key</code> 的值，如果键不存在，则返回 <code>None</code>？</strong>  B
+A) <code>my_dict[key]</code><br />
+B) <code>my_dict.get(key)</code><br />
+C) <code>my_dict.fetch(key)</code><br />
+D) <code>my_dict.retrieve(key)</code></p>
+</li>
+<li>
+<p><strong><code>bool([])</code> 的值是什么？</strong>  B
+A) <code>True</code><br />
+B) <code>False</code><br />
+C) <code>None</code><br />
+D) <code>Error</code>
+Python中所有的假值：
+a). <code>None</code>
+b). <code>False</code>
+c). <code>0</code> -- 所有数值类型的<code>0</code> (包括<code>int</code>、<code>float</code>)
+d).  空的序列：<code>&quot;&quot;</code>、<code>[]</code>、<code>()</code>
+e).  空的集合：<code>{}</code>、 <code>set()</code> 、<code>dict()</code>
+f).   空的 <code>range</code>，如<code>range(0)</code>, <code>range(10, 0)</code>
+g).  <code>bytes</code>和<code>bytearry</code>的空对象
+<code>b&quot;&quot;</code> 和<code>bytearry(b&quot;&quot;)</code></p>
+</li>
+<li>
+<p><strong>哪条语句用于创建一个继承自 <code>Person</code> 类的新类 <code>Student</code>？</strong>  B
+A) <code>class Student inherits Person:</code><br />
+B) <code>class Student(Person):</code><br />
+C) <code>Student = class(Person):</code><br />
+D) <code>def Student(Person):</code></p>
+</li>
+<li>
+<p><strong>以下代码的输出是什么？</strong> B</p>
+<pre><code class="language-python">def func(a, b=2, c=3):
+    return a + b + c
+
+print(func(1, c=4))
+</code></pre>
+<p>A) <code>6</code><br />
+B) <code>7</code><br />
+C) <code>8</code><br />
+D) <code>Error</code></p>
+</li>
+<li>
+<p><strong>Python 中的 <code>with open('file.txt', 'r') as f:</code> 语句的作用是？</strong>  C
+A) 打开文件并锁定，直到程序结束<br />
+B) 读取整个文件内容到变量 <code>f</code><br />
+C) 确保文件在 <code>with</code> 代码块执行完后自动关闭<br />
+D) 以二进制模式打开文件</p>
+</li>
+</ol>
+<hr />
+<h3 id="三编程题coding-questions"><a class="header" href="#三编程题coding-questions"><strong>三、编程题（Coding Questions）</strong></a></h3>
+<h4 id="1-交换两个变量的值pcep-级别"><a class="header" href="#1-交换两个变量的值pcep-级别"><strong>1. 交换两个变量的值（PCEP 级别）</strong></a></h4>
+<p><strong>问题：</strong><br />
+编写一个 Python 程序，在不使用第三个变量的情况下交换两个变量的值。</p>
+<p><strong>示例输入</strong>：</p>
+<pre><code class="language-python">a = 5
+b = 10
+a = a+b  # 15
+b = a-b  # 5
+a = a-b  # 10
+print(a,b)
+</code></pre>
+<p><strong>示例输出</strong>：</p>
+<pre><code class="language-python">a = 10, b = 5
+</code></pre>
+<hr />
+<h4 id="2-计算-fibonacci-数列pcep-级别"><a class="header" href="#2-计算-fibonacci-数列pcep-级别"><strong>2. 计算 Fibonacci 数列（PCEP 级别）</strong></a></h4>
+<p><strong>问题：</strong><br />
+编写一个函数 <code>fibonacci(n)</code>，返回第 <code>n</code> 个 Fibonacci 数。</p>
+<p><strong>示例输入</strong>：</p>
+<pre><code class="language-python">print(fibonacci(6))
+</code></pre>
+<p><strong>示例输出</strong>：</p>
+<pre><code class="language-python">8
+</code></pre>
+<hr />
+<h4 id="3-统计字符串中字母出现的次数pcap-级别"><a class="header" href="#3-统计字符串中字母出现的次数pcap-级别"><strong>3. 统计字符串中字母出现的次数（PCAP 级别）</strong></a></h4>
+<p><strong>问题：</strong><br />
+编写一个 Python 程序，统计用户输入的字符串中每个字母出现的次数，并按字母顺序输出。</p>
+<p><strong>示例输入</strong>：</p>
+<pre><code class="language-python">&quot;hello world&quot;
+</code></pre>
+<p><strong>示例输出</strong>：</p>
+<pre><code class="language-python">d: 1
+e: 1
+h: 1
+l: 3
+o: 2
+r: 1
+w: 1
+</code></pre>
+<hr />
+<h4 id="4-解析-json-并提取数据pcap-级别"><a class="header" href="#4-解析-json-并提取数据pcap-级别"><strong>4. 解析 JSON 并提取数据（PCAP 级别）</strong></a></h4>
+<p><strong>问题：</strong><br />
+Python 提供了 <code>json</code> 模块用于解析 JSON 数据。请编写一个程序，从以下 JSON 数据中提取 <code>name</code> 和 <code>age</code> 信息，并打印出来。</p>
+<p><strong>示例 JSON 数据</strong>：</p>
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;Alice&quot;,
+    &quot;age&quot;: 25,
+    &quot;city&quot;: &quot;New York&quot;
+}
+</code></pre>
+<p><strong>示例输出</strong>：</p>
+<pre><code class="language-python">Name: Alice, Age: 25
+</code></pre>
+<hr />
+<h4 id="5-继承与方法重写pcap-级别"><a class="header" href="#5-继承与方法重写pcap-级别"><strong>5. 继承与方法重写（PCAP 级别）</strong></a></h4>
+<p><strong>问题：</strong><br />
+创建一个 <code>Animal</code> 类，它有一个 <code>speak</code> 方法，默认返回 <code>&quot;Some sound&quot;</code>。然后创建一个 <code>Dog</code> 类，继承 <code>Animal</code>，并重写 <code>speak</code> 方法，使其返回 <code>&quot;Bark!&quot;</code>。</p>
+<p><strong>示例输入</strong>：</p>
+<pre><code class="language-python">a = Animal()
+d = Dog()
+print(a.speak())
+print(d.speak())
+</code></pre>
+<p><strong>示例输出</strong>：</p>
+<pre><code class="language-python">Some sound
+Bark!
+</code></pre>
+<hr />
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../27.模块和包/包.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../Exam/习题.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../27.模块和包/包.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../Exam/习题.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

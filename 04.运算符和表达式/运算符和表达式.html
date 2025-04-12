@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>运算符和表达式 - Python 教程 for Junior</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">简介</a></li><li class="chapter-item expanded "><a href="../00.引言/引言.html"><strong aria-hidden="true">1.</strong> Python 初识</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../00.引言/引言.html"><strong aria-hidden="true">1.1.</strong> 引言</a></li><li class="chapter-item expanded "><a href="../01.Python简介/Python简介.html"><strong aria-hidden="true">1.2.</strong> Python简介</a></li><li class="chapter-item expanded "><a href="../02.HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.3.</strong> hello, world</a></li></ol></li><li class="chapter-item expanded "><a href="../03.类型和变量/类型和变量.html"><strong aria-hidden="true">2.</strong> 一级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03.类型和变量/类型和变量.html"><strong aria-hidden="true">2.1.</strong> 类型和变量</a></li><li class="chapter-item expanded "><a href="../04.运算符和表达式/运算符和表达式.html" class="active"><strong aria-hidden="true">2.2.</strong> 运算符和表达式</a></li><li class="chapter-item expanded "><a href="../05.位运算/位运算.html"><strong aria-hidden="true">2.3.</strong> 位运算</a></li><li class="chapter-item expanded "><a href="../06.常用内建函数/常用内建函数.html"><strong aria-hidden="true">2.4.</strong> 常用内建函数</a></li><li class="chapter-item expanded "><a href="../07.海龟画图/海龟画图一.html"><strong aria-hidden="true">2.5.</strong> 海龟画图-第一部分</a></li><li class="chapter-item expanded "><a href="../07.海龟画图/海龟画图二.html"><strong aria-hidden="true">2.6.</strong> 海龟画图-第二部分</a></li></ol></li><li class="chapter-item expanded "><a href="../08.选择结构/三大结构.html"><strong aria-hidden="true">3.</strong> 二级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.选择结构/三大结构.html"><strong aria-hidden="true">3.1.</strong> 三大结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.选择结构/选择结构.html"><strong aria-hidden="true">3.1.1.</strong> 选择结构</a></li><li class="chapter-item expanded "><a href="../09.循环结构/循环结构.html"><strong aria-hidden="true">3.1.2.</strong> 循环结构</a></li></ol></li><li class="chapter-item expanded "><a href="../10.高级数据类型/高级数据类型.html"><strong aria-hidden="true">3.2.</strong> 高级数据结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../11.字符串/字符串.html"><strong aria-hidden="true">3.2.1.</strong> 字符串</a></li><li class="chapter-item expanded "><a href="../12.列表/列表.html"><strong aria-hidden="true">3.2.2.</strong> 列表</a></li><li class="chapter-item expanded "><a href="../13.元组/元组.html"><strong aria-hidden="true">3.2.3.</strong> 元组</a></li><li class="chapter-item expanded "><a href="../14.集合/集合.html"><strong aria-hidden="true">3.2.4.</strong> 集合</a></li><li class="chapter-item expanded "><a href="../15.字典/字典.html"><strong aria-hidden="true">3.2.5.</strong> 字典</a></li></ol></li><li class="chapter-item expanded "><a href="../16.推导式与函数/推导式与函数.html"><strong aria-hidden="true">3.3.</strong> 推导式与函数</a></li></ol></li><li class="chapter-item expanded "><a href="../18.内置函数/内置函数.html"><strong aria-hidden="true">4.</strong> 三级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../18.内置函数/内置函数.html"><strong aria-hidden="true">4.1.</strong> 内置函数</a></li><li class="chapter-item expanded "><a href="../19.文件读写/文件读写.html"><strong aria-hidden="true">4.2.</strong> 文件读写</a></li><li class="chapter-item expanded "><a href="../20.进制转换/进制转换.html"><strong aria-hidden="true">4.3.</strong> 进制转换</a></li><li class="chapter-item expanded "><a href="../21.异常处理/异常处理.html"><strong aria-hidden="true">4.4.</strong> 异常处理</a></li><li class="chapter-item expanded "><a href="../22.排序算法/排序算法.html"><strong aria-hidden="true">4.5.</strong> 排序算法</a></li><li class="chapter-item expanded "><a href="../23.二分法查找/二分法查找.html"><strong aria-hidden="true">4.6.</strong> 二分法查找</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/内建模块.html"><strong aria-hidden="true">4.7.</strong> 常用内建模块</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../25.常用内建模块/内建模块.html"><strong aria-hidden="true">4.7.1.</strong> 内建模块</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/math.html"><strong aria-hidden="true">4.7.2.</strong> math</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/time.html"><strong aria-hidden="true">4.7.3.</strong> time</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/os.html"><strong aria-hidden="true">4.7.4.</strong> os</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.</strong> 高级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.1.</strong> 面向对象编程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.1.1.</strong> 类和对象</a></li><li class="chapter-item expanded "><a href="../26.面向对象编程/类的继承.html"><strong aria-hidden="true">5.1.2.</strong> 类的继承</a></li><li class="chapter-item expanded "><a href="../26.面向对象编程/自定义异常.html"><strong aria-hidden="true">5.1.3.</strong> 自定义异常</a></li></ol></li><li class="chapter-item expanded "><a href="../27.模块和包/模块.html"><strong aria-hidden="true">5.2.</strong> 模块、包</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../27.模块和包/模块.html"><strong aria-hidden="true">5.2.1.</strong> 模块</a></li><li class="chapter-item expanded "><a href="../27.模块和包/包.html"><strong aria-hidden="true">5.2.2.</strong> 包</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../Exam/习题.html"><strong aria-hidden="true">6.</strong> 习题</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Exam/习题.html"><strong aria-hidden="true">6.1.</strong> 习题1</a></li><li class="chapter-item expanded "><a href="../Exam/习题2.html"><strong aria-hidden="true">6.2.</strong> 习题2</a></li><li class="chapter-item expanded "><a href="../Exam/习题3.html"><strong aria-hidden="true">6.3.</strong> 习题3</a></li><li class="chapter-item expanded "><a href="../Exam/习题4.html"><strong aria-hidden="true">6.4.</strong> 习题4</a></li></ol></li><li class="chapter-item expanded "><a href="../进制转换.html">进制转换</a></li><li class="chapter-item expanded affix "><a href="../附录/appendix.html">附录</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Python 教程 for Junior</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="运算符和表达式"><a class="header" href="#运算符和表达式">运算符和表达式</a></h1>
+<p>运算符是用来组成表达式的重要元素，会对表达式的结果产生影响。</p>
+<p>表达式可以直接用来执行，并通过运算会得到一个结果，但是这个结果马上就会补缓存释放且不再存在，所以在编程过程中，表达式要配合变量来使用。</p>
+<h2 id="运算符-operators"><a class="header" href="#运算符-operators">运算符 Operators</a></h2>
+<p>我们这里提到的运算符不仅仅是在数学中学到的<em>加、减、乘、除</em>， Python提供了大量的强大的运算符来帮助我们进行运算，这里我们先介绍下面三种类型的运算符（按优先级排列）：</p>
+<h3 id="算术运算符-arithmetic-operator"><a class="header" href="#算术运算符-arithmetic-operator">算术运算符 Arithmetic Operator</a></h3>
+<table><thead><tr><th align="left">运算符</th><th align="left">说明</th></tr></thead><tbody>
+<tr><td align="left"><code>**</code></td><td align="left">幂运算（指数运算）</td></tr>
+<tr><td align="left"><code>+</code>  <code>-</code></td><td align="left">正负号（正号可省略）</td></tr>
+<tr><td align="left"><code>*</code>  <code>/</code>  <code>%</code>  <code>//</code></td><td align="left">乘、除、模（取余）、整除</td></tr>
+<tr><td align="left"><code>+</code>  <code>-</code></td><td align="left">加、减</td></tr>
+</tbody></table>
+<h3 id="位运算符-bit-operator"><a class="header" href="#位运算符-bit-operator">位运算符 Bit Operator</a></h3>
+<table><thead><tr><th align="left">运算符</th><th align="left">说明</th></tr></thead><tbody>
+<tr><td align="left"><code>~</code></td><td align="left">按位取反</td></tr>
+<tr><td align="left"><code>>>  </code>&nbsp;&nbsp;<code><<</code></td><td align="left">右移&nbsp;&nbsp;左移</td></tr>
+<tr><td align="left"><code>&amp;</code></td><td align="left">按位与</td></tr>
+<tr><td align="left"><code>^</code>&nbsp;&nbsp;<code>|</code></td><td align="left">按位异或、按位或</td></tr>
+</tbody></table>
+<h3 id="关系运算符比较运算符relational-operator"><a class="header" href="#关系运算符比较运算符relational-operator">关系运算符（比较运算符）Relational Operator</a></h3>
+<table><thead><tr><th align="left">运算符</th><th align="left">说明</th></tr></thead><tbody>
+<tr><td align="left"><code>&lt;=</code>  <code>&lt;</code>  <code>&gt;=</code>  <code>&gt;</code></td><td align="left">小于等于、小于、大于等于、大于</td></tr>
+<tr><td align="left"><code>==</code>  <code>!=</code></td><td align="left">等于、不等于</td></tr>
+</tbody></table>
+<h3 id="逻辑运行符-logic-operator"><a class="header" href="#逻辑运行符-logic-operator">逻辑运行符 Logic Operator</a></h3>
+<table><thead><tr><th align="left">运算符</th><th align="left">说明</th></tr></thead><tbody>
+<tr><td align="left"><code>not</code></td><td align="left">逻辑非</td></tr>
+<tr><td align="left"><code>and</code></td><td align="left">逻辑与</td></tr>
+<tr><td align="left"><code>or</code></td><td align="left">逻辑或</td></tr>
+</tbody></table>
+<p>需要说明的是，上述前三种运算符的优先级为: <strong>算术运算符</strong>&gt;<strong>位运算符</strong>&gt;<strong>比较运算符</strong>&gt;<strong>逻辑运行符</strong>，而的位运行符中的按位取反<code>~</code>的优先级和正负号一样，低于幂运算<code>**</code>，高于其它算术运算符。</p>
+<p>完整的运算符列表以及优先级可查看<a href="../%E9%99%84%E5%BD%95/appendix.html#%E5%AE%8C%E6%95%B4%E8%BF%90%E7%AE%97%E7%AC%A6">附录-完整运算符</a></p>
+<h2 id="表达式-expression"><a class="header" href="#表达式-expression">表达式 Expression</a></h2>
+<p>表达式是由字面量的值、变量等等与运算符组成的运算式，每一个表达式最终都会等到一个确切的字面量的值。</p>
+<p>有关字面量的解释，可以查看<a href="../%E9%99%84%E5%BD%95/appendix.html#%E5%AD%97%E9%9D%A2%E9%87%8F">附录-字面量</a></p>
+<p>在Python中，常用的表达式有<em>算术表达式</em>、<em>关系表达式</em>（或者叫<em>比较表达式</em>）和<em>逻辑表达式</em>。</p>
+<h3 id="算术表达式-arithmetic-expression"><a class="header" href="#算术表达式-arithmetic-expression">算术表达式 Arithmetic Expression</a></h3>
+<p>Python中的算术表达式和数学中算式很像，只是我们不需要在后面再写个等号并给出结果。</p>
+<pre><code class="language-Python">&gt;&gt;&gt;  1 + 1
+2
+&gt;&gt;&gt;  1 - 1
+0
+&gt;&gt;&gt;  1 * 2
+2
+</code></pre>
+<p><strong><code>Python</code>中的除法运算<code>/</code>得到的结果一定是一个浮点型的数值:</strong></p>
+<pre><code class="language-Python">&gt;&gt;&gt;  10 / 5
+2.0
+</code></pre>
+<p>Python中的整除和取余分别用来得到数学中除法运算的<strong>商</strong>和<strong>余数</strong>，比如：</p>
+<p>\[10 \div 3 = 3 \ldots 1\]</p>
+<p>取余运算<code>%</code>和整除运算<code>//</code>不仅仅适用于整型数值，也适用于浮点型数值，只要在参与运算的数值里，有一个浮点型，那么结果一点是一个浮点型数值。</p>
+<pre><code class="language-Python">&gt;&gt;&gt; 10 // 3 
+3
+&gt;&gt;&gt; 10 % 3
+1
+&gt;&gt;&gt; 10.0 // 3
+3.0
+&gt;&gt;&gt; 10.0 % 3
+1.0
+&gt;&gt;&gt; 18.32 // 2.51
+7.0
+&gt;&gt;&gt; 18.32 % 2.51
+0.7500000000000018
+</code></pre>
+<p>注: 至于上面的余数为什么出现了<code>0.7500000000000018</code>，我们后面会讲到。</p>
+<p>在使用算术表达式的时候，一这要注意<a href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6">运算符</a>的优先级关系，如果搞不清楚优先级，可以使用圆括号来确保运算的执行顺序。</p>
+<p>比如在数学中的:</p>
+<p>\[\lbrace[(3 + 4) \times 5-6]+7 \rbrace \times 8\]</p>
+<p>应该写成:</p>
+<pre><code class="language-Python">&gt;&gt;&gt; (((3 + 4) * 5 - 6 ) + 7) * 8
+288
+</code></pre>
+<p>这一点同样适用于关系表达式和逻辑表达式。</p>
+<p>在Python中，字符串也能进行加法<code>+</code>和乘法<code>*</code>运算，加法运算只能发生在两个字符串之间,运算结果为两个字符串连接在一起之后的新字符串；而乘法运算是只能由字符串和整型参与，比如<code>&quot;abc&quot; * 2</code>，结果为<code>'abcabc'</code></p>
+<pre><code class="language-Python">&gt;&gt;&gt; &quot;abc&quot; + &quot;def&quot;
+'abcdef'
+&gt;&gt;&gt; &quot;def&quot; + &quot;abc&quot;
+'defabc'
+&gt;&gt;&gt; &quot;a&quot; * 10
+'aaaaaaaaaa'
+</code></pre>
+<h3 id="关系表达式-ralational-expression"><a class="header" href="#关系表达式-ralational-expression">关系表达式 Ralational Expression</a></h3>
+<p>关系表达式，也可以被叫做比较表达式，通过关系运算符将两个值连接到一起得到的一种表达式，用来运算这一关系是否成立，一个关系表达式的结果只有两个值<code>True</code>和<code>False</code>。</p>
+<p>在使用关系表达式的时候，要注意数据的类型，一般情况下，整型和浮点型之间的比较没有限制，也可以和布尔型进行比较（基本不会用到），但是它们都不能与字符串进行比较:</p>
+<pre><code class="language-Python">&gt;&gt;&gt; 3 &gt; 2
+True
+&gt;&gt;&gt; 4 &lt; 2
+False
+&gt;&gt;&gt; 5.3 &gt; 3
+True
+&gt;&gt;&gt; True &gt; False
+True
+&gt;&gt;&gt; False &gt; -1
+True
+</code></pre>
+<p>字符串之间则是按照字节逐个去比较的，比如下面三个字符串<code>'16'</code>、<code>'161'</code>和<code>'8'</code>，先比较第一个字符，分别为<code>'1'</code>、<code>'1'</code>、<code>'8'</code>，其中<code>'8'</code>比其它两个都大，所以<code>'8'</code>是三个中最大的字符串；在其余两个字符串中，前面两个字节均为<code>'1'</code>和<code>'6'</code>，所以还要继续比较下一个字节的大小，但是第一个字符串只有两个字节，而第二个字符串还有第三个字节，所以第二个字符串比第一个字符串要大。根据以上分析，下面三个字符串的大小顺序为<code>'8'&gt;'161'&gt;'16'</code>。</p>
+<svg width="260" height="160" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <rect stroke="#000f0f" id="svg_8" height="36" width="78" y="62" x="11" fill="none"/>
+  <rect stroke="#000f0f" id="svg_11" height="36" width="78" y="62" x="91" fill="none"/>
+  <rect stroke="#000f0f" id="svg_12" height="36" width="78" y="62" x="171" fill="none"/>
+  <rect stroke="#000f0f" id="svg_13" height="36" width="78" y="10" x="11" fill="none"/>
+  <rect stroke="#000f0f" id="svg_14" height="36" width="78" y="10" x="91" fill="none"/>
+  <rect stroke="#000f0f" id="svg_16" height="36" width="78" y="115" x="11" fill="none"/>
+  <text stroke="#000f0f" xml:space="preserve" text-anchor="start" font-family="'Stick No Bills'" font-size="18" stroke-width="0" id="svg_19" y="34.5" x="49" fill="#000000">1</text>
+  <text transform="matrix(1.42566 0 0 1 -65.3354 4)" stroke="#000f0f" xml:space="preserve" text-anchor="start" font-family="'Stick No Bills'" font-size="18" id="svg_20" y="29.5" x="130.70143" stroke-width="0" fill="#000000">6</text>
+  <text stroke="#000f0f" xml:space="preserve" text-anchor="start" font-family="'Stick No Bills'" font-size="18" stroke-width="0" id="svg_21" y="87.5" x="49" fill="#000000">1</text>
+  <text transform="matrix(1.42566 0 0 1 -65.3354 4)" stroke="#000f0f" xml:space="preserve" text-anchor="start" font-family="'Stick No Bills'" font-size="18" id="svg_22" y="82.5" x="130.70143" stroke-width="0" fill="#000000">6</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Stick No Bills'" font-size="18" id="svg_24" y="86.5" x="204" stroke-width="0" stroke="#000f0f" fill="#000000">1</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Stick No Bills'" font-size="18" stroke-width="0" id="svg_25" y="138.5" x="46" stroke="#000f0f" fill="#000000">8</text>
+ </g>
+</svg>
+<pre><code class="language-Python">&gt;&gt;&gt; '16' &lt; '161'
+True
+&gt;&gt;&gt; '161' &gt; '8'
+False
+</code></pre>
+<p>两个字符串的大小是根据它们在字符集中的位置判断的，暂时我们只需要下表即可。</p>
+<table><thead><tr><th align="left">字符</th><th align="left">位置</th></tr></thead><tbody>
+<tr><td align="left"><code>'0'</code>~<code>'9'</code></td><td align="left">48~57</td></tr>
+<tr><td align="left"><code>'A'</code>~<code>'Z'</code></td><td align="left">65~90</td></tr>
+<tr><td align="left"><code>'a'</code>~<code>'z'</code></td><td align="left">97~122</td></tr>
+</tbody></table>
+<p>从上表可以看出，即使字母<code>a</code>是小写的，但是它并不“小”，在字符串中，它要大于大写字母<code>A</code>。当我们不确定某个字符在字符集中的位置的时候，可以调用函数<code>ord()</code>来查看，有关这一内建函数，我们会在后面章节详细学习:</p>
+<pre><code class="language-Python">&gt;&gt;&gt; ord('A')
+65
+</code></pre>
+<h3 id="逻辑表达式-logic-expression"><a class="header" href="#逻辑表达式-logic-expression">逻辑表达式 Logic Expression</a></h3>
+<p>当我们用两个关系表达式和逻辑运算符组成一个逻辑表达式时，它的结果也是只有两个<code>True</code>和<code>False</code>:</p>
+<pre><code class="language-Python">&gt;&gt;&gt; 5 &gt; 3 and 4 &lt; 6
+True
+&gt;&gt;&gt; 5 &gt; 6 or 6 &lt; 7
+True
+&gt;&gt;&gt; 7 &gt; 4 and 3 &lt; 1
+False
+&gt;&gt;&gt; not (5 &gt; 6)
+True
+</code></pre>
+<p>对于关系表达式，也可以多个值一起比较，但不建议用，在这里还是建义大家用逻辑表达式来代替:</p>
+<pre><code class="language-Python">&gt;&gt;&gt; 5 &lt; 6 &gt; 2
+True
+&gt;&gt;&gt; 5 &lt; 6 and 6 &gt; 2 #与上式等价
+True
+</code></pre>
+<p>假如，假和爸爸去看电影，检票员说：”你们两个必须都有票才能进“，那么这里用的就是<code>and</code>，如果检票员说：”你们两个只要有一发张票就可以进入“，那么这里用的就是<code>or</code>。</p>
+<p>我们可以用下表来熟悉两个关系表达式的结果在逻辑表达式中的运算情况</p>
+<table><thead><tr><th align="left">表达式a</th><th align="left">表达式b</th><th align="left"><code>and</code>运算</th><th align="left"><code>or</code>运算</th><th align="left"><code>not a</code>运算</th></tr></thead><tbody>
+<tr><td align="left"><code>True</code></td><td align="left"><code>True</code></td><td align="left"><code>True</code></td><td align="left"><code>True</code></td><td align="left"><code>False</code></td></tr>
+<tr><td align="left"><code>True</code></td><td align="left"><code>False</code></td><td align="left"><code>False</code></td><td align="left"><code>True</code></td><td align="left"><code>False</code></td></tr>
+<tr><td align="left"><code>False</code></td><td align="left"><code>True</code></td><td align="left"><code>False</code></td><td align="left"><code>True</code></td><td align="left"><code>True</code></td></tr>
+<tr><td align="left"><code>False</code></td><td align="left"><code>False</code></td><td align="left"><code>False</code></td><td align="left"><code>False</code></td><td align="left"><code>True</code></td></tr>
+</tbody></table>
+<p>在Python中，还有一种特别有意思的概念，也是我们接下来要讲的:<em>短路逻辑</em>，它的意思可以理解成在逻辑表达式中，运算符右边部分的运算被短路了:</p>
+<p>在<code>a and b</code>表达式中，如果<code>a</code>的值为<code>True</code>，那么结果为<code>b</code>的值，否则结果直接为<code>a</code>的值</p>
+<pre><code class="language-Python">&gt;&gt;&gt; 5 and 6
+6
+&gt;&gt;&gt; 5 &lt; 4 and 6 &gt; 1 #这里关系表达式“6 &gt; 1”被短路了，并没有进行运算
+False
+&gt;&gt;&gt; False and 6 #这里6被短路了，并没有被运算
+False
+</code></pre>
+<p>在<code>a or b</code>表达式中，如果<code>a</code>的值为<code>True</code>，那么结果为<code>a</code>的值，否则结果直接为<code>b</code>的值</p>
+<pre><code class="language-Python">&gt;&gt;&gt; 5 or 6  #这里6被短路了，并没有被运算
+5
+&gt;&gt;&gt; 5 &gt; 4 or 6 &lt; 1 #这里关系表达式“6 &gt; 1”被短路了，并没有进行运算
+True
+&gt;&gt;&gt; False or 6
+6
+</code></pre>
+<p>在上一章节，我们提到过，任何非<code>0</code>数值均可被认为是真逻辑值，这一说法可以扩展到其它基本类型:</p>
+<table><thead><tr><th align="left">类型</th><th align="left">假逻辑值</th><th align="left">真逻辑值</th></tr></thead><tbody>
+<tr><td align="left"><code>int</code></td><td align="left"><code>0</code></td><td align="left"><code>非0整数</code></td></tr>
+<tr><td align="left"><code>float</code></td><td align="left"><code>0.0</code>、<code>0.00</code>等等</td><td align="left"><code>非0.0浮点数</code></td></tr>
+<tr><td align="left"><code>str</code></td><td align="left"><code>''</code></td><td align="left"><code>非空字符串</code></td></tr>
+<tr><td align="left"><code>NoneType</code></td><td align="left"><code>None</code></td><td align="left">无</td></tr>
+</tbody></table>
+<pre><code class="language-Python">&gt;&gt;&gt; '' and True
+''
+&gt;&gt;&gt; None and False
+&gt;&gt;&gt; 
+</code></pre>
+<h2 id="表达式与变量"><a class="header" href="#表达式与变量">表达式与变量</a></h2>
+<p>在本章节开篇时，我们提到，表达式的结果被输出之后就会被缓存释放了，所以为了后面继续使用表达式运算出来的结果，需要配合变量来使用。</p>
+<pre><code class="language-Python">&gt;&gt;&gt; a = 5 + 7
+&gt;&gt;&gt; print(a)
+12
+&gt;&gt;&gt; b = 4 &gt; 3 and 5 &lt; 1
+&gt;&gt;&gt; print(b)
+False
+&gt;&gt;&gt; c = a and b
+&gt;&gt;&gt; print(c)
+False
+</code></pre>
+<p>有关变量的详细内容，如果还有不清楚的地方，可以回到上一章节中复习：<a href=".././03.%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F/%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F.html#%E5%8F%98%E9%87%8Fvariables">变量</a>。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../03.类型和变量/类型和变量.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../05.位运算/位运算.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../03.类型和变量/类型和变量.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../05.位运算/位运算.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

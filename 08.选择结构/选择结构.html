@@ -1,0 +1,362 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>选择结构 - Python 教程 for Junior</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">简介</a></li><li class="chapter-item expanded "><a href="../00.引言/引言.html"><strong aria-hidden="true">1.</strong> Python 初识</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../00.引言/引言.html"><strong aria-hidden="true">1.1.</strong> 引言</a></li><li class="chapter-item expanded "><a href="../01.Python简介/Python简介.html"><strong aria-hidden="true">1.2.</strong> Python简介</a></li><li class="chapter-item expanded "><a href="../02.HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.3.</strong> hello, world</a></li></ol></li><li class="chapter-item expanded "><a href="../03.类型和变量/类型和变量.html"><strong aria-hidden="true">2.</strong> 一级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03.类型和变量/类型和变量.html"><strong aria-hidden="true">2.1.</strong> 类型和变量</a></li><li class="chapter-item expanded "><a href="../04.运算符和表达式/运算符和表达式.html"><strong aria-hidden="true">2.2.</strong> 运算符和表达式</a></li><li class="chapter-item expanded "><a href="../05.位运算/位运算.html"><strong aria-hidden="true">2.3.</strong> 位运算</a></li><li class="chapter-item expanded "><a href="../06.常用内建函数/常用内建函数.html"><strong aria-hidden="true">2.4.</strong> 常用内建函数</a></li><li class="chapter-item expanded "><a href="../07.海龟画图/海龟画图一.html"><strong aria-hidden="true">2.5.</strong> 海龟画图-第一部分</a></li><li class="chapter-item expanded "><a href="../07.海龟画图/海龟画图二.html"><strong aria-hidden="true">2.6.</strong> 海龟画图-第二部分</a></li></ol></li><li class="chapter-item expanded "><a href="../08.选择结构/三大结构.html"><strong aria-hidden="true">3.</strong> 二级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.选择结构/三大结构.html"><strong aria-hidden="true">3.1.</strong> 三大结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.选择结构/选择结构.html" class="active"><strong aria-hidden="true">3.1.1.</strong> 选择结构</a></li><li class="chapter-item expanded "><a href="../09.循环结构/循环结构.html"><strong aria-hidden="true">3.1.2.</strong> 循环结构</a></li></ol></li><li class="chapter-item expanded "><a href="../10.高级数据类型/高级数据类型.html"><strong aria-hidden="true">3.2.</strong> 高级数据结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../11.字符串/字符串.html"><strong aria-hidden="true">3.2.1.</strong> 字符串</a></li><li class="chapter-item expanded "><a href="../12.列表/列表.html"><strong aria-hidden="true">3.2.2.</strong> 列表</a></li><li class="chapter-item expanded "><a href="../13.元组/元组.html"><strong aria-hidden="true">3.2.3.</strong> 元组</a></li><li class="chapter-item expanded "><a href="../14.集合/集合.html"><strong aria-hidden="true">3.2.4.</strong> 集合</a></li><li class="chapter-item expanded "><a href="../15.字典/字典.html"><strong aria-hidden="true">3.2.5.</strong> 字典</a></li></ol></li><li class="chapter-item expanded "><a href="../16.推导式与函数/推导式与函数.html"><strong aria-hidden="true">3.3.</strong> 推导式与函数</a></li></ol></li><li class="chapter-item expanded "><a href="../18.内置函数/内置函数.html"><strong aria-hidden="true">4.</strong> 三级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../18.内置函数/内置函数.html"><strong aria-hidden="true">4.1.</strong> 内置函数</a></li><li class="chapter-item expanded "><a href="../19.文件读写/文件读写.html"><strong aria-hidden="true">4.2.</strong> 文件读写</a></li><li class="chapter-item expanded "><a href="../20.进制转换/进制转换.html"><strong aria-hidden="true">4.3.</strong> 进制转换</a></li><li class="chapter-item expanded "><a href="../21.异常处理/异常处理.html"><strong aria-hidden="true">4.4.</strong> 异常处理</a></li><li class="chapter-item expanded "><a href="../22.排序算法/排序算法.html"><strong aria-hidden="true">4.5.</strong> 排序算法</a></li><li class="chapter-item expanded "><a href="../23.二分法查找/二分法查找.html"><strong aria-hidden="true">4.6.</strong> 二分法查找</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/内建模块.html"><strong aria-hidden="true">4.7.</strong> 常用内建模块</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../25.常用内建模块/内建模块.html"><strong aria-hidden="true">4.7.1.</strong> 内建模块</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/math.html"><strong aria-hidden="true">4.7.2.</strong> math</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/time.html"><strong aria-hidden="true">4.7.3.</strong> time</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/os.html"><strong aria-hidden="true">4.7.4.</strong> os</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.</strong> 高级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.1.</strong> 面向对象编程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.1.1.</strong> 类和对象</a></li><li class="chapter-item expanded "><a href="../26.面向对象编程/类的继承.html"><strong aria-hidden="true">5.1.2.</strong> 类的继承</a></li><li class="chapter-item expanded "><a href="../26.面向对象编程/自定义异常.html"><strong aria-hidden="true">5.1.3.</strong> 自定义异常</a></li></ol></li><li class="chapter-item expanded "><a href="../27.模块和包/模块.html"><strong aria-hidden="true">5.2.</strong> 模块、包</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../27.模块和包/模块.html"><strong aria-hidden="true">5.2.1.</strong> 模块</a></li><li class="chapter-item expanded "><a href="../27.模块和包/包.html"><strong aria-hidden="true">5.2.2.</strong> 包</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../Exam/习题.html"><strong aria-hidden="true">6.</strong> 习题</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Exam/习题.html"><strong aria-hidden="true">6.1.</strong> 习题1</a></li><li class="chapter-item expanded "><a href="../Exam/习题2.html"><strong aria-hidden="true">6.2.</strong> 习题2</a></li><li class="chapter-item expanded "><a href="../Exam/习题3.html"><strong aria-hidden="true">6.3.</strong> 习题3</a></li><li class="chapter-item expanded "><a href="../Exam/习题4.html"><strong aria-hidden="true">6.4.</strong> 习题4</a></li></ol></li><li class="chapter-item expanded "><a href="../进制转换.html">进制转换</a></li><li class="chapter-item expanded affix "><a href="../附录/appendix.html">附录</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Python 教程 for Junior</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="选择结构"><a class="header" href="#选择结构">选择结构</a></h1>
+<h2 id="引言"><a class="header" href="#引言">引言</a></h2>
+<p>在Python编程语言中，<code>if</code>是选择结构最主要的语句，它是一项基本而强大的控制结构，用于根据特定条件的真假执行不同的代码块。这是一种编写灵活和适应性强的程序逻辑的关键工具。本章将深入探讨<code>if</code>语句的各个方面，包括基本语法、多分支结构、条件表达式、嵌套结构、缩进的重要性以及通过示例演示其实际用法。</p>
+<p>试想以下场景：</p>
+<ul>
+<li>如果到了18周岁，就可以开车了</li>
+<li>如果周末不下雨，就约同学去骑行，否则就在家写作业</li>
+<li>给学生的数学成绩分为优、良、中、差</li>
+<li>去市场买菜的时候，比较哪家又好又便宜就买那家</li>
+</ul>
+<p>这些问题都需要用选择结构去解决。</p>
+<h2 id="基本语法结构"><a class="header" href="#基本语法结构">基本语法结构</a></h2>
+<h3 id="二元分支结构"><a class="header" href="#二元分支结构">二元分支结构</a></h3>
+<p><code>if</code>语句二元分支结构的基本语法结构如下：</p>
+<pre><code class="language-python">if 条件:
+    # 如果条件为真，执行这里的代码块
+</code></pre>
+<p>或</p>
+<pre><code class="language-python">if 条件:
+    # 如果条件为真，执行这里的代码块
+else:
+    # 如果条件为假，执行这里的代码块
+</code></pre>
+<p>第一种结构中，当<code>条件</code>满足时，也就是这个表达式返回<code>True</code>或者本身就是个<code>真值</code>，则会执行<code>:</code>下面一行被缩进的代码，否则什么都不做。但是在第二种结构中，有了<code>else</code>语句，那么当<code>条件</code>不成立时，就行执行<code>else:</code>以下被缩进的语句；这里<code>else</code>的后面不需要写出条件表达式。</p>
+<h4 id="示例演示"><a class="header" href="#示例演示">示例演示</a></h4>
+<ul>
+<li>如果到了18周岁，就可以开车了</li>
+</ul>
+<pre><code class="language-python">age = int(input(&quot;请输入你的年龄:&quot;))
+
+if age &gt;= 18:
+    print(&quot;你可以开车了!&quot;)
+</code></pre>
+<pre><code class="language-shell"># 第一次执行，输入19，会打印出&quot;你可以开车了!&quot;
+请输入你的年龄:19
+你可以开车了!
+# 第二次执行，输入17，什么都不会打印
+请输入你的年龄:17
+</code></pre>
+<ul>
+<li>如果周末不下雨，就约同学去骑行，否则就在家写作业</li>
+</ul>
+<pre><code class="language-python">weather = input(&quot;请输入明天的天气:&quot;)
+
+if weather != 'rain':
+    print(&quot;约同学去骑行&quot;)
+else
+    print(&quot;在家写作业&quot;)
+</code></pre>
+<pre><code class="language-shell"># 第一次执行，输入sunshine，会打印出&quot;约同学去骑行&quot;
+请输入明天的天气:sunshine
+约同学去骑行
+# 第二次执行，输入rain，会打印出&quot;在家写作业&quot;
+请输入明天的天气:rain
+在家写作业
+</code></pre>
+<h3 id="多分支结构"><a class="header" href="#多分支结构">多分支结构</a></h3>
+<p><code>if</code>语句可以扩展为多分支结构，通过使用<code>elif</code>（else if的缩写）关键字，可以处理多个条件。例如：</p>
+<pre><code class="language-python">if 条件1:
+    # 如果条件1为真，执行这里的代码块
+elif 条件2:
+    # 如果条件1为假，但条件2为真，执行这里的代码块
+......
+elif 条件n:
+    # 如果条件1~n-1为假，但条件n为真，执行这里的代码块
+else:
+    # 如果所有条件都为假，执行这里的代码块
+</code></pre>
+<p>这种结构允许程序根据多个条件进行逻辑分支，更灵活地处理各种情况。</p>
+<h4 id="示例演示-1"><a class="header" href="#示例演示-1">示例演示</a></h4>
+<ul>
+<li>给学生的数学成绩分为优、良、中、差</li>
+</ul>
+<pre><code class="language-python">score = int(input(&quot;请输入你的成绩:&quot;))
+
+if score &gt;= 90:
+    print(&quot;成绩:优&quot;)
+elif score &gt;= 80:
+    print(&quot;成绩:良&quot;)
+elif score &gt;= 60:
+    print(&quot;成绩:中&quot;)
+else:
+    print(&quot;成绩:差&quot;)
+</code></pre>
+<h3 id="条件表达式"><a class="header" href="#条件表达式">条件表达式</a></h3>
+<p>条件通常是表达式，可以是比较运算、逻辑运算、成员运算等返回布尔值的操作。例如：</p>
+<pre><code class="language-python">x = 10
+if x &gt; 0:
+    print(&quot;x 是正数&quot;)
+else:
+    print(&quot;x 不是正数&quot;)
+</code></pre>
+<p>在这个例子中，条件是<code>x &gt; 0</code>，如果这个条件为真，就执行<code>print(&quot;x 是正数&quot;)</code>，否则执行<code>print(&quot;x 不是正数&quot;)</code>。条件表达式的灵活性使得<code>if</code>语句可以适应各种判断场景。</p>
+<p>也可以直接使用<code>bool</code>类型的值：</p>
+<pre><code class="language-python">flag = True
+
+if flag:
+    print(&quot;flag 是真值&quot;)
+</code></pre>
+<h3 id="嵌套结构"><a class="header" href="#嵌套结构">嵌套结构</a></h3>
+<p><code>if</code>语句可以嵌套在其他<code>if</code>语句内，形成更复杂的条件结构。这样的嵌套结构使得程序能够更细致地处理各种情况。例如：</p>
+<pre><code class="language-python">x = 5
+if x &gt; 0:
+    if x % 2 == 0:
+        print(&quot;x 是正偶数&quot;)
+    else:
+        print(&quot;x 是正奇数&quot;)
+else:
+    print(&quot;x 不是正数&quot;)
+</code></pre>
+<p>在这个例子中，外层<code>if</code>语句检查<code>x</code>是否为正数，如果是，进一步嵌套的<code>if</code>语句判断<code>x</code>是否为偶数或奇数。嵌套结构可根据具体问题的复杂性灵活运用，但需要注意避免过度嵌套，以保持代码的可读性。</p>
+<h2 id="缩进的重要性"><a class="header" href="#缩进的重要性">缩进的重要性</a></h2>
+<p>在Python中，缩进是一种语法结构，而不仅仅是代码格式。它决定了代码块的开始和结束，是Python语言独有的特点。因此，要确保同一代码块的缩进相同，否则会导致语法错误或逻辑错误。例如：</p>
+<pre><code class="language-python">if 条件:
+    # 代码块 A
+    if 另一个条件:
+        # 代码块 B
+    else:
+        # 代码块 C
+else:
+    # 代码块 D
+</code></pre>
+<p>在这个例子中，代码块 <code>B</code> 和代码块 <code>C</code> 同属于外层的<code>if</code>语句，因此它们的缩进相同。与之相反，代码块 <code>D</code> 是属于外层的<code>else</code>语句的，所以它的缩进与<code>else</code>语句一致。</p>
+<h2 id="示例演示-2"><a class="header" href="#示例演示-2">示例演示</a></h2>
+<p>为了更全面地理解<code>if</code>语句的实际应用，考虑以下示例：一个简单的登录系统。用户需要输入用户名和密码，程序会根据预设的用户名和密码进行验证，根据验证结果给出相应的提示。</p>
+<pre><code class="language-python"># 预设的用户名和密码
+correct_username = &quot;user123&quot;
+correct_password = &quot;pass456&quot;
+# 用户输入
+input_username = input(&quot;请输入用户名：&quot;)
+input_password = input(&quot;请输入密码：&quot;)
+success = message = None
+
+# 登录验证
+if username == correct_username and password == correct_password:
+    success, message = True, &quot;登录成功&quot;
+else:
+    success, message = False, &quot;用户名或密码错误&quot;
+
+if success:
+    print(message)
+else:
+    print(message)
+</code></pre>
+<p>在这个示例中，<code>authenticate</code>函数接受用户输入的用户名和密码，与预设的正确用户名和密码进行比较，返回验证结果。主程序根据验证结果使用<code>if</code>语句输出相应的提示信息。这个简单的示例展示了<code>if</code>语句在实际应用中的作用，根据条件的真假执行不同的代码块。</p>
+<h2 id="实际场景的应用"><a class="header" href="#实际场景的应用">实际场景的应用</a></h2>
+<h3 id="数据处理与分析"><a class="header" href="#数据处理与分析">数据处理与分析</a></h3>
+<p>在数据处理与分析的场景中，<code>if</code>语句常用于根据数据的特征或条件执行不同的数据处理步骤。例如：</p>
+<pre><code class="language-python">if data_type == &quot;numeric&quot;:
+    # 执行数值型数据处理
+    process_numeric_data(data)
+elif data_type == &quot;text&quot;:
+    # 执行文本型数据处理
+    process_text_data(data)
+else:
+    # 执行其他数据处理
+    process_other_data(data)
+</code></pre>
+<h3 id="用户权限管理"><a class="header" href="#用户权限管理">用户权限管理</a></h3>
+<p>在用户权限管理中，<code>if</code>语句可以根据用户的角色或权限级别来控制其对系统资源的访问。例如：</p>
+<pre><code class="language-python">if user_role == &quot;admin&quot;:
+    # 执行管理员权限的操作
+    perform_admin_actions()
+elif user_role == &quot;user&quot;:
+    # 执行普通用户权限的操作
+    perform_user_actions()
+else:
+    # 执行其他角色的操作
+    perform_generic_actions()
+</code></pre>
+<h3 id="程序异常处理"><a class="header" href="#程序异常处理">程序异常处理</a></h3>
+<p>在程序中，<code>if</code>语句通常用于处理异常情况。例如，在文件读取时，可以使用<code>if</code>语句检查文件是否存在：</p>
+<pre><code class="language-python">file_path = &quot;example.txt&quot;
+
+if os.path.exists(file_path):
+    with open(file_path, 'r') as file:
+        # 执行文件读取操作
+        content = file.read()
+else:
+    print(&quot;文件不存在，无法读取。&quot;)
+</code></pre>
+<h2 id="总结"><a class="header" href="#总结">总结</a></h2>
+<p><code>if</code>语句是Python中一项基本而强大的控制结构，通过它，程序能够根据不同的条件采取不同的行动，使得代码更灵活、可读性更强。理解其基本语法、多分支结构、条件表达式、嵌套结构和缩进的重要性，能够帮助开发者更有效地使用<code>if</code>语句构建复杂的程序逻辑。</p>
+<p>在实际应用中，<code>if</code>语句通常用于处理用户输入、业务逻辑判断、状态管理等方面。它的灵活性使得程序可以根据不同的情况执行不同的代码块，从而满足各种需求。在编写代码时，务必注意缩进，因为它不仅仅是格式规范，更是Python语法的一部分。通过合理使用<code>if</code>语句，可以写出结构清晰、逻辑严谨的代码，提高代码的可维护性和可读性。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../08.选择结构/三大结构.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../09.循环结构/循环结构.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../08.选择结构/三大结构.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../09.循环结构/循环结构.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

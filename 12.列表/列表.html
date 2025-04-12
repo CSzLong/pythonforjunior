@@ -1,0 +1,491 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>列表 - Python 教程 for Junior</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">简介</a></li><li class="chapter-item expanded "><a href="../00.引言/引言.html"><strong aria-hidden="true">1.</strong> Python 初识</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../00.引言/引言.html"><strong aria-hidden="true">1.1.</strong> 引言</a></li><li class="chapter-item expanded "><a href="../01.Python简介/Python简介.html"><strong aria-hidden="true">1.2.</strong> Python简介</a></li><li class="chapter-item expanded "><a href="../02.HelloWorld/HelloWorld.html"><strong aria-hidden="true">1.3.</strong> hello, world</a></li></ol></li><li class="chapter-item expanded "><a href="../03.类型和变量/类型和变量.html"><strong aria-hidden="true">2.</strong> 一级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03.类型和变量/类型和变量.html"><strong aria-hidden="true">2.1.</strong> 类型和变量</a></li><li class="chapter-item expanded "><a href="../04.运算符和表达式/运算符和表达式.html"><strong aria-hidden="true">2.2.</strong> 运算符和表达式</a></li><li class="chapter-item expanded "><a href="../05.位运算/位运算.html"><strong aria-hidden="true">2.3.</strong> 位运算</a></li><li class="chapter-item expanded "><a href="../06.常用内建函数/常用内建函数.html"><strong aria-hidden="true">2.4.</strong> 常用内建函数</a></li><li class="chapter-item expanded "><a href="../07.海龟画图/海龟画图一.html"><strong aria-hidden="true">2.5.</strong> 海龟画图-第一部分</a></li><li class="chapter-item expanded "><a href="../07.海龟画图/海龟画图二.html"><strong aria-hidden="true">2.6.</strong> 海龟画图-第二部分</a></li></ol></li><li class="chapter-item expanded "><a href="../08.选择结构/三大结构.html"><strong aria-hidden="true">3.</strong> 二级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.选择结构/三大结构.html"><strong aria-hidden="true">3.1.</strong> 三大结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.选择结构/选择结构.html"><strong aria-hidden="true">3.1.1.</strong> 选择结构</a></li><li class="chapter-item expanded "><a href="../09.循环结构/循环结构.html"><strong aria-hidden="true">3.1.2.</strong> 循环结构</a></li></ol></li><li class="chapter-item expanded "><a href="../10.高级数据类型/高级数据类型.html"><strong aria-hidden="true">3.2.</strong> 高级数据结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../11.字符串/字符串.html"><strong aria-hidden="true">3.2.1.</strong> 字符串</a></li><li class="chapter-item expanded "><a href="../12.列表/列表.html" class="active"><strong aria-hidden="true">3.2.2.</strong> 列表</a></li><li class="chapter-item expanded "><a href="../13.元组/元组.html"><strong aria-hidden="true">3.2.3.</strong> 元组</a></li><li class="chapter-item expanded "><a href="../14.集合/集合.html"><strong aria-hidden="true">3.2.4.</strong> 集合</a></li><li class="chapter-item expanded "><a href="../15.字典/字典.html"><strong aria-hidden="true">3.2.5.</strong> 字典</a></li></ol></li><li class="chapter-item expanded "><a href="../16.推导式与函数/推导式与函数.html"><strong aria-hidden="true">3.3.</strong> 推导式与函数</a></li></ol></li><li class="chapter-item expanded "><a href="../18.内置函数/内置函数.html"><strong aria-hidden="true">4.</strong> 三级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../18.内置函数/内置函数.html"><strong aria-hidden="true">4.1.</strong> 内置函数</a></li><li class="chapter-item expanded "><a href="../19.文件读写/文件读写.html"><strong aria-hidden="true">4.2.</strong> 文件读写</a></li><li class="chapter-item expanded "><a href="../20.进制转换/进制转换.html"><strong aria-hidden="true">4.3.</strong> 进制转换</a></li><li class="chapter-item expanded "><a href="../21.异常处理/异常处理.html"><strong aria-hidden="true">4.4.</strong> 异常处理</a></li><li class="chapter-item expanded "><a href="../22.排序算法/排序算法.html"><strong aria-hidden="true">4.5.</strong> 排序算法</a></li><li class="chapter-item expanded "><a href="../23.二分法查找/二分法查找.html"><strong aria-hidden="true">4.6.</strong> 二分法查找</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/内建模块.html"><strong aria-hidden="true">4.7.</strong> 常用内建模块</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../25.常用内建模块/内建模块.html"><strong aria-hidden="true">4.7.1.</strong> 内建模块</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/math.html"><strong aria-hidden="true">4.7.2.</strong> math</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/time.html"><strong aria-hidden="true">4.7.3.</strong> time</a></li><li class="chapter-item expanded "><a href="../25.常用内建模块/os.html"><strong aria-hidden="true">4.7.4.</strong> os</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.</strong> 高级</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.1.</strong> 面向对象编程</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../26.面向对象编程/类和对象.html"><strong aria-hidden="true">5.1.1.</strong> 类和对象</a></li><li class="chapter-item expanded "><a href="../26.面向对象编程/类的继承.html"><strong aria-hidden="true">5.1.2.</strong> 类的继承</a></li><li class="chapter-item expanded "><a href="../26.面向对象编程/自定义异常.html"><strong aria-hidden="true">5.1.3.</strong> 自定义异常</a></li></ol></li><li class="chapter-item expanded "><a href="../27.模块和包/模块.html"><strong aria-hidden="true">5.2.</strong> 模块、包</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../27.模块和包/模块.html"><strong aria-hidden="true">5.2.1.</strong> 模块</a></li><li class="chapter-item expanded "><a href="../27.模块和包/包.html"><strong aria-hidden="true">5.2.2.</strong> 包</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../Exam/习题.html"><strong aria-hidden="true">6.</strong> 习题</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Exam/习题.html"><strong aria-hidden="true">6.1.</strong> 习题1</a></li><li class="chapter-item expanded "><a href="../Exam/习题2.html"><strong aria-hidden="true">6.2.</strong> 习题2</a></li><li class="chapter-item expanded "><a href="../Exam/习题3.html"><strong aria-hidden="true">6.3.</strong> 习题3</a></li><li class="chapter-item expanded "><a href="../Exam/习题4.html"><strong aria-hidden="true">6.4.</strong> 习题4</a></li></ol></li><li class="chapter-item expanded "><a href="../进制转换.html">进制转换</a></li><li class="chapter-item expanded affix "><a href="../附录/appendix.html">附录</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Python 教程 for Junior</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="列表-list"><a class="header" href="#列表-list">列表 List</a></h1>
+<p><code>Python</code>中的列表<code>List</code>是一种非常重要和常用的数据结构，它允许我们存储和操作多个元素。在<code>Python</code>中，列表是一种有序的序列，可以包含任意数量的元素，并且可以动态地改变大小。列表是<code>Python</code>中最灵活、最常用的数据类型之一，几乎在每个<code>Python</code>程序中都会被广泛应用。</p>
+<h2 id="基本操作"><a class="header" href="#基本操作">基本操作</a></h2>
+<h3 id="创建列表"><a class="header" href="#创建列表">创建列表</a></h3>
+<p>在<code>Python</code>中，可以通过简单的方括号<code>[]</code>来创建一个列表，并在其中放入多个元素，元素之间用逗号<code>,</code>分隔。例如：</p>
+<pre><code class="language-python">&gt;&gt;&gt; my_list = [1, 2, 3, 4, 5]
+</code></pre>
+<p>上述代码创建了一个名为<code>my_list</code>的列表，其中包含了整数<code>1</code>到<code>5</code>。列表中的元素可以是任意类型的对象，也可以是不同类型的对象的组合，甚至可以是另一个列表。例如：</p>
+<pre><code class="language-python">&gt;&gt;&gt; mixed_list = [1, 'apple', True, [5, 6, 7]]
+</code></pre>
+<p>这个列表中包含了一个整数、一个字符串、一个布尔值和一个内嵌列表。<code>Python</code>的列表是可以嵌套的，也就是说一个列表可以包含另一个列表作为其元素。</p>
+<h3 id="索引"><a class="header" href="#索引">索引</a></h3>
+<p>与字符串一样，列表也可以从正反两个方向来索引</p>
+<p>比如：</p>
+<pre><code class="language-Python">lst = ['red', 'green', 'blue', 'yellow', 'white', 'black']
+</code></pre>
+<p>正向索引：
+<img src="./images/positive-indexes-1.png" alt="positive-index" /></p>
+<p>反向索引:
+<img src="./images/negative-indexes.png" alt="negative-index" /></p>
+<pre><code class="language-python">&gt;&gt;&gt; print(lst[0])
+red
+&gt;&gt;&gt; print(lst[-2])
+white
+</code></pre>
+<p>同样列表也不能越界访问其中的元素：</p>
+<pre><code class="language-python">&gt;&gt;&gt; print(lst[10])
+Traceback (most recent call last):
+  File &quot;&lt;pyshell#3&gt;&quot;, line 1, in &lt;module&gt;
+    print(lst[10])
+IndexError: list index out of range
+</code></pre>
+<h3 id="切片"><a class="header" href="#切片">切片</a></h3>
+<p>与字符串一样，列表也可以进行切片，所用的运算符也是<code>[]</code>, 它的语法与字符串类似：</p>
+<pre><code class="language-python">list_name[start:stop:step]
+
+```python
+&gt;&gt;&gt; numlst = [1,2,3,4,5,6,7,8,9,10]
+&gt;&gt;&gt; numlst[1:4] 
+[2,3,4]
+&gt;&gt;&gt; numlst[6:] #切片从索引6开始，切到最后
+[7,8,9,10]
+&gt;&gt;&gt; numlst[::2] 
+[1,3,5,7,9]
+</code></pre>
+<p><strong>列表的切片结果还是列表</strong></p>
+<p>通常情况下，切片时，<code>stop</code>的值要大于<code>start</code>的值，否则切片结果为一个空列表<code>[]</code>。
+但也有例外，如果设置了步长<code>step</code>为负数，那么<code>stop</code>的值一定要小于<code>start</code>的值，如：</p>
+<pre><code class="language-python">&gt;&gt;&gt; numlst[5:2:-1]
+[6, 5, 4]
+</code></pre>
+<h4 id="成员运算"><a class="header" href="#成员运算">成员运算</a></h4>
+<p>成员运算可以用在<code>Python</code>中所有的数据结构中，语法一致：</p>
+<pre><code class="language-python">&gt;&gt;&gt; lst = [1, 2, 3, 4, 5]
+&gt;&gt;&gt; 1 not in lst
+False
+</code></pre>
+<h3 id="修改列表"><a class="header" href="#修改列表">修改列表</a></h3>
+<p>可以通过索引和切片来修改列表的元素值：</p>
+<pre><code class="language-python">&gt;&gt;&gt; numlst = [1,2,3,4,5,6,7,8,9,10]
+&gt;&gt;&gt; numlst[0] = 100
+&gt;&gt;&gt; print(numlst)
+[100,2,3,4,5,6,7,8,9,10]
+&gt;&gt;&gt; numlst[1:4] = ['a','b']
+&gt;&gt;&gt; print(numlst)
+[100,'a','b',5,6,7,8,9,10]
+</code></pre>
+<p>这里提到的修改只是修改这个列表里的内容，不会改变列表的对象。</p>
+<h3 id="删除列表里的值"><a class="header" href="#删除列表里的值">删除列表里的值</a></h3>
+<p>与字符串不同的是，我们可以调用<code>del</code>关键字来删除列表里的元素，或者一段切片。</p>
+<pre><code class="language-python">&gt;&gt;&gt; numlst = [1,2,3,4,5,6,7,8,9,10]
+&gt;&gt;&gt; del numlst[0]
+&gt;&gt;&gt; print(numlst)
+[2,3,4,5,6,7,8,9,10]
+&gt;&gt;&gt; del numlst[1:4]
+&gt;&gt;&gt; print(numlst)
+[1,5,6,7,8,9,10]
+&gt;&gt;&gt; del numlst #删除整个列表
+</code></pre>
+<h3 id="列表的加法运算"><a class="header" href="#列表的加法运算">列表的加法运算</a></h3>
+<p>列表的加法运算只能发生在两个列表之间，不能与其它类型进行加法运算。</p>
+<pre><code class="language-python">&gt;&gt;&gt; lst1 = [1,2,3]
+&gt;&gt;&gt; lst2 = [4,5,6]
+&gt;&gt;&gt; print(lst1 + lst2)
+[1,2,3,4,5,6]
+&gt;&gt;&gt; lst3 = lst1 + lst2
+</code></pre>
+<h3 id="列表的乘法运算"><a class="header" href="#列表的乘法运算">列表的乘法运算</a></h3>
+<p>列表的加法运算只能发生在列表和整型之间，不能与其它类型进行乘法运算。</p>
+<pre><code class="language-python">&gt;&gt;&gt; lst1 = [1,2,3]
+&gt;&gt;&gt; print(lst1 * 2)
+[1,2,3,1,2,3]
+&gt;&gt;&gt; lst3 = lst1 * 2
+</code></pre>
+<h2 id="遍历列表"><a class="header" href="#遍历列表">遍历列表</a></h2>
+<p>用<code>for</code>循环可以对那些可迭代的对象进行遍历，主要有两种方式：</p>
+<h3 id="索引遍历"><a class="header" href="#索引遍历">索引遍历</a></h3>
+<pre><code class="language-Python">lst = [1,2,3,4,5,6,7,8,9,10]
+
+for j in range(len(lst)):
+    print(lst[j])
+</code></pre>
+<p>这种方式通过索引来访问列表中的元素。<code>j</code> 在每次循环中都被赋值为列表的下一个索引，然后使用这个索引来从列表中获取元素。这种方式在处理简单元素（如整数或字符串）的列表时，由于需要额外的索引查找，可能会比第一种方式稍慢一些。</p>
+<h3 id="直接遍历"><a class="header" href="#直接遍历">直接遍历</a></h3>
+<pre><code class="language-Python">lst = [1,2,3,4,5,6,7,8,9,10]
+
+for i in lst:
+    print(i)
+</code></pre>
+<p>这种方式直接遍历列表中的每一个元素。<code>i</code> 在每次循环中都会被赋值为列表 <code>lst</code> 的下一个元素。这种方式更简洁，并且当列表的元素是复杂对象（如字典或自定义类的实例）时，效率更高。</p>
+<h2 id="函数"><a class="header" href="#函数">函数</a></h2>
+<table><thead><tr><th align="left">名字</th><th align="left">说明</th></tr></thead><tbody>
+<tr><td align="left"><code>len</code></td><td align="left">有返回值，返回列表的长度</td></tr>
+<tr><td align="left"><code>min</code></td><td align="left">有返回值，返回列表中最小的字符</td></tr>
+<tr><td align="left"><code>max</code></td><td align="left">有返回值，返回列表中最大的字符</td></tr>
+</tbody></table>
+<h2 id="方法"><a class="header" href="#方法">方法</a></h2>
+<h3 id="内容查找"><a class="header" href="#内容查找">内容查找</a></h3>
+<table><thead><tr><th align="left">方法</th><th align="left">说明</th></tr></thead><tbody>
+<tr><td align="left"><code>count</code></td><td align="left">统计在列表中某个元素出现的次数</td></tr>
+<tr><td align="left"><code>index</code></td><td align="left">查找在列表中某个元素的位置</td></tr>
+</tbody></table>
+<h4 id="countvalue"><a class="header" href="#countvalue">count(value)</a></h4>
+<p><code>count</code> 返回在列表中有几个<code>value</code></p>
+<pre><code class="language-python">&gt;&gt;&gt; lst = [2,3,4,65,1,34,5,2,5,7,10]
+&gt;&gt;&gt; lst.count(5)
+2
+</code></pre>
+<h4 id="indexvalue-start0-stop"><a class="header" href="#indexvalue-start0-stop">index(value, start=0, stop)</a></h4>
+<p>列表的<code>index(value,start, stop)</code>方法有三个参数，其中后面两个是可以省略的。
+其作用为返回<code>value</code>在整个列表或给定范围内第一次出现的索引，如果不存在则报错。</p>
+<pre><code class="language-python">&gt;&gt;&gt; lst = [1, 2, 3, 4, 5, 'a', 'b', 'c']
+&gt;&gt;&gt; lst.index(2)
+1
+&gt;&gt;&gt; lst.index(2,1,5)
+1
+&gt;&gt;&gt;
+&gt;&gt;&gt;
+&gt;&gt;&gt; lst.index(2,2,5)
+Traceback (most recent call last):
+  File &quot;&lt;pyshell#6&gt;&quot;, line 1, in &lt;module&gt;
+    lst.index(2,2,5)
+ValueError: 2 is not in list
+&gt;&gt;&gt;
+&gt;&gt;&gt;
+&gt;&gt;&gt; lst.index('a',2,5)
+Traceback (most recent call last):
+  File &quot;&lt;pyshell#7&gt;&quot;, line 1, in &lt;module&gt;
+    lst.index('a',2,5)
+ValueError: 'a' is not in list
+&gt;&gt;&gt; lst.index(5,2,5)
+4
+&gt;&gt;&gt;
+&gt;&gt;&gt;
+&gt;&gt;&gt; lst.index(2,2)
+Traceback (most recent call last):
+  File &quot;&lt;pyshell#9&gt;&quot;, line 1, in &lt;module&gt;
+    lst.index(2,2)
+ValueError: 2 is not in list
+&gt;&gt;&gt; lst.index(2,1)
+1
+</code></pre>
+<h3 id="扩展新的元素"><a class="header" href="#扩展新的元素">扩展新的元素</a></h3>
+<table><thead><tr><th align="left">方法</th><th align="left">说明</th></tr></thead><tbody>
+<tr><td align="left"><code>append</code></td><td align="left">将一个新的元素插入在列表的末尾</td></tr>
+<tr><td align="left"><code>extend</code></td><td align="left">将一个可迭代对象中的元素逐个插入到列表的末尾</td></tr>
+<tr><td align="left"><code>insert</code></td><td align="left">将一个元素插入到列表的指定位置</td></tr>
+</tbody></table>
+<h4 id="appendobject-与-extenditerable"><a class="header" href="#appendobject-与-extenditerable">append(object) 与 extend(iterable)</a></h4>
+<p><code>append</code>，这个方法无返回值，其作用为将<code>object</code>做为一个元素，插入到列表的最后一位。</p>
+<pre><code class="language-python">&gt;&gt;&gt; lst = [1,2,3,4,5]
+&gt;&gt;&gt; lst.append('a')
+&gt;&gt;&gt; print(lst)
+[1,2,3,4,5,'a']
+&gt;&gt;&gt; lst.append([7,8,9])
+&gt;&gt;&gt; print(lst)
+[1,2,3,4,5,'a',[7,8,9]]
+</code></pre>
+<p><code>extend</code>，这个方法也无返回值，要求输入的参数必须为一个序列，它的作用为将<code>iterable</code>中的所有元素，都单独作为一个元素按顺序插入到列表的后面。</p>
+<pre><code class="language-python">&gt;&gt;&gt; lst = [1,2,3,4,5]
+&gt;&gt;&gt; lst.extend('abc')
+&gt;&gt;&gt; print(lst)
+[1,2,3,4,5,'a','b','c']
+&gt;&gt;&gt; lst.extend(1)
+Traceback (most recent call last):
+  File &quot;&lt;pyshell#1&gt;&quot;, line 1, in &lt;module&gt;
+    lst.extend(1)
+TypeError: 'int' object is not iterable
+</code></pre>
+<h4 id="insertindex-object"><a class="header" href="#insertindex-object">insert(index, object)</a></h4>
+<p><code>insert</code>无返回值，它会将值<code>value</code>插入到列表的索引位置<code>index</code>上。</p>
+<pre><code class="language-python">&gt;&gt;&gt; lst.insert(2,6)
+&gt;&gt;&gt; lst
+[1, 2, 6, 3, 4, 5, 'a', 'b', 'c']
+&gt;&gt;&gt; lst.insert(9,7)
+&gt;&gt;&gt; lst
+[1, 2, 6, 3, 4, 5, 'a', 'b', 'c', 7]
+&gt;&gt;&gt; lst.insert(100, 8)
+&gt;&gt;&gt; lst
+[1, 2, 6, 3, 4, 5, 'a', 'b', 'c', 7, 8]
+</code></pre>
+<h3 id="删除列表的元素"><a class="header" href="#删除列表的元素">删除列表的元素</a></h3>
+<table><thead><tr><th align="left">方法</th><th align="left">说明</th></tr></thead><tbody>
+<tr><td align="left"><code>pop</code></td><td align="left">删除列表中指定索引位置的元素</td></tr>
+<tr><td align="left"><code>remove</code></td><td align="left">删除列表中第一次出现值为指定内容的元素</td></tr>
+<tr><td align="left"><code>clear</code></td><td align="left">清空整个列表</td></tr>
+</tbody></table>
+<h4 id="popindex-1"><a class="header" href="#popindex-1">pop(index=-1)</a></h4>
+<p><code>pop(index)</code>，如果给定<code>index</code>一个索引值，则移除列表中这个索引下的元素，如未给定则移除最后一个元素，最后将这个被移除的元素返回。</p>
+<pre><code class="language-python">&gt;&gt;&gt; lst.pop()
+8
+&gt;&gt;&gt; lst
+[1, 2, 6, 3, 4, 5, 'a', 'b', 'c', 7]
+&gt;&gt;&gt; lst.pop(2)
+6
+&gt;&gt;&gt; lst
+[1, 2, 3, 4, 5, 'a', 'b', 'c', 7]
+</code></pre>
+<h4 id="removevalue"><a class="header" href="#removevalue">remove(value)</a></h4>
+<p><code>remove</code>无返回值，其作用为移除掉第一个值为<code>value</code>的元素。</p>
+<pre><code class="language-python">&gt;&gt;&gt; lst = [1,2,3,4,5,2,7]
+&gt;&gt;&gt; lst.remove(2)
+&gt;&gt;&gt; print(lst)
+[1,3,4,5,2,7]
+</code></pre>
+<h4 id="clear"><a class="header" href="#clear">clear()</a></h4>
+<p><code>clear</code>清空列表，将其变成一个空列表<code>[]</code></p>
+<pre><code class="language-python">&gt;&gt;&gt; lst = [1,2,3,4,5]
+&gt;&gt;&gt; lst.clear()
+&gt;&gt;&gt; print(lst)
+[]
+</code></pre>
+<h3 id="改变元素的排列"><a class="header" href="#改变元素的排列">改变元素的排列</a></h3>
+<table><thead><tr><th align="left">方法</th><th align="left">说明</th></tr></thead><tbody>
+<tr><td align="left"><code>sort</code></td><td align="left">将列表的元素按升序或降序排列</td></tr>
+<tr><td align="left"><code>reverse</code></td><td align="left">将列表的元素反序，但是并使列表元素有序</td></tr>
+</tbody></table>
+<h4 id="sortreversefalse"><a class="header" href="#sortreversefalse">sort(reverse=False)</a></h4>
+<p><code>sort</code>对原列表的元素进行排序，将列表生成一个新的有序的列表。 参数<code>reverse</code>被传入的值为<code>True</code>，则倒序排列；否则正序排列。</p>
+<pre><code class="language-python">&gt;&gt;&gt; lst = [5,7,2,3,6,10]
+&gt;&gt;&gt; lst.sort()
+&gt;&gt;&gt; print(lst)
+[2,3,5,6,7,10]
+&gt;&gt;&gt; lst = [5,7,2,3,6,10]
+&gt;&gt;&gt; lst.sort(reverse=True)
+&gt;&gt;&gt; print(lst)
+[10,7,6,5,3,2]
+</code></pre>
+<h4 id="reverse"><a class="header" href="#reverse">reverse()</a></h4>
+<p><code>reverse</code>将列表中元素按索引的位置反序排列。</p>
+<pre><code class="language-python">&gt;&gt;&gt; lst = [5,7,2,3,6,10]
+&gt;&gt;&gt; lst.reverse()
+&gt;&gt;&gt; print(lst)
+[10, 6, 3, 2, 7, 5]
+</code></pre>
+<h3 id="复制列表"><a class="header" href="#复制列表">复制列表</a></h3>
+<table><thead><tr><th align="left">方法</th><th align="left">说明</th></tr></thead><tbody>
+<tr><td align="left"><code>copy</code></td><td align="left">将列表进行浅复制并返回</td></tr>
+</tbody></table>
+<h4 id="copy"><a class="header" href="#copy">copy()</a></h4>
+<p><code>copy</code>浅复制列表并返回。</p>
+<pre><code class="language-python">&gt;&gt;&gt; lst = [1,2,3,4,5]
+&gt;&gt;&gt; new_lst = lst.copy()
+&gt;&gt;&gt; print(new_lst)
+[1, 2, 3, 4, 5]
+</code></pre>
+<p>在这里简单区分一下<code>Python</code>中的有一种复制方式：</p>
+<ul>
+<li><strong>引用赋值:</strong> 将一个对象的引用赋给另一个变量，不复制对象的任何内容。这也意味着，这两个变量指向同一个对象。</li>
+</ul>
+<p><img src="images/reference.png" alt="reference" /></p>
+<ul>
+<li><strong>浅复制:</strong> 创建一个新的对象，并将原始对象中的元素的引用复制到新对象中。如果原始对象中的元素是不可变的，那么浅复制和引用赋值的效果是一样的，因为不可变对象的引用和值是一样的。但如果原始对象中包含可变对象（例如列表中嵌套列表），那么浅复制只会复制最外层的元素的引用，内部元素仍然共享。</li>
+</ul>
+<p><img src="images/shadowcopy.png" alt="shadowcopy" /></p>
+<ul>
+<li><strong>深复制:</strong> 创建一个全新的对象，同时递归地复制原始对象中的所有元素及其子元素，这样就完全脱离了原始对象。深复制会创建一个独立的对象，不论原始对象中的元素是不可变还是可变，它们都不会共享内存。</li>
+</ul>
+<p><img src="images/deepcopy.png" alt="deepcopy" /></p>
+<p>根据上面的介绍，我们可以进行如下的测试：</p>
+<pre><code class="language-python">from copy import deepcopy # 导入copy模块中的深复制函数
+
+if __name__ == '__main__':
+    
+    seed = [1,2,3,4,5,[6,7,8,9]]
+    
+    lst1 = seed
+    lst2 = seed.copy()
+    lst3 = deepcopy(seed)
+    
+    seed.append(10)
+    print('lst1:', lst1)
+    print('lst2:', lst2)
+    print('lst3:', lst2)
+    
+    &quot;&quot;&quot;
+    上面print 语句输出的内容为：
+    list1: [1, 2, 3, 4, 5, [6, 7, 8, 9], 10]
+    list2: [1, 2, 3, 4, 5, [6, 7, 8, 9]]
+    list3: [1, 2, 3, 4, 5, [6, 7, 8, 9]]
+    &quot;&quot;&quot;
+    seed[5].append('a')
+    print('lst1:', lst1)
+    print('lst2:', lst2)
+    print('lst3:', lst2)
+    
+    &quot;&quot;&quot;
+    上面print 语句输出的内容为：
+    list1: [1, 2, 3, 4, 5, [6, 7, 8, 9, 'a'], 10]
+    list2: [1, 2, 3, 4, 5, [6, 7, 8, 9], 10]
+    list3: [1, 2, 3, 4, 5, [6, 7, 8, 9]]
+    &quot;&quot;&quot;
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../11.字符串/字符串.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../13.元组/元组.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../11.字符串/字符串.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../13.元组/元组.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
